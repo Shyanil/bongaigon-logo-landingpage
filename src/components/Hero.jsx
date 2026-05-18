@@ -1,35 +1,23 @@
 ﻿import React from "react";
-import {
-  MapPin,
-  Building2,
-  Layers,
-  Home,
-  Dumbbell,
-  ArrowRight,
-  PlayCircle,
-  Phone,
-} from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import "../App.css";
 import heroImage from "../assets/images/herosectionimage.png";
 
 const Hero = () => {
   return (
     <>
-      {/* Navbar er sathe mil rakhar jonno id="about-project" kora holo */}
-     <section className="hero" id="home">
-        <div className="hero-leaf-bg"></div>
-
+      <section
+        className="hero hero-custom"
+        id="home"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
         <div className="hero-content">
-          <div className="hero-badge">
-            <span></span>
-            Quiet Luxury Living
-            <span></span>
-          </div>
+          <div className="hero-badge">Quiet Luxury Living</div>
 
-          <h1>
-            Step Into <br />
-            <strong>Spotlight of</strong> <br />
-            Modern Living
+          <h1 className="hero-title">
+            Crafted for <br />
+            <strong>Comfort.</strong> <br />
+            Built for Life.
           </h1>
 
           <div className="hero-line">
@@ -38,58 +26,20 @@ const Hero = () => {
             <span></span>
           </div>
 
-          <p>
-            Imagine a life where everything you need is just a step away.
-            Bongaigaon’s most coveted address offers you just that. Built in a
-            prime location with the best of modern amenities, it’s not just a
-            home; it’s a lifestyle upgrade.
+          <p className="hero-text">
+            Premium 2.5, 3 &amp; 3.5 BHK residences in the heart of Bongaigaon.
+            Where modern living meets everyday convenience.
           </p>
-
-          <div className="hero-details">
-            <div className="detail-item">
-              <Building2 size={22} />
-              <span>1 Residential Tower</span>
-            </div>
-
-            <div className="detail-item">
-              <MapPin size={22} />
-              <span>Site Area: 28800 Sq.Ft. Approx</span>
-            </div>
-
-            <div className="detail-item">
-              <Layers size={22} />
-              <span>G+7 Storeys</span>
-            </div>
-
-            <div className="detail-item">
-              <Home size={22} />
-              <span>48 Spacious Flats</span>
-            </div>
-
-            <div className="detail-item">
-              <Home size={22} />
-              <span>3 BHK & 4 BHK</span>
-            </div>
-
-            <div className="detail-item">
-              <Dumbbell size={22} />
-              <span>Club House</span>
-            </div>
-          </div>
 
           <div className="hero-buttons">
             <a href="#contact" className="hero-btn primary">
-              Enquire Now <ArrowRight size={18} />
+              Explore Homes <ArrowRight size={18} />
             </a>
 
-            <a href="#walkthrough" className="hero-btn secondary">
-              View Walkthrough <PlayCircle size={19} />
+            <a href="#amenities" className="hero-btn secondary">
+              View Amenities <ArrowRight size={18} />
             </a>
           </div>
-        </div>
-
-        <div className="hero-image-wrap">
-          <img src={heroImage} alt="Subham Park Bongaigaon" />
         </div>
       </section>
 
