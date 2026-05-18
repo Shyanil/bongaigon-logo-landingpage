@@ -24,7 +24,18 @@ body {
   color: var(--body-text);
   font-family: Georgia, "Times New Roman", serif;
 }
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
+img,
+iframe,
+video {
+  max-width: 100%;
+}
 /* ............................Navbar................ */
 .navbar {
   width: 100%;
@@ -5737,3 +5748,93 @@ video {
   }
 }
 
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .navbar {
+    display: block !important;
+    width: 100%;
+  }
+
+  .navbar-container {
+    width: 100%;
+    padding: 10px 16px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 28px 16px 100px;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 28px 18px;
+    overflow: hidden;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+    line-height: 1.12;
+    word-break: normal;
+  }
+
+  .hero-content p {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: break-word;
+  }
+
+  .hero-line {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-details {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .detail-item {
+    align-items: flex-start;
+    font-size: 13px;
+    line-height: 1.4;
+    overflow-wrap: break-word;
+  }
+
+  .hero-image-wrap {
+    width: 100%;
+    max-width: 100%;
+    height: 330px;
+  }
+
+  .hero-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero-badge {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .hero-badge span {
+    width: 22px;
+  }
+}
