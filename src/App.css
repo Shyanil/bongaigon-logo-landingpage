@@ -39,7 +39,8 @@ video {
 /* ............................Navbar................ */
 .navbar {
   width: 100%;
-  position: fixed;   /* Sticky effect */
+  height: 74px;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
@@ -50,82 +51,72 @@ video {
   box-shadow: 0 10px 30px rgba(88, 99, 58, 0.08);
 }
 
-/* Page content jate navbar-er niche chole na jay */
+html,
 body {
-  padding-top: 105px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-top: 74px;
 }
 
 .navbar-container {
   max-width: 1320px;
+  height: 74px;
   margin: 0 auto;
-  padding: 10px 48px; /* Padding ektu komano hoyeche jate boro logo space pay */
+  padding: 0 30px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
-
-/* Logo - Fixed & Enlarged */
 
 .navbar-logo-box {
   display: flex;
   align-items: center;
   gap: 12px;
+  transform: translateX(-48px);
+  flex-shrink: 0;
 }
 
 .navbar-logo {
-  /* Logo size significantly increased */
-  width: 85px;
-  height: 85px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   border-radius: 50%;
-
-  /* Background transparent jate navbar color er sathe mishe jay */
   background: transparent;
   padding: 0;
-
-  /* Border/Shadow remove kora hoyeche clean look er jonno */
   border: none;
   box-shadow: none;
 }
 
-.brand-text h1 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 25px;
-  line-height: 1;
-  color: var(--heading);
-  font-weight: 700;
-  letter-spacing: 0.4px;
-}
-
-.brand-text p {
-  margin-top: 4px;
-  font-family: "Inter", sans-serif;
-  font-size: 13px;
-  color: var(--body-text);
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-}
-
-/* Menu */
-
+/* ================= MENU ================= */
 .navbar-menu {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 45px; /* NAVBAR ITEM GULOR DETANCE KHANIKTA BARANO HOLO */
-  margin-left: auto; /* MENU KE RIGHT SIDE-E PUSH KORBE JATE BUTTON ER SATHE GAP THAK-E */
-  margin-right: 45px; /* MENU R BUTTON ER MODDHE SIMILAR EQUAL DISTANCE RAKHAR JONNO */
+  gap: 36px;
+  margin: 0 36px 0 90px;
+  padding: 0;
+  flex: unset;
+}
+
+.navbar-menu li {
+  flex: unset;
+  display: flex;
+  justify-content: center;
 }
 
 .navbar-menu li a {
   text-decoration: none;
   font-family: "Inter", sans-serif;
   font-size: 14px;
+  font-weight: 600;
   color: var(--heading);
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
   transition: 0.3s ease;
+  white-space: nowrap;
 }
 
 .navbar-menu li a::after {
@@ -148,21 +139,22 @@ body {
   width: 100%;
 }
 
-/* Button */
-
+/* ================= BUTTON ================= */
 .navbar-btn {
   text-decoration: none;
   background: linear-gradient(135deg, var(--cta-gold), #A94F27);
   color: var(--white);
-  padding: 12px 22px;
+  padding: 11px 22px;
   border-radius: 30px;
   font-size: 13px;
+  font-weight: 600;
   font-family: "Inter", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   box-shadow: 0 10px 25px rgba(185, 94, 47, 0.35);
   transition: 0.3s ease;
-  flex-shrink: 0; /* JATE BUTTON CHOTO NA HOYE JAY */
+  flex-shrink: 0;
+  margin-left: 0;
 }
 
 .navbar-btn:hover {
@@ -170,8 +162,7 @@ body {
   box-shadow: 0 14px 35px rgba(185, 94, 47, 0.5);
 }
 
-/* Hamburger */
-
+/* ================= HAMBURGER ================= */
 .hamburger {
   display: none;
   width: 34px;
@@ -191,47 +182,46 @@ body {
   transition: 0.3s ease;
 }
 
-.hamburger.open span:nth-child(1) {
-  transform: translateY(12px) rotate(45deg);
-}
-
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.open span:nth-child(3) {
-  transform: translateY(-12px) rotate(-45deg);
-}
-
 /* ================= RESPONSIVE ================= */
-
 @media (max-width: 1024px) {
   .navbar-container {
-    padding: 10px 28px;
+    padding: 0 28px;
+  }
+
+  .navbar-logo-box {
+    transform: translateX(0);
   }
 
   .navbar-menu {
-    gap: 24px; /* RESPONSIVE SCREEN-E DISTANCE ADJUST KORA HOLO */
-    margin-right: 24px;
+    gap: 24px;
+    margin: 0 24px;
   }
 
   .navbar-menu li a {
     font-size: 12px;
+    letter-spacing: 0.8px;
   }
 
   .navbar-btn {
     padding: 10px 16px;
     font-size: 12px;
+    margin-left: 0;
   }
 }
 
 @media (max-width: 850px) {
+  .navbar,
+  .navbar-container {
+    height: 74px;
+  }
+
   body {
-    padding-top: 90px;
+    padding-top: 74px;
   }
 
   .hamburger {
     display: flex;
+    margin-left: auto;
   }
 
   .navbar-btn {
@@ -240,7 +230,7 @@ body {
 
   .navbar-menu {
     position: absolute;
-    top: 82px;
+    top: 74px;
     left: 0;
     width: 100%;
     background: rgba(248, 244, 236, 0.96);
@@ -255,8 +245,7 @@ body {
     pointer-events: none;
     transform: translateY(-15px);
     transition: 0.3s ease;
-    margin-left: 0; /* MOBILE UI ER JONNO MARGIN REMOVE KORA HOLO */
-    margin-right: 0;
+    margin: 0;
   }
 
   .navbar-menu.active {
@@ -267,7 +256,7 @@ body {
 
   .navbar-menu li {
     width: 100%;
-    text-align: center;
+    justify-content: center;
   }
 
   .navbar-menu li a {
@@ -276,58 +265,63 @@ body {
     font-size: 14px;
   }
 
-  .brand-text h1 {
-    font-size: 22px;
-  }
-
-  .brand-text p {
-    font-size: 11px;
-  }
-
   .navbar-logo {
-    width: 65px; /* Mobile e ektu boro thakbe */
-    height: 65px;
+    width: 58px;
+    height: 58px;
   }
 }
 
 @media (max-width: 480px) {
+  .navbar,
+  .navbar-container {
+    height: 68px;
+  }
+
   body {
-    padding-top: 80px;
+    padding-top: 68px;
   }
 
   .navbar-container {
-    padding: 10px 18px;
-  }
-
-  .brand-text h1 {
-    font-size: 19px;
-  }
-
-  .brand-text p {
-    letter-spacing: 1.8px;
+    padding: 0 18px;
   }
 
   .navbar-logo {
-    width: 55px;
-    height: 55px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .navbar-menu {
+    top: 68px;
   }
 }
+
 /* ===== HERO SECTION ===== */
 .hero.hero-custom {
   width: 100%;
-  min-height: calc(100vh - 92px);
+  min-height: calc(100vh - 74px);
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding: 38px 5.2%;
+
+  margin-top: 0 !important;
+  padding: 38px 5.2% !important;
+
   background-image: url("./assets/images/herosectionimage.png") !important;
   background-size: cover !important;
   background-position: center 22% !important;
   background-repeat: no-repeat !important;
 }
 
-/* black overlay */
+/* white gap force remove */
+.app-shell,
+.page-shell,
+main,
+.hero,
+.hero-custom {
+  margin-top: 0 !important;
+}
+
 .hero.hero-custom::before {
   content: "";
   position: absolute;
@@ -343,7 +337,6 @@ body {
   );
 }
 
-/* content transparent */
 .hero.hero-custom .hero-content {
   position: relative !important;
   z-index: 5 !important;
@@ -351,22 +344,10 @@ body {
   padding: 0 !important;
   margin: 0 !important;
   background: none !important;
-  background-color: transparent !important;
-  background-image: none !important;
   border: 0 !important;
-  border-radius: 0 !important;
   box-shadow: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
 }
 
-.hero.hero-custom .hero-content::before,
-.hero.hero-custom .hero-content::after {
-  content: none !important;
-  display: none !important;
-}
-
-/* badge */
 .hero-badge {
   width: fit-content;
   padding: 13px 28px;
@@ -381,12 +362,10 @@ body {
   background: rgba(0, 0, 0, 0.22);
 }
 
-/* ===== HEADING FIX ===== */
-/* অন্য সব গ্লোবাল বা থিম কালারকে ওভাররাইড করে মূল হেডিং সম্পূর্ণ সাদা (WHITE) করা হলো */
 .hero h1,
 .hero-title,
 div.hero-content h1 {
-  color: #ffffff !important; 
+  color: #ffffff !important;
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(48px, 5vw, 78px);
   line-height: 1.08;
@@ -395,16 +374,13 @@ div.hero-content h1 {
   text-shadow: 0 4px 22px rgba(0, 0, 0, 0.85);
 }
 
-/* শুধুমাত্র Comfort অংশটিকে নিখুঁতভাবে উজ্জ্বল কমলা (ORANGE) করা হলো */
 .hero h1 strong,
 .hero-title strong,
 div.hero-content h1 strong {
-  color: #d77a42 !important; 
+  color: #d77a42 !important;
   font-weight: 500;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.65);
 }
 
-/* line */
 .hero-line {
   display: flex;
   align-items: center;
@@ -427,21 +403,17 @@ div.hero-content h1 strong {
   display: block;
 }
 
-/* ===== PARAGRAPH FIX ===== */
-/* প্যারাগ্রাফের কালারকে পরিষ্কার ও দৃশ্যমান করার জন্য শক্তিশালী CSS রুল */
 .hero-content p,
 .hero-text,
 div.hero-content p {
   max-width: 500px;
-  color: rgba(255, 255, 255, 0.95) !important; /* স্পষ্ট সাদা করার জন্য অপাসিটি বাড়ানো হয়েছে */
+  color: rgba(255, 255, 255, 0.95) !important;
   font-family: "Inter", sans-serif;
   font-size: 18px;
   line-height: 1.75;
   margin: 0 0 34px;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
 }
 
-/* buttons */
 .hero-buttons {
   display: flex;
   align-items: center;
@@ -459,115 +431,64 @@ div.hero-content p {
   gap: 16px;
   font-family: "Inter", sans-serif;
   font-size: 14px;
-  text-transform: capitalize;
-  letter-spacing: 0.4px;
   transition: 0.3s ease;
 }
 
-/* primary button */
 .hero-btn.primary {
   background: linear-gradient(135deg, #d77a42, #b55324);
   color: #ffffff !important;
-  border: 1px solid #d77a42;
-  box-shadow: 0 16px 35px rgba(198, 104, 47, 0.35);
 }
 
-.hero-btn.primary svg {
-  color: #ffffff !important;
-}
-
-/* secondary button (View Amenities) - text & icon ORANGE */
 .hero-btn.secondary,
 .hero-btn.secondary * {
-  color: #d77a42 !important; /* ভেতরের টেক্সট ও আইকন যেন সবসময় কমলা থাকে */
+  color: #d77a42 !important;
 }
 
 .hero-btn.secondary {
   background: rgba(255, 255, 255, 0.94);
-  border: 1px solid rgba(215, 122, 66, 0.55);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
-}
-
-.hero-btn.secondary svg {
-  color: #d77a42 !important;
 }
 
 .hero-btn:hover {
   transform: translateY(-3px);
 }
 
-.hero-image-wrap,
-.hero-leaf-bg {
-  display: none !important;
-}
-
-.mobile-sticky-cta {
-  display: none;
-}
-
-/* ===== RESPONSIVE ===== */
+/* Mobile */
 @media (max-width: 850px) {
-  .hero.hero-custom {
-    min-height: calc(100vh - 78px);
-    padding: 45px 22px 110px;
-    background-position: center center !important;
+  body {
+    padding-top: 74px;
   }
 
-  .hero.hero-custom::before {
-    background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.92) 0%,
-      rgba(0, 0, 0, 0.78) 50%,
-      rgba(0, 0, 0, 0.35) 100%
-    );
+  .navbar-logo-box {
+    transform: translateX(0);
   }
 
-  .hero h1,
-  .hero-title {
-    font-size: 44px;
-  }
-
-  .hero-buttons {
+  .navbar-btn {
     display: none;
   }
 
-  .mobile-sticky-cta {
-    display: flex;
-    position: fixed;
-    left: 16px;
-    right: 16px;
-    bottom: 16px;
-    z-index: 1000;
-    height: 56px;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    text-decoration: none;
-    border-radius: 50px;
-    background: #c6682f;
-    color: #ffffff;
-    font-family: "Inter", sans-serif;
-    font-size: 15px;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
+  .hero.hero-custom {
+    min-height: calc(100vh - 74px);
+    padding: 45px 22px 110px !important;
   }
 }
 
-@media (max-width: 500px) {
-  .hero-badge {
-    font-size: 10px;
-    letter-spacing: 2px;
-    padding: 10px 18px;
+@media (max-width: 480px) {
+  .navbar,
+  .navbar-container {
+    height: 68px;
   }
 
-  .hero h1,
-  .hero-title {
-    font-size: 36px;
+  body {
+    padding-top: 68px;
   }
 
-  .hero-content p,
-  .hero-text {
-    font-size: 15px;
+  .hero.hero-custom {
+    min-height: calc(100vh - 68px);
+  }
+
+  .navbar-logo {
+    width: 52px;
+    height: 52px;
   }
 }
 /* ================= ABOUT PROJECT ================= */
@@ -1519,7 +1440,7 @@ div.hero-content p {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 48px;
-  align-items: stretch;
+  align-items: start;
   overflow: hidden;
 }
 
@@ -1590,7 +1511,7 @@ div.hero-content p {
   overflow: hidden;
   background: #FFFDF8;
   box-shadow: 0 18px 42px rgba(63, 74, 42, 0.10);
-  margin-top: auto;
+  margin-top: 34px;
 }
 
 .location-accordion-item {
@@ -1683,14 +1604,16 @@ div.hero-content p {
 
 .location-map-card {
   position: relative;
-  height: auto;
-  min-height: 100%;
-  margin-top: 48px;
+  height: 100%;
+  min-height: 545px;
+  margin-top: 0 !important;
+  transform: translateY(0);
   border-radius: 28px;
   overflow: hidden;
   border: 1px solid rgba(151, 61, 24, 0.5);
   box-shadow: 0 26px 65px rgba(63, 74, 42, 0.15);
   background: #EAE3D6;
+  align-self: start;
 }
 
 .location-map-card iframe {
@@ -1784,7 +1707,7 @@ div.hero-content p {
   .location-map-card {
     height: 430px;
     min-height: auto;
-    margin-top: 0;
+    margin-top: 0 !important;
   }
 
   .location-map-card iframe {
@@ -2329,9 +2252,13 @@ div.hero-content p {
 
 .contact-premium-section {
   width: 100%;
-  min-height: 750px;
-  padding: 80px 8%;
-  background-image: linear-gradient(rgba(255, 253, 248, 0.9), rgba(255, 253, 248, 0.9)), url('../assets/images/formimage.png');
+  min-height: 780px;
+  padding: 75px 8% 90px;
+  background-image: linear-gradient(
+      rgba(255, 253, 248, 0.9),
+      rgba(255, 253, 248, 0.9)
+    ),
+    url("../assets/images/formimage.png");
   background-size: cover;
   background-position: center;
   display: grid;
@@ -2343,45 +2270,38 @@ div.hero-content p {
 
 .contact-left {
   max-width: 650px;
+  transform: translateY(-10px);
 }
 
-/* ===== FLOORPLAN STYLE LABEL ===== */
 .contact-label {
   width: fit-content;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 22px;
-  margin-bottom: 40px;
+  margin: 0 0 30px 0;
+  padding: 0;
 }
 
-.contact-label i {
-  width: 76px;
-  height: 1px;
-  background: #B95E2F;
-  display: block;
-  flex: 0 0 76px;
-}
-
-/* FIXED: Get In Touch er pore right side line */
+.contact-label i,
 .contact-label::after {
   content: "";
   width: 76px;
   height: 1px;
-  background: #B95E2F;
+  background: #ffffff !important;
   display: block;
   flex: 0 0 76px;
+  opacity: 1 !important;
 }
 
 .contact-label span {
-  margin: 0;
-  padding: 0;
   font-family: "Inter", sans-serif;
-  font-size: 9px;
+  font-size: 14px !important;
   text-transform: uppercase;
   letter-spacing: 7px;
-  color: #B95E2F;
-  font-weight: 400;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-weight: 600;
   line-height: 1;
   white-space: nowrap;
 }
@@ -2392,11 +2312,11 @@ div.hero-content p {
   font-size: clamp(42px, 4vw, 68px);
   line-height: 1.1;
   font-weight: 500;
-  color: #3F4A2A;
+  color: #ffffff;
 }
 
 .contact-left h2 strong {
-  color: #B95E2F;
+  color: #b95e2f;
   font-weight: 500;
   white-space: nowrap;
 }
@@ -2406,8 +2326,47 @@ div.hero-content p {
   font-family: "Inter", sans-serif;
   font-size: 17px;
   line-height: 1.6;
-  color: #3F4A2A;
-  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.contact-highlights {
+  margin-top: 34px;
+  display: grid;
+  gap: 14px;
+  max-width: 560px;
+}
+
+.contact-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.contact-highlight-item svg {
+  width: 40px;
+  height: 40px;
+  color: #ffffff;
+  background: rgba(185, 94, 47, 0.32);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  padding: 9px;
+  flex-shrink: 0;
+}
+
+.contact-highlight-item h4 {
+  margin: 0 0 4px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.contact-highlight-item span {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .contact-form-card {
@@ -2416,7 +2375,7 @@ div.hero-content p {
   justify-self: center;
   padding: 45px 40px;
   border-radius: 30px;
-  background: #FFFDF8;
+  background: #fffdf8;
   border: 1px solid rgba(185, 94, 47, 0.2);
   box-shadow: 0 30px 70px rgba(185, 94, 47, 0.1);
 }
@@ -2425,12 +2384,12 @@ div.hero-content p {
   text-align: center;
   font-family: "Cormorant Garamond", serif;
   font-size: 28px;
-  color: #3F4A2A;
+  color: #3f4a2a;
   margin-bottom: 35px;
 }
 
 .contact-form-card h3 strong {
-  color: #B95E2F;
+  color: #b95e2f;
   font-weight: 500;
 }
 
@@ -2454,15 +2413,14 @@ div.hero-content p {
 }
 
 .input-box:focus-within {
-  border-color: #B95E2F;
-  background: #FFFDF8;
+  border-color: #b95e2f;
+  background: #fffdf8;
 }
 
 .input-box svg {
   width: 16px;
   height: 16px;
-  color: #B95E2F;
-  opacity: 0.8;
+  color: #b95e2f;
 }
 
 .input-box input,
@@ -2473,7 +2431,7 @@ div.hero-content p {
   outline: none;
   font-family: "Inter", sans-serif;
   font-size: 14px;
-  color: #3F4A2A;
+  color: #3f4a2a;
   background: transparent;
 }
 
@@ -2495,7 +2453,7 @@ div.hero-content p {
   border-radius: 14px;
   margin-top: 10px;
   cursor: pointer;
-  background: #B95E2F;
+  background: #b95e2f;
   color: #fff;
   font-family: "Inter", sans-serif;
   font-size: 15px;
@@ -2509,11 +2467,10 @@ div.hero-content p {
 }
 
 .contact-submit-btn:hover {
-  background: #A94F27;
+  background: #a94f27;
   transform: translateY(-2px);
 }
 
-/* Responsive */
 @media (max-width: 1100px) {
   .contact-premium-section {
     grid-template-columns: 1fr;
@@ -2521,18 +2478,25 @@ div.hero-content p {
     padding: 60px 5%;
   }
 
-  .contact-label {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .contact-left {
     max-width: 100%;
     margin-bottom: 40px;
+    transform: translateY(0);
+  }
+
+  .contact-label {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
   }
 
   .contact-left p {
     margin: 20px auto;
+  }
+
+  .contact-highlights {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -2548,8 +2512,8 @@ div.hero-content p {
   }
 
   .contact-label span {
-    font-size: 12px;
-    letter-spacing: 5px;
+    font-size: 14px !important;
+    letter-spacing: 4px;
   }
 
   .contact-left h2 {
@@ -2570,7 +2534,7 @@ div.hero-content p {
 .footer-premium {
   background: linear-gradient(135deg, #5B6639 0%, #263119 100%);
   color: #ffffff;
-  padding: 52px 5.5%;
+  padding: 38px 5.5% 16px; /* top / sides / bottom */
   position: relative;
   overflow: hidden;
 }
@@ -2580,30 +2544,31 @@ div.hero-content p {
   position: absolute;
   inset: 0;
   background: url("https://www.transparenttextures.com/patterns/pinstriped-suit.png");
-  opacity: 0.05;
+  opacity: 0.04;
   pointer-events: none;
 }
 
 .simple-footer-container {
-  max-width: 1300px;
+  max-width: 1380px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 0.85fr 1.7fr 0.8fr;
-  align-items: center;
-  gap: 34px;
+  grid-template-columns: 1.1fr 1.15fr 1.15fr 1fr;
+  align-items: start;
+  gap: 36px;
 }
 
+/* Logo */
 .simple-footer-logo-box {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 14px;
 }
 
 .footer-logo {
-  width: 58px;
-  height: 58px;
+  width: 54px;
+  height: 54px;
   object-fit: contain;
   filter: brightness(1.15);
 }
@@ -2611,66 +2576,87 @@ div.hero-content p {
 .logo-text h3 {
   margin: 0;
   font-family: "Cormorant Garamond", serif;
-  font-size: 24px;
-  letter-spacing: 2px;
+  font-size: 22px;
+  letter-spacing: 1.8px;
   color: #fffdf8;
   line-height: 1;
 }
 
 .logo-text p {
-  margin: 6px 0 0;
+  margin: 5px 0 0;
   font-family: "Inter", sans-serif;
-  font-size: 11px;
-  letter-spacing: 5px;
+  font-size: 10px;
+  letter-spacing: 4px;
   color: #c99a48;
   font-weight: 600;
 }
 
-.simple-footer-info {
-  text-align: center;
-  display: grid;
-  gap: 14px;
-}
-
+/* Info Blocks */
 .footer-info-block {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 4px;
+  align-items: flex-start;
+  gap: 10px;
 }
 
 .footer-info-block h4 {
   margin: 0;
   font-family: "Inter", sans-serif;
-  font-size: 15px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   color: #c99a48 !important;
-  font-weight: 700;
-  text-align: center;
-  line-height: 1.3;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.footer-info-block h4::before {
+  content: "—";
+  margin-right: 8px;
+  color: #c99a48;
 }
 
 .footer-info-block p {
   margin: 0;
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.92) !important;
-  font-weight: 500;
-  text-align: center;
-}
-
-.simple-footer-copy {
-  text-align: right;
+  max-width: 290px;
   font-family: "Inter", sans-serif;
   font-size: 13px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.86) !important;
+  font-weight: 500;
+  text-align: left;
 }
 
-/* Mobile Responsive */
-@media (max-width: 900px) {
+/* Bottom Copyright */
+.footer-bottom-copy {
+  max-width: 1380px;
+  margin: 18px auto 0;      /* line er sathe কম gap */
+  padding-top: 12px;        /* line er নিচে কম gap */
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  position: relative;
+  z-index: 2;
+  text-align: right;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.4;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+  .simple-footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 700px) {
   .simple-footer-container {
     grid-template-columns: 1fr;
+    gap: 26px;
     text-align: center;
   }
 
@@ -2678,22 +2664,47 @@ div.hero-content p {
     justify-content: center;
   }
 
-  .simple-footer-copy {
+  .footer-info-block {
+    align-items: center;
+  }
+
+  .footer-info-block p {
     text-align: center;
+    max-width: 100%;
+  }
+
+  .footer-bottom-copy {
+    text-align: center;
+    margin-top: 16px;
+    padding-top: 10px;
   }
 }
 
 @media (max-width: 500px) {
   .footer-premium {
-    padding: 38px 20px;
+    padding: 30px 20px 18px;
   }
 
   .simple-footer-logo-box {
     flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo-text h3 {
+    font-size: 20px;
   }
 
   .footer-info-block p {
-    font-size: 13px;
+    font-size: 12.5px;
+  }
+
+  .footer-bottom-copy {
+    font-size: 11px;
   }
 }
 /* =========================================================
@@ -8234,4 +8245,150 @@ button.mobile-sticky-btn {
   stroke: #ffffff !important;
   opacity: 1 !important;
   visibility: visible !important;
+}
+
+/* ===== FINAL FIX: REMOVE NAVBAR HERO WHITE GAP ===== */
+
+html,
+body,
+#root {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body {
+  padding-top: 74px !important;
+}
+
+.navbar {
+  height: 74px !important;
+}
+
+.navbar-container {
+  height: 74px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.app-shell,
+.page-shell,
+main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.hero,
+.hero-custom,
+.hero.hero-custom {
+  margin-top: -32px !important;
+  padding-top: 38px !important;
+  border-top: 0 !important;
+}
+
+
+
+
+/* ===== HERO CONTENT LOWER POSITION FIX ===== */
+/* App.css-এর একদম নিচে paste করো */
+
+.hero.hero-custom {
+  align-items: flex-start !important;
+  padding-top: 120px !important; /* লেখাগুলো অনেক নিচে নামবে */
+}
+
+.hero.hero-custom .hero-content {
+  margin-top: 35px !important; /* extra নিচে নামানোর জন্য */
+  max-width: 560px !important;
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+  .hero.hero-custom {
+    padding-top: 110px !important;
+  }
+
+  .hero.hero-custom .hero-content {
+    margin-top: 20px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .hero.hero-custom {
+    padding-top: 90px !important;
+  }
+
+  .hero.hero-custom .hero-content {
+    margin-top: 10px !important;
+  }
+}
+
+/* Paste this at the VERY END of App.css */
+
+.contact-label i,
+.contact-label::after {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  height: 2px !important;
+  opacity: 1 !important;
+  border: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* Paste this at the VERY END of App.css */
+
+/* Form heading color fix */
+.contact-form-card h3 {
+  color: #3f4a2a !important; /* same green used throughout the site */
+}
+
+.contact-form-card h3 strong {
+  color: #b95e2f !important; /* keep highlighted text orange */
+}
+
+/* If any span is used inside heading */
+.contact-form-card h3 span {
+  color: #3f4a2a !important;
+}
+
+/* ===== MAP HEIGHT INCREASE (এই কোডটা CSS-এর একদম শেষে paste করো) ===== */
+.location-map-card {
+  min-height: 650px !important; /* height আরও নিচের দিকে বাড়বে */
+}
+
+/* ===== CONTACT SECTION BOTTOM GAP REMOVE ===== */
+/* এই কোডটা App.css-এর একদম শেষে paste করো */
+
+.contact-premium-section {
+  min-height: auto !important;
+  padding: 15px 8% 30px !important; /* আগে 80px ছিল */
+}
+
+.contact-left {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.contact-form-card {
+  margin-bottom: 0 !important;
+}
+
+.contact-highlights {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Desktop view-তে নিচের অতিরিক্ত ফাঁকা অংশ কমাবে */
+@media (min-width: 1101px) {
+  .contact-premium-section {
+    padding-bottom: 10px !important;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 1100px) {
+  .contact-premium-section {
+    padding-bottom: 30px !important;
+  }
 }

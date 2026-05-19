@@ -29,24 +29,38 @@ class App extends React.Component {
   componentDidMount() {
     this.handleStickyFooterScroll = () => {
       const footer = document.querySelector(".footer-premium");
+      const aboutProject =
+        document.querySelector("#about") ||
+        document.querySelector(".about-project-section") ||
+        document.querySelector(".about-project");
+
       const stickyForms = document.querySelectorAll(
         ".desktop-sticky-form, .mobile-sticky-cta, .sticky-popup-form"
       );
 
-      if (!footer || stickyForms.length === 0) return;
+      if (stickyForms.length === 0) return;
 
-      const footerTop = footer.getBoundingClientRect().top;
       const windowHeight = window.innerHeight;
 
-      if (footerTop <= windowHeight + 120) {
-        stickyForms.forEach((form) => {
-          form.classList.add("hide-before-footer");
-        });
-      } else {
-        stickyForms.forEach((form) => {
-          form.classList.remove("hide-before-footer");
-        });
+      let aboutReached = false;
+      if (aboutProject) {
+        const aboutTop = aboutProject.getBoundingClientRect().top;
+        aboutReached = aboutTop <= windowHeight * 0.75;
       }
+
+      let footerReached = false;
+      if (footer) {
+        const footerTop = footer.getBoundingClientRect().top;
+        footerReached = footerTop <= windowHeight + 120;
+      }
+
+      stickyForms.forEach((form) => {
+        if (!aboutReached || footerReached) {
+          form.classList.add("hide-before-footer");
+        } else {
+          form.classList.remove("hide-before-footer");
+        }
+      });
     };
 
     window.addEventListener("scroll", this.handleStickyFooterScroll);

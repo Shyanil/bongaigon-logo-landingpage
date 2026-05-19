@@ -1,7 +1,7 @@
 ﻿import React from "react";
 import {
   Dumbbell,
-  Sofa,
+  Building2,
   Trees,
   Baby,
   Waves,
@@ -19,7 +19,7 @@ const Amenities = () => {
       description: "State-of-the-art gym for a healthy & active lifestyle.",
     },
     {
-      icon: <Sofa />,
+      icon: <Building2 />,
       title: "Clubhouse",
       description: "Elegant clubhouse for celebrations & social gatherings.",
     },
@@ -51,7 +51,8 @@ const Amenities = () => {
     {
       icon: <Zap />,
       title: "Power Backup",
-      description: "Uninterrupted power backup for a hassle-free living experience.",
+      description:
+        "Uninterrupted power backup for a hassle-free living experience.",
     },
   ];
 
