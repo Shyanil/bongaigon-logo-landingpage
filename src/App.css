@@ -8184,16 +8184,26 @@ button.mobile-sticky-btn {
   pointer-events: auto !important;
 }
 
-/* BACK button bigger */
+/* CLOSE BUTTON: hide "Back" text completely and show only X icon */
 .plan-modal .plan-modal-header .plan-modal-actions button:last-child {
-  width: 62px !important;
-  min-width: 62px !important;
-  padding: 0 12px !important;
-  gap: 4px !important;
-  overflow: visible !important;
+  width: 42px !important;
+  min-width: 42px !important;
+  height: 42px !important;
+  min-height: 42px !important;
+  padding: 0 !important;
+  gap: 0 !important;
+
+  /* Hide all text completely */
+  font-size: 0 !important;
+  line-height: 0 !important;
+  text-indent: -9999px !important;
+  color: transparent !important;
+
+  overflow: hidden !important;
   white-space: nowrap !important;
 }
 
+/* All modal icons */
 .plan-modal .plan-modal-header .plan-modal-actions button svg {
   width: 20px !important;
   height: 20px !important;
@@ -8202,6 +8212,26 @@ button.mobile-sticky-btn {
   display: block !important;
   flex-shrink: 0 !important;
   stroke-width: 2.4 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Keep X icon centered and visible */
+.plan-modal .plan-modal-header .plan-modal-actions button:last-child svg {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+
+  margin: 0 !important;
+  text-indent: 0 !important;
+  color: #ffffff !important;
+  stroke: #ffffff !important;
   opacity: 1 !important;
   visibility: visible !important;
 }
