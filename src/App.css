@@ -7932,68 +7932,74 @@ button.mobile-sticky-btn {
 }
 
 /* =========================================================
-   FINAL FIX ONLY:
-   1) Floorplan popup Back button visible on DESKTOP + MOBILE
-   2) Mobile navbar and hero section white gap remove
-   ========================================================= */
+   FINAL FORCE FIX: FLOORPLAN BACK BUTTON DESKTOP + MOBILE
+   Paste this at the VERY END of App.css.
+   This keeps the Back/Close button visible on every screen size.
+========================================================= */
 
-/* Floorplan modal header/back button - desktop and mobile both */
 .plan-modal {
   position: fixed !important;
   inset: 0 !important;
   z-index: 2147483647 !important;
   background: rgba(0, 0, 0, 0.94) !important;
-  padding: 96px 18px 18px !important;
-  overflow: hidden !important;
+  padding: 88px 18px 22px !important;
   display: flex !important;
   flex-direction: column !important;
+  overflow: hidden !important;
 }
 
 .plan-modal-header {
   position: fixed !important;
-  top: 18px !important;
-  left: 18px !important;
-  right: 18px !important;
-  transform: none !important;
-  width: auto !important;
-  max-width: none !important;
-  height: 62px !important;
-  padding: 0 16px !important;
+  top: 14px !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  width: calc(100% - 36px) !important;
+  max-width: 1320px !important;
+  height: 58px !important;
+  padding: 0 14px 0 18px !important;
   border-radius: 16px !important;
   background: #fffdf8 !important;
-  border: 1px solid rgba(185, 94, 47, 0.38) !important;
-  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.45) !important;
+  border: 1px solid rgba(185, 94, 47, 0.45) !important;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.42) !important;
   z-index: 2147483647 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
 
 .plan-modal-header h2,
-.plan-modal-header h3 {
+.plan-modal-header h3,
+.plan-modal-title {
   margin: 0 !important;
-  color: #263119 !important;
   font-family: "Cormorant Garamond", serif !important;
   font-size: 24px !important;
   line-height: 1 !important;
-  max-width: 55% !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
+  color: #263119 !important;
   white-space: nowrap !important;
 }
 
 .plan-modal-actions {
   display: flex !important;
   align-items: center !important;
+  justify-content: flex-end !important;
   gap: 10px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
   flex-shrink: 0 !important;
+  z-index: 2147483647 !important;
 }
 
 .plan-modal-actions button {
-  height: 42px !important;
-  min-width: 42px !important;
-  border: none !important;
-  border-radius: 999px !important;
+  min-width: 44px !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(185, 94, 47, 0.45) !important;
   background: #263119 !important;
   color: #ffffff !important;
   display: inline-flex !important;
@@ -8003,53 +8009,105 @@ button.mobile-sticky-btn {
   visibility: visible !important;
   pointer-events: auto !important;
   cursor: pointer !important;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 700 !important;
 }
 
-/* Last action button will show as BACK button */
+/* Close/back button ke text Back banano holo */
 .plan-modal-actions button:last-child {
   width: auto !important;
   min-width: 92px !important;
+  border-radius: 999px !important;
   padding: 0 18px !important;
   font-size: 0 !important;
+  background: linear-gradient(135deg, #B95E2F, #A94F27) !important;
+  color: #ffffff !important;
+}
+
+.plan-modal-actions button:last-child svg,
+.plan-modal-actions button:last-child i,
+.plan-modal-actions button:last-child span {
+  display: none !important;
 }
 
 .plan-modal-actions button:last-child::after {
   content: "Back" !important;
-  font-family: "Inter", sans-serif !important;
   font-size: 14px !important;
+  line-height: 1 !important;
+  font-family: "Inter", sans-serif !important;
   font-weight: 800 !important;
   letter-spacing: 0.5px !important;
   color: #ffffff !important;
+  display: inline-block !important;
 }
 
 .plan-modal-body {
+  flex: 1 !important;
   width: 100% !important;
-  height: calc(100vh - 116px) !important;
-  margin: 0 !important;
+  min-height: 0 !important;
   overflow: auto !important;
-  border-radius: 16px !important;
   background: #111111 !important;
-  display: block !important;
-  -webkit-overflow-scrolling: touch !important;
+  border-radius: 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 .plan-modal-body img {
-  width: 1200px !important;
-  max-width: none !important;
-  height: auto !important;
-  max-height: none !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
   object-fit: contain !important;
-  display: block !important;
-  margin: 0 auto !important;
 }
 
-/* Mobile white gap remove: navbar-er niche hero direct start hobe */
-@media (max-width: 850px) {
-  html,
-  body {
-    background: #263119 !important;
+@media (max-width: 700px) {
+  .plan-modal {
+    padding: 76px 10px 14px !important;
   }
 
+  .plan-modal-header {
+    top: 10px !important;
+    left: 10px !important;
+    right: 10px !important;
+    transform: none !important;
+    width: auto !important;
+    max-width: none !important;
+    height: 52px !important;
+    padding: 0 10px 0 14px !important;
+    border-radius: 14px !important;
+  }
+
+  .plan-modal-header h2,
+  .plan-modal-header h3,
+  .plan-modal-title {
+    font-size: 18px !important;
+    max-width: calc(100% - 108px) !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .plan-modal-actions button {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+  }
+
+  .plan-modal-actions button:last-child {
+    min-width: 78px !important;
+    height: 38px !important;
+    padding: 0 13px !important;
+  }
+
+  .plan-modal-actions button:last-child::after {
+    font-size: 13px !important;
+  }
+}
+
+/* =========================================================
+   FINAL MOBILE WHITE GAP REMOVE: NAVBAR + HERO
+========================================================= */
+@media (max-width: 850px) {
   body {
     padding-top: 0 !important;
   }
@@ -8057,71 +8115,16 @@ button.mobile-sticky-btn {
   .navbar {
     position: sticky !important;
     top: 0 !important;
-    left: 0 !important;
     margin-bottom: 0 !important;
-    background: #263119 !important;
-    z-index: 999999 !important;
   }
 
   .navbar-container {
     margin-bottom: 0 !important;
   }
 
+  .hero,
   .hero.hero-custom {
     margin-top: 0 !important;
     border-top: 0 !important;
-  }
-
-  .navbar + .hero,
-  .navbar + .hero.hero-custom,
-  .navbar + section,
-  .navbar + div {
-    margin-top: 0 !important;
-  }
-
-  .plan-modal {
-    padding: 74px 10px 14px !important;
-  }
-
-  .plan-modal-header {
-    top: 10px !important;
-    left: 10px !important;
-    right: 10px !important;
-    height: 54px !important;
-    padding: 0 10px 0 14px !important;
-    border-radius: 14px !important;
-  }
-
-  .plan-modal-header h2,
-  .plan-modal-header h3 {
-    font-size: 17px !important;
-    max-width: 145px !important;
-  }
-
-  .plan-modal-actions {
-    gap: 8px !important;
-  }
-
-  .plan-modal-actions button {
-    height: 38px !important;
-    min-width: 38px !important;
-  }
-
-  .plan-modal-actions button:last-child {
-    min-width: 82px !important;
-    padding: 0 16px !important;
-  }
-
-  .plan-modal-actions button:last-child::after {
-    font-size: 13px !important;
-  }
-
-  .plan-modal-body {
-    height: calc(100vh - 88px) !important;
-    border-radius: 14px !important;
-  }
-
-  .plan-modal-body img {
-    width: 1050px !important;
   }
 }
