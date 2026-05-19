@@ -7306,3 +7306,434 @@ body {
     pointer-events: none !important;
   }
 }
+
+
+/* =========================================================
+   FINAL MOBILE RESPONSIVE FIX — 19-05-2026
+   Fixes:
+   1) Mobile navbar and hero white gap removed
+   2) Hero buttons visible on phone
+   3) Contact/form section visible on phone
+   4) Floorplan "Main Plan" mobile title centered and smaller
+   5) Floorplan zoom popup Back button visible on phone
+========================================================= */
+
+/* ---------- MOBILE NAVBAR + HERO WHITE GAP REMOVE ---------- */
+@media (max-width: 850px) {
+  html,
+  body {
+    padding-top: 0 !important;
+    margin: 0 !important;
+    background: #FFF9F1 !important;
+  }
+
+  .navbar {
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 999999 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: linear-gradient(135deg, #3F4A2A 0%, #263119 100%) !important;
+    border-bottom: 1px solid rgba(185, 94, 47, 0.25) !important;
+    box-shadow: none !important;
+  }
+
+  .navbar-container {
+    min-height: 72px !important;
+    height: 72px !important;
+    padding: 8px 18px !important;
+    margin: 0 !important;
+  }
+
+  .navbar-logo {
+    width: 54px !important;
+    height: 54px !important;
+  }
+
+  .hero.hero-custom {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    min-height: calc(100vh - 72px) !important;
+    display: flex !important;
+    align-items: center !important;
+    background-image: url("./assets/images/herosectionimage.png") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .hero.hero-custom::before {
+    inset: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    min-height: 70px !important;
+    height: 70px !important;
+    padding: 7px 16px !important;
+  }
+
+  .navbar-logo {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .hero.hero-custom {
+    min-height: calc(100vh - 70px) !important;
+  }
+}
+
+/* ---------- HERO MOBILE BUTTONS FORCE SHOW ---------- */
+@media (max-width: 850px) {
+  .hero.hero-custom .hero-content {
+    position: relative !important;
+    z-index: 5 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 22px !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  .hero.hero-custom .hero-buttons,
+  .hero-buttons {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 24px !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  .hero.hero-custom .hero-btn,
+  .hero-btn,
+  .hero.hero-custom button.hero-btn,
+  .hero.hero-custom a.hero-btn {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 52px !important;
+    height: 52px !important;
+    padding: 0 18px !important;
+    border-radius: 999px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    text-align: center !important;
+    font-size: 13px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+  }
+
+  .hero.hero-custom .hero-btn.primary {
+    background: linear-gradient(135deg, #d77a42, #b55324) !important;
+    color: #ffffff !important;
+  }
+
+  .hero.hero-custom .hero-btn.secondary {
+    background: rgba(255, 255, 255, 0.96) !important;
+    color: #d77a42 !important;
+  }
+}
+
+/* ---------- CONTACT / FORM MOBILE FORCE SHOW ---------- */
+@media (max-width: 850px) {
+  .contact-premium-section,
+  .contact-section {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    padding: 60px 18px !important;
+    margin: 0 !important;
+    gap: 28px !important;
+    text-align: center !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  .contact-left,
+  .contact-form-card,
+  .contact-form-panel,
+  .contact-card,
+  .contact-form {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    transform: none !important;
+  }
+
+  .contact-form-card,
+  .contact-form-panel,
+  .contact-card {
+    padding: 28px 18px !important;
+    border-radius: 22px !important;
+    background: #fffdf8 !important;
+    border: 1px solid rgba(185, 94, 47, 0.24) !important;
+    box-shadow: 0 22px 50px rgba(47, 58, 31, 0.14) !important;
+  }
+
+  .input-box,
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea,
+  .contact-submit-btn {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ---------- FLOOR PLAN MOBILE TITLE SMALL + CENTER ---------- */
+@media (max-width: 700px) {
+  .floorplan-section {
+    padding: 54px 16px 62px !important;
+  }
+
+  .floorplan-tabs {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 26px !important;
+  }
+
+  .plan-panel {
+    padding: 22px 16px !important;
+    border-radius: 20px !important;
+  }
+
+  .plan-panel-title {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px !important;
+    margin: 0 auto 24px !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+
+  .plan-panel-title span {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 1px !important;
+    background: rgba(185, 94, 47, 0.75) !important;
+  }
+
+  .plan-panel-title h3,
+  .plan-panel-title h2 {
+    display: block !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 120px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    font-family: "Cormorant Garamond", serif !important;
+    font-size: 30px !important;
+    line-height: 1.05 !important;
+    font-weight: 600 !important;
+    color: #B95E2F !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+  }
+
+  .main-plan-image-box {
+    border-radius: 12px !important;
+  }
+
+  .main-plan-image-box img {
+    height: 245px !important;
+    object-fit: contain !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .plan-panel-title h3,
+  .plan-panel-title h2 {
+    max-width: 100px !important;
+    font-size: 28px !important;
+  }
+
+  .plan-panel-title {
+    gap: 10px !important;
+  }
+}
+
+/* ---------- FLOOR PLAN ZOOM POPUP BACK BUTTON VISIBLE ---------- */
+@media (max-width: 700px) {
+  .plan-modal {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 2147483647 !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    padding: 74px 10px 14px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .plan-modal-header {
+    position: fixed !important;
+    top: 10px !important;
+    left: 10px !important;
+    right: 10px !important;
+    transform: none !important;
+    width: auto !important;
+    max-width: none !important;
+    height: 54px !important;
+    padding: 0 10px 0 14px !important;
+    border-radius: 14px !important;
+    background: #fffdf8 !important;
+    border: 1px solid rgba(185, 94, 47, 0.35) !important;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.42) !important;
+    z-index: 2147483647 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .plan-modal-header h3,
+  .plan-modal-header h2 {
+    font-size: 17px !important;
+    line-height: 1 !important;
+    color: #263119 !important;
+    margin: 0 !important;
+    max-width: 145px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .plan-modal-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .plan-modal-actions button {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    border-radius: 50% !important;
+    border: none !important;
+    background: #263119 !important;
+    color: #ffffff !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+  }
+
+  .plan-modal-actions button:last-child {
+    width: auto !important;
+    min-width: 82px !important;
+    border-radius: 999px !important;
+    padding: 0 16px !important;
+    font-size: 0 !important;
+  }
+
+  .plan-modal-actions button:last-child::after {
+    content: "Back" !important;
+    font-size: 13px !important;
+    font-family: "Inter", sans-serif !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.4px !important;
+    color: #ffffff !important;
+  }
+
+  .plan-modal-body {
+    width: 100% !important;
+    height: calc(100vh - 88px) !important;
+    margin: 0 !important;
+    overflow: auto !important;
+    border-radius: 14px !important;
+    background: #111111 !important;
+    display: block !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .plan-modal-body img {
+    width: 1050px !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* ---------- POPUP FORM MOBILE VISIBILITY ---------- */
+@media (max-width: 700px) {
+  .popup-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 2147483647 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 12px !important;
+    background: rgba(0, 0, 0, 0.72) !important;
+  }
+
+  .popup-form,
+  .popup-form-card {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 94vw !important;
+    max-height: 86vh !important;
+    overflow-y: auto !important;
+    padding: 34px 18px 22px !important;
+    border-radius: 22px !important;
+    background: #fffdf8 !important;
+  }
+
+  .popup-close {
+    top: 10px !important;
+    right: 10px !important;
+    z-index: 3 !important;
+  }
+}
+
+/* ---------- ONLY BOTTOM FLOATING ENQUIRE BAR OFF ON MOBILE ---------- */
+@media (max-width: 900px) {
+  .mobile-sticky-cta,
+  .footer-enquiry-btn.mobile-sticky,
+  .sticky-mobile-cta {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
