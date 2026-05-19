@@ -8184,6 +8184,16 @@ button.mobile-sticky-btn {
   pointer-events: auto !important;
 }
 
+/* BACK button bigger */
+.plan-modal .plan-modal-header .plan-modal-actions button:last-child {
+  width: 62px !important;
+  min-width: 62px !important;
+  padding: 0 12px !important;
+  gap: 4px !important;
+  overflow: visible !important;
+  white-space: nowrap !important;
+}
+
 .plan-modal .plan-modal-header .plan-modal-actions button svg {
   width: 20px !important;
   height: 20px !important;
