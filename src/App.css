@@ -8376,4 +8376,72 @@ main {
   color: #b95e2f !important; /* Orange */
   font-weight: 300 !important;
 }
+/* ===== MOBILE NAVBAR FIX ONLY ===== */
+@media (max-width: 850px) {
+  .navbar {
+    height: 82px !important;
+    background: #17290f !important;
+  }
 
+  body {
+    padding-top: 82px !important;
+  }
+
+  .navbar-container {
+    height: 82px !important;
+    padding: 0 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .navbar-logo-box {
+    transform: none !important;
+    margin: 0 !important;
+  }
+
+  .navbar-logo {
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  .hamburger {
+    display: flex !important;
+    margin-left: auto !important;
+    width: 34px !important;
+    height: 25px !important;
+  }
+
+  .hamburger span {
+    height: 3px !important;
+    background: #ffffff !important;
+  }
+
+  .navbar-menu {
+    top: 82px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    height: 82px !important;
+  }
+
+  body {
+    padding-top: 82px !important;
+  }
+
+  .navbar-container {
+    height: 82px !important;
+    padding: 0 28px !important;
+  }
+
+  .navbar-logo {
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  .navbar-menu {
+    top: 82px !important;
+  }
+}
