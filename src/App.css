@@ -8377,58 +8377,72 @@ main {
   font-weight: 300 !important;
 }
 
-/* ===== REAL MOBILE NAVBAR SLIM FIX ===== */
-@media (max-width: 850px) {
-  .navbar {
-    height: 58px !important;
-    min-height: 58px !important;
-    max-height: 58px !important;
+/* ===== NUCLEAR MOBILE NAVBAR SLIM FIX ===== */
+@media only screen and (max-width: 850px) {
+  html body .app-shell .navbar,
+  html body .navbar {
+    height: 70px !important;
+    min-height: 70px !important;
+    max-height: 70px !important;
     padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
     overflow: hidden !important;
+    background: #172b10 !important;
   }
 
-  .navbar-container {
-    height: 58px !important;
-    min-height: 58px !important;
-    max-height: 58px !important;
+  html body .app-shell .navbar .navbar-container,
+  html body .navbar .navbar-container {
+    position: absolute !important;
+    inset: 0 !important;
+    height: 70px !important;
+    min-height: 70px !important;
+    max-height: 70px !important;
     padding: 0 26px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
   }
 
-  .navbar-logo-box {
-    height: 58px !important;
-    min-height: 58px !important;
-    max-height: 58px !important;
+  html body .navbar-logo-box {
+    height: 70px !important;
+    min-height: 70px !important;
+    max-height: 70px !important;
+    padding: 0 !important;
+    margin: 0 !important;
     transform: none !important;
+    display: flex !important;
+    align-items: center !important;
   }
 
-  .navbar-logo {
-    width: 42px !important;
-    height: 42px !important;
+  html body .navbar-logo {
+    width: 46px !important;
+    height: 46px !important;
+    max-width: 46px !important;
+    max-height: 46px !important;
+    object-fit: contain !important;
   }
 
-  .hamburger {
-    width: 30px !important;
-    height: 22px !important;
+  html body .hamburger {
+    width: 32px !important;
+    height: 23px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
   }
 
-  .navbar-menu {
-    top: 58px !important;
+  html body .hamburger span {
+    height: 3px !important;
+    background: #ffffff !important;
   }
 
-  body {
-    padding-top: 58px !important;
+  html body {
+    padding-top: 70px !important;
   }
 
-  .hero.hero-custom {
-    padding-top: 0 !important;
+  html body .navbar-menu {
+    top: 70px !important;
   }
 }
-
-/* IMPORTANT: ei old rule ta thakle delete/replace korte hobe:
-@media (max-width: 850px) {
-  .navbar,
-  .navbar-container {
-    height: 74px;
-  }
-}
-*/
