@@ -8126,51 +8126,63 @@ button.mobile-sticky-btn {
   }
 }
 
-/* =========================================================
-   ONLY FIX: Footer asar age sticky form/CTA vanish
-   Extra kono design change kora hoyni
-========================================================= */
 
-.footer-premium {
+
+
+
+
+/* ===== STICKY FORM HIDE BEFORE FOOTER ===== */
+.desktop-sticky-form.hide-before-footer,
+.mobile-sticky-cta.hide-before-footer,
+.sticky-popup-form.hide-before-footer {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translate(-50%, 140px) !important;
+}
+
+/* ===== FLOOR PLAN MODAL: BUTTONS ALWAYS VISIBLE ===== */
+.plan-modal {
+  z-index: 999999 !important;
+  padding-top: 52px !important;
+}
+
+.plan-modal-header {
+  position: fixed !important;
+  top: 4px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: calc(100% - 24px) !important;
+  max-width: 1540px !important;
+  z-index: 1000001 !important;
+}
+
+.plan-modal-actions {
   position: relative !important;
   z-index: 1000002 !important;
 }
 
-/* Footer viewport-e dhuklei sticky form/CTA fade out hobe */
-@supports (animation-timeline: view()) {
-  .footer-premium {
-    view-timeline-name: --footer-reveal;
-    view-timeline-axis: block;
-  }
-
-  .desktop-sticky-form,
-  .desktop-sticky-form.show,
-  .mobile-sticky-btn,
-  .mobile-sticky-btn.show,
-  .mobile-sticky-cta,
-  .mobile-sticky-cta.show {
-    animation-name: stickyVanishBeforeFooter !important;
-    animation-timeline: --footer-reveal !important;
-    animation-range: entry -120px entry 80px !important;
-    animation-fill-mode: both !important;
-  }
-
-  @keyframes stickyVanishBeforeFooter {
-    from {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
-    to {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-  }
+.plan-modal-actions button {
+  position: relative !important;
+  z-index: 1000003 !important;
 }
 
-/* Browser jodi scroll-timeline support na kore, footer sticky form-er opore thakbe */
-.footer-premium {
-  isolation: isolate !important;
+/* Modal open thakle sticky form hide */
+.plan-modal .desktop-sticky-form,
+.plan-modal .mobile-sticky-cta,
+.plan-modal .sticky-popup-form {
+  display: none !important;
 }
 
+/* ===== MOBILE + DESKTOP ===== */
+@media (max-width: 768px) {
+  .plan-modal {
+    padding-top: 44px !important;
+  }
+
+  .plan-modal-header {
+    top: 2px !important;
+    width: calc(100% - 12px) !important;
+    border-radius: 14px !important;
+  }
+}

@@ -26,6 +26,39 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.handleStickyFooterScroll = () => {
+      const footer = document.querySelector(".footer-premium");
+      const stickyForms = document.querySelectorAll(
+        ".desktop-sticky-form, .mobile-sticky-cta, .sticky-popup-form"
+      );
+
+      if (!footer || stickyForms.length === 0) return;
+
+      const footerTop = footer.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (footerTop <= windowHeight + 120) {
+        stickyForms.forEach((form) => {
+          form.classList.add("hide-before-footer");
+        });
+      } else {
+        stickyForms.forEach((form) => {
+          form.classList.remove("hide-before-footer");
+        });
+      }
+    };
+
+    window.addEventListener("scroll", this.handleStickyFooterScroll);
+    window.addEventListener("resize", this.handleStickyFooterScroll);
+    this.handleStickyFooterScroll();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleStickyFooterScroll);
+    window.removeEventListener("resize", this.handleStickyFooterScroll);
+  }
+
   openPopup = () => {
     this.setState({ isPopupOpen: true });
   };
