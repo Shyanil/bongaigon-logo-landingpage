@@ -8377,63 +8377,58 @@ main {
   font-weight: 300 !important;
 }
 
-/* ===== FINAL FORCE MOBILE NAVBAR SLIM ===== */
-@media screen and (max-width: 850px) {
-  header.navbar,
+/* ===== REAL MOBILE NAVBAR SLIM FIX ===== */
+@media (max-width: 850px) {
   .navbar {
-    height: 64px !important;
-    min-height: 64px !important;
-    max-height: 64px !important;
+    height: 58px !important;
+    min-height: 58px !important;
+    max-height: 58px !important;
     padding: 0 !important;
-    margin: 0 !important;
     overflow: hidden !important;
   }
 
-  header.navbar .navbar-container,
-  .navbar .navbar-container,
   .navbar-container {
-    height: 64px !important;
-    min-height: 64px !important;
-    max-height: 64px !important;
-    padding: 0 18px !important;
-    margin: 0 auto !important;
-    align-items: center !important;
+    height: 58px !important;
+    min-height: 58px !important;
+    max-height: 58px !important;
+    padding: 0 26px !important;
   }
 
   .navbar-logo-box {
-    height: 64px !important;
-    min-height: 64px !important;
-    max-height: 64px !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    height: 58px !important;
+    min-height: 58px !important;
+    max-height: 58px !important;
     transform: none !important;
-    align-items: center !important;
   }
 
   .navbar-logo {
-    width: 46px !important;
-    height: 46px !important;
-    max-width: 46px !important;
-    max-height: 46px !important;
+    width: 42px !important;
+    height: 42px !important;
   }
 
   .hamburger {
     width: 30px !important;
     height: 22px !important;
-    padding: 0 !important;
-    margin-left: auto !important;
-  }
-
-  .hamburger span {
-    height: 3px !important;
-    background: #ffffff !important;
-  }
-
-  body {
-    padding-top: 64px !important;
   }
 
   .navbar-menu {
-    top: 64px !important;
+    top: 58px !important;
+  }
+
+  body {
+    padding-top: 58px !important;
+  }
+
+  .hero.hero-custom {
+    padding-top: 0 !important;
   }
 }
+
+/* IMPORTANT: ei old rule ta thakle delete/replace korte hobe:
+@media (max-width: 850px) {
+  .navbar,
+  .navbar-container {
+    height: 74px;
+  }
+}
+*/
