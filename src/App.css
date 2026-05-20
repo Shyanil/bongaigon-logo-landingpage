@@ -8455,9 +8455,155 @@ main {
   box-sizing: border-box !important;
 }
 
+/* =========================================================
+   FINAL MOBILE NAVBAR SLIM FIX
+   Phone theke navbar mota howa stop korar final override.
+   Paste location: App.css er ekdom last.
+========================================================= */
+@media (max-width: 850px) {
+  html {
+    scroll-padding-top: 62px !important;
+  }
 
+  body {
+    padding-top: 62px !important;
+  }
 
+  .navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 62px !important;
+    min-height: 62px !important;
+    max-height: 62px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #263119 !important;
+    z-index: 999999 !important;
+  }
 
+  .navbar-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 62px !important;
+    min-height: 62px !important;
+    max-height: 62px !important;
+    margin: 0 !important;
+    padding: 0 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+  }
 
+  .navbar-logo-box {
+    height: 62px !important;
+    min-height: 62px !important;
+    max-height: 62px !important;
+    display: flex !important;
+    align-items: center !important;
+    flex: 0 0 auto !important;
+    transform: translateX(0) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
+  .navbar-logo {
+    width: 46px !important;
+    height: 46px !important;
+    max-width: 46px !important;
+    max-height: 46px !important;
+    object-fit: contain !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
+  .hamburger {
+    display: flex !important;
+    width: 28px !important;
+    height: 21px !important;
+    min-width: 28px !important;
+    max-width: 28px !important;
+    margin-left: auto !important;
+    padding: 0 !important;
+    align-items: stretch !important;
+    justify-content: space-between !important;
+    position: relative !important;
+    z-index: 1000000 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .hamburger span {
+    height: 2px !important;
+    width: 100% !important;
+    display: block !important;
+    background: #ffffff !important;
+    border-radius: 4px !important;
+  }
+
+  .navbar-btn {
+    display: none !important;
+  }
+
+  .navbar-menu {
+    position: fixed !important;
+    top: 62px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 14px 0 !important;
+    z-index: 999998 !important;
+  }
+
+  .hero.hero-custom {
+    min-height: calc(100vh - 62px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    scroll-padding-top: 58px !important;
+  }
+
+  body {
+    padding-top: 58px !important;
+  }
+
+  .navbar,
+  .navbar-container,
+  .navbar-logo-box {
+    height: 58px !important;
+    min-height: 58px !important;
+    max-height: 58px !important;
+  }
+
+  .navbar-container {
+    padding: 0 14px !important;
+  }
+
+  .navbar-logo {
+    width: 42px !important;
+    height: 42px !important;
+    max-width: 42px !important;
+    max-height: 42px !important;
+  }
+
+  .hamburger {
+    width: 27px !important;
+    height: 20px !important;
+    min-width: 27px !important;
+    max-width: 27px !important;
+  }
+
+  .navbar-menu {
+    top: 58px !important;
+  }
+
+  .hero.hero-custom {
+    min-height: calc(100vh - 58px) !important;
+  }
+}
