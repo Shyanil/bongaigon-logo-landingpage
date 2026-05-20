@@ -8786,17 +8786,34 @@ body {
   height: 100px !important;
 }
 
+/* ===== PASTE THIS AT THE VERY END OF APP.CSS ===== */
+/* Logo ke force kore upore niye jabe */
 
-/* Logo একটু উপরের দিকে তোলার জন্য
-   CSS-এর একদম শেষে এটা add করো */
-
-/* Logo শুধু সামান্য নিচে নামানোর জন্য
-   CSS-এর একদম শেষে এটা add করো */
-
-.navbar-logo-box {
-  transform: translateY(6px) !important;
+.navbar .navbar-logo-box {
+  position: relative !important;
+  top: 4px !important;              /* যত বেশি negative, তত বেশি উপরে উঠবে */
+  left: 35px !important;              /* ডান দিকে সরবে */
+  transform: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 99999 !important;
 }
 
+/* Tablet */
+@media (max-width: 1024px) {
+  .navbar .navbar-logo-box {
+    top: -24px !important;
+    left: 25px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 850px) {
+  .navbar .navbar-logo-box {
+    top: 0 !important;
+    left: 0 !important;
+  }
+}
 
 
 
@@ -8917,4 +8934,24 @@ body:has(.gallery-modal) [class*="floating"] {
 .gallery-modal-close,
 .gallery-modal-arrow {
   z-index: 2147483647 !important;
+}
+
+
+/* Logo একটু ডান দিকে সরানোর জন্য */
+.navbar-logo-box {
+  transform: translateX(35px) translateY(22px) !important;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .navbar-logo-box {
+    transform: translateX(25px) translateY(10px) !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 850px) {
+  .navbar-logo-box {
+    transform: translateX(0) !important;
+  }
 }
