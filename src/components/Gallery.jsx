@@ -1,22 +1,22 @@
 ﻿import React from "react";
 import "../App.css";
 
-import eveningView from "../assets/images/aboutartelivation.jpeg";
+import eveningView from "../assets/images/gymnasium.jpeg";
 import mainEntrance from "../assets/images/mainentrance.jpeg";
 import kidsPlayArea from "../assets/images/kidsplayarea.jpeg";
 import lobbyLounge from "../assets/images/lobbylounge.jpeg";
 import indoorGames from "../assets/images/indoor-games.png";
-import gymnasium from "../assets/images/gymnasium.jpeg";
+import gymnasium from "../assets/images/semiarenaview.jpeg";
 import splashPool from "../assets/images/splashpool.jpeg";
 
 const Gallery = () => {
   const galleryImages = [
-    { image: eveningView, title: "Morning View", className: "gallery-tall" },
+    { image: eveningView, title: "Gymnasium", className: "gallery-tall" },
     { image: lobbyLounge, title: "Lobby Lounge", className: "gallery-wide" },
     { image: mainEntrance, title: "Main Entrance", className: "gallery-small" },
     { image: kidsPlayArea, title: "Kids Play Area", className: "gallery-small" },
     { image: indoorGames, title: "Indoor Games Room", className: "gallery-bottom" },
-    { image: gymnasium, title: "Gymnasium", className: "gallery-bottom" },
+    { image: gymnasium, title: "Semi-Arena View", className: "gallery-bottom" },
     { image: splashPool, title: "Splash Pool", className: "gallery-bottom" },
   ];
 
