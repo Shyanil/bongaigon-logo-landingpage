@@ -8955,3 +8955,15 @@ body:has(.gallery-modal) [class*="floating"] {
     transform: translateX(0) !important;
   }
 }
+
+
+
+
+/* ===== DEPLOY FORCE LOGO FIX ===== */
+body .navbar .navbar-container .navbar-logo-box {
+  position: relative !important;
+  top: -35px !important;
+  left: 35px !important;
+  transform: none !important;
+  z-index: 999999 !important;
+}
