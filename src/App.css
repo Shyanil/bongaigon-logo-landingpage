@@ -8870,3 +8870,25 @@ body.gallery-open .floating-form {
     right: 12px;
   }
 }
+
+
+/* ===== FORCE HIDE STICKY SITE VISIT FORM WHEN GALLERY MODAL IS OPEN ===== */
+/* CSS-এর একদম শেষে এটা paste কর */
+
+body.gallery-open [class*="site-visit"],
+body.gallery-open [class*="sticky"],
+body.gallery-open [class*="floating"],
+body.gallery-open [class*="enquiry"],
+body.gallery-open [class*="contact-sticky"],
+body.gallery-open [class*="bottom-form"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+/* Gallery modal সবকিছুর উপরে থাকবে */
+body.gallery-open .gallery-modal {
+  z-index: 2147483647 !important;
+}
