@@ -35,17 +35,17 @@ class FloorPlans extends React.Component {
     };
 
     this.floorPlans = [
-      { title: "Floor Plan 1", image: map1 },
-      { title: "Floor Plan 2", image: map2 },
-      { title: "Floor Plan 3", image: map3 },
-      { title: "Floor Plan 4", image: map4 },
+      { title: "1st Floor", image: map1 },
+      { title: "2nd & 5th Floor", image: map2 },
+      { title: "3rd & 6th Floor", image: map3 },
+      { title: "4th Floor", image: map4 },
     ];
 
     this.unitPlans = [
-      { title: "Unit Plan 1", image: unitmap1 },
-      { title: "Unit Plan 2", image: unitmap2 },
-      { title: "Unit Plan 3", image: unitmap3 },
-      { title: "Unit Plan 4", image: unitmap4 },
+      { title: "1st Floor", image: unitmap1 },
+      { title: "2nd & 5th Floor", image: unitmap2 },
+      { title: "3rd & 6th Floor", image: unitmap3 },
+      { title: "4th Floor", image: unitmap4 },
     ];
   }
 
