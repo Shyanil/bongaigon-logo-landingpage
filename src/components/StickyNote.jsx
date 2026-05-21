@@ -1,11 +1,24 @@
 import React from "react";
 import { Sparkles, User, Phone, Mail, Send, Clock } from "lucide-react";
+import { supabase } from "../supabase";
 import "../App.css";
 
 class StickyNote extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { show: false };
+
+    this.state = {
+      show: false,
+      loading: false,
+      success: false,
+      formData: {
+        name: "",
+        phone: "",
+        email: "",
+        interestedIn: "3 BHK",
+        timing: "Morning",
+      },
+    };
   }
 
   componentDidMount() {
@@ -29,47 +42,145 @@ class StickyNote extends React.Component {
     this.setState({ show: shouldShow });
   };
 
+  handleChange = (e) => {
+    this.setState({
+      formData: {
+        ...this.state.formData,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
+
+  handleSubmit = async () => {
+    const { formData } = this.state;
+
+    if (!formData.name || !formData.phone || !formData.email) {
+      alert("Please fill all details.");
+      return;
+    }
+
+    this.setState({ loading: true });
+
+    const { error } = await supabase.from("subham-bongaigon").insert([
+      {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        interested_in: formData.interestedIn,
+        requirement: "Site Visit",
+        timing: formData.timing || null,
+      },
+    ]);
+
+    if (error) {
+      console.log("SUPABASE ERROR:", error);
+      alert(error.message);
+      this.setState({ loading: false });
+      return;
+    }
+
+    this.setState({
+      loading: false,
+      success: true,
+      formData: {
+        name: "",
+        phone: "",
+        email: "",
+        interestedIn: "3 BHK",
+        timing: "Morning",
+      },
+    });
+
+    setTimeout(() => {
+      window.location.href = "/thank-you";
+    }, 2200);
+  };
+
   render() {
     return (
       <>
         <div className={`desktop-sticky-form ${this.state.show ? "show" : ""}`}>
-          <div className="sticky-left">
-            <div className="sticky-icon">
-              <Sparkles size={18} />
+          {this.state.success ? (
+            <div className="sticky-success-box">
+              <div className="form-success-check">✓</div>
+              <span>Submitted</span>
             </div>
-            <div>
-              <h4>Site Visit</h4>
-              <p>Book Priority Slot</p>
-            </div>
-          </div>
+          ) : (
+            <>
+              <div className="sticky-left">
+                <div className="sticky-icon">
+                  <Sparkles size={18} />
+                </div>
+                <div>
+                  <h4>Site Visit</h4>
+                  <p>Book Priority Slot</p>
+                </div>
+              </div>
 
-          <div className="sticky-input">
-            <User size={14} />
-            <input type="text" placeholder="Name" />
-          </div>
+              <div className="sticky-input">
+                <User size={14} />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  value={this.state.formData.name}
+                  onChange={this.handleChange}
+                />
+              </div>
 
-          <div className="sticky-input">
-            <Phone size={14} />
-            <input type="tel" placeholder="Phone" />
-          </div>
+              <div className="sticky-input">
+                <Phone size={14} />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone"
+                  value={this.state.formData.phone}
+                  onChange={this.handleChange}
+                />
+              </div>
 
-          <div className="sticky-input">
-            <Mail size={14} />
-            <input type="email" placeholder="Email" />
-          </div>
+              <div className="sticky-input">
+                <Mail size={14} />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value={this.state.formData.email}
+                  onChange={this.handleChange}
+                />
+              </div>
 
-          <select className="sticky-select">
-            <option>3 BHK</option>
-            <option>4 BHK</option>
-          </select>
+              <select
+                className="sticky-select"
+                name="interestedIn"
+                value={this.state.formData.interestedIn}
+                onChange={this.handleChange}
+              >
+                <option>3 BHK</option>
+                <option>4 BHK</option>
+              </select>
 
-          <div className="sticky-select time">
-            Morning <Clock size={14} />
-          </div>
+              <select
+                className="sticky-select time"
+                name="timing"
+                value={this.state.formData.timing}
+                onChange={this.handleChange}
+              >
+                <option>Morning</option>
+                <option>Afternoon</option>
+                <option>Evening</option>
+              </select>
 
-          <button className="sticky-submit" onClick={this.props.onOpenPopup}>
-            Confirm <Send size={15} />
-          </button>
+              <button
+                className="sticky-submit"
+                onClick={this.handleSubmit}
+                disabled={this.state.loading}
+              >
+                {this.state.loading ? "Saving..." : "Confirm"}{" "}
+                <Send size={15} />
+              </button>
+            </>
+          )}
         </div>
 
         <button

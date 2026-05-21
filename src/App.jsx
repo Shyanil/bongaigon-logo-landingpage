@@ -15,6 +15,7 @@ import StickyNote from "./components/StickyNote";
 import PopupForm from "./components/PopupForm";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
+import ThankYou from "./components/ThankYou";
 
 class App extends React.Component {
   constructor(props) {
@@ -134,4 +135,14 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const AppWrapper = () => {
+  const currentPath = window.location.pathname;
+
+  if (currentPath === "/thank-you") {
+    return <ThankYou />;
+  }
+
+  return <App />;
+};
+
+export default AppWrapper;
