@@ -84,9 +84,12 @@ class FloorPlans extends React.Component {
     return (
       <section className="floorplan-section" id="floor-plans">
         <div className="floorplan-heading">
-          <h2>Floor Plans</h2>
-          <p>Crafted for comfort. Built for life.</p>
-        </div>
+  <h2>Floor Plans</h2>
+  <p>
+  <span>A Symphony of </span>
+  <strong>Space and Comfort</strong>
+</p>
+</div>
 
         <div className="floorplan-shell">
           <div className="floorplan-main">

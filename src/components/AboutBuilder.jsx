@@ -46,14 +46,6 @@ const completedProjects = [
   "Subham Greens",
 ];
 
-const commercialProjects = [
-  "Subham Velocity",
-  "Subham Redstone",
-  "Bijay Crescent",
-  "Subham Square",
-  "Subham Buildwell",
-];
-
 const strengths = [
   { icon: ShieldCheck, title: "RERA Registered" },
   { icon: Gem, title: "Quality Construction" },
@@ -141,14 +133,6 @@ class AboutBuilder extends React.Component {
             <h3>Completed Projects</h3>
             <div className="builder-project-pills">
               {this.renderProjectPills(completedProjects)}
-            </div>
-          </div>
-
-          <div className="builder-project-column">
-            <Building2 size={24} />
-            <h3>Commercial Projects</h3>
-            <div className="builder-project-pills">
-              {this.renderProjectPills(commercialProjects)}
             </div>
           </div>
         </div>

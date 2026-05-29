@@ -88,7 +88,10 @@ class Gallery extends React.Component {
       <section className="gallery-section" id="gallery">
         <div className="gallery-heading">
           <h2>Gallery</h2>
-          <p>Crafted for comfort. Built for life.</p>
+         <p>
+  <span>Crafted for comfort</span>{" "}
+  <strong>Built for modern life</strong>
+</p>
         </div>
 
         <div className="gallery-grid">

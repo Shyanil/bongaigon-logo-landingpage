@@ -23,7 +23,7 @@ const locationGroups = [
     ],
   },
   {
-   title: "Connectivity",
+    title: "Connectivity",
     icon: Train,
     items: [["New Bongaigaon Railway Station", "8 Min"]],
   },
@@ -76,17 +76,15 @@ class LocationAdvantage extends React.Component {
     return (
       <section className="location-section" id="location">
         <div className="location-heading">
-          <h2>
-            Perfectly Connected <br /> To Everything
-          </h2>
-          <p>Crafted for comfort. Connected for life.</p>
+          <h2>The Harmony Of Time</h2>
+          <p>
+            <span>Perfectly Connected</span>{" "}
+            <strong>Everyday Living</strong>
+          </p>
         </div>
 
         <div className="location-container">
           <div className="location-left">
-              
-          
-
             <div className="location-accordion">
               {locationGroups.map((group, index) => {
                 const Icon = group.icon;
