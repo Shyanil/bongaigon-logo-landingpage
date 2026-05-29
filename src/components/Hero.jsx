@@ -1,53 +1,60 @@
 ﻿import React from "react";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Download, MapPin } from "lucide-react";
+
 import "../App.css";
-import heroImage from "../assets/images/herosectionimage.jpeg";
+import heroimage from "../assets/images/heroimage.png";
 
 const Hero = ({ onOpenPopup }) => {
   return (
-    <>
-      <section
-        className="hero hero-custom"
-        id="home"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="hero-content">
-          <div className="hero-badge">Quiet Luxury Living</div>
+    <section className="hero-section" id="home">
+      <img src={heroimage} alt="Subham Park" className="hero-bg" />
 
-          <h1 className="hero-title">
-            Crafted for <br />
-            <strong>Comfort.</strong> <br />
-            Built for Life.
-          </h1>
+      <div className="hero-overlay"></div>
 
-          <div className="hero-line">
-            <span></span>
-            <i></i>
-            <span></span>
-          </div>
+      <div className="hero-content">
+        <h1 className="hero-title">
+          Luxury Meets
+          <span>natural</span>
+          Elegance
+        </h1>
 
-          <p className="hero-text">
-            Premium 3 &amp; 4 BHK residences in the heart of Bongaigaon.
-            Where modern living meets everyday convenience.
+        <div className="hero-description">
+          <p>
+            Experience premium 3BHK & 4 BHK residences designed for refined
+            living, elegant comfort, and a lifestyle inspired by nature.
+            Thoughtfully crafted spaces, serene surroundings, and modern
+            architecture come together to create an address of timeless luxury.
           </p>
 
+          <div className="hero-info">
+            <div className="hero-info-card">
+              <small>Starts From</small>
+              <strong>₹64.13L</strong>
+            </div>
+
+            <div className="hero-info-card">
+              <small>
+                <MapPin size={14} />
+                Location
+              </small>
+              <strong>Sonari Gaon, Assam</strong>
+            </div>
+          </div>
+
           <div className="hero-buttons">
-            <button type="button" className="hero-btn primary" onClick={onOpenPopup}>
-              Download Brochure<ArrowRight size={18} />
+            <button type="button" className="hero-btn hero-btn-brochure" onClick={onOpenPopup}>
+              Download Brochure
+              <Download size={17} />
             </button>
 
-            <a href="#amenities" className="hero-btn secondary">
-              View Amenities <ArrowRight size={18} />
+            <a href="#about" className="hero-btn hero-btn-explore">
+              Explore More
+              <ArrowRight size={18} />
             </a>
           </div>
         </div>
-      </section>
-
-      <button type="button" className="mobile-sticky-cta" onClick={onOpenPopup}>
-        <Phone size={18} />
-        Enquire Now
-      </button>
-    </>
+      </div>
+    </section>
   );
 };
 

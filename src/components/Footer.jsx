@@ -1,13 +1,11 @@
 ﻿import React from "react";
 import "../App.css";
-import logoImg from "../assets/images/logoimage.png";
 
 const Footer = () => {
   return (
     <footer className="footer-premium">
       <div className="simple-footer-container">
         <div className="simple-footer-logo-box">
-          <img src={logoImg} alt="Subham Park" className="footer-logo" />
           <div className="logo-text">
             <h3>SUBHAM PARK</h3>
             <p>BONGAIGAON</p>

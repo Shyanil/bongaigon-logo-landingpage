@@ -1,29 +1,26 @@
 ﻿import React from "react";
 import "../App.css";
 
-const Highlights = () => {
-  const items = [
-    "Luxury Residences in Bongaigaon",
-    "Modern Amenities for Everyday Life",
-    "Peaceful Green Surroundings",
-    "Premium 3 BHK & 4 BHK Homes",
-    "A Lifestyle Upgrade",
-  ];
-
+const Highlight = () => {
   return (
     <section className="highlight-marquee-section">
       <div className="highlight-marquee">
         <div className="highlight-track">
-          {[...items, ...items].map((item, index) => (
-            <div className="highlight-item" key={index}>
-              <span>{item}</span>
-              <i></i>
-            </div>
-          ))}
+          <span>Premium 3BHK & 4BHK Residences</span>
+          <span>Nature Inspired Living</span>
+          <span>Secure Community</span>
+          <span>Prime Location</span>
+          <span>Modern Luxury Lifestyle</span>
+
+          <span>Premium 3BHK & 4BHK Residences</span>
+          <span>Nature Inspired Living</span>
+          <span>Secure Community</span>
+          <span>Prime Location</span>
+          <span>Modern Luxury Lifestyle</span>
         </div>
       </div>
     </section>
   );
 };
 
-export default Highlights;
+export default Highlight;

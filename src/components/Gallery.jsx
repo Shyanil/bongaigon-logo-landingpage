@@ -1,149 +1,173 @@
 ﻿import React from "react";
+import { Search, X, ZoomIn, ZoomOut, ArrowLeft, ArrowRight } from "lucide-react";
 import "../App.css";
 
-import eveningView from "../assets/images/gymnasium.jpeg";
-import mainEntrance from "../assets/images/mainentrance.jpeg";
-import kidsPlayArea from "../assets/images/kidsplayarea.jpeg";
-import lobbyLounge from "../assets/images/lobbylounge.jpeg";
-import indoorGames from "../assets/images/indoor-games.png";
-import gymnasium from "../assets/images/semiarenaview.jpeg";
-import splashPool from "../assets/images/splashpool.jpeg";
-import picture1 from "../assets/images/picture1.jpeg";
+import gallery1 from "../assets/images/lobbylounge.jpeg";
+import gallery2 from "../assets/images/splashpool.jpeg";
+import gallery3 from "../assets/images/semiarenaview.jpeg";
+import gallery4 from "../assets/images/gymnasium.jpeg";
+import gallery5 from "../assets/images/kids-play-area.png";
+import gallery6 from "../assets/images/picture1.jpeg";
+import gallery7 from "../assets/images/indoor-games.png";
+import gallery8 from "../assets/images/mainentrance.jpeg";
+
+const galleryImages = [
+  { img: gallery1, title: "Lobby Lounge View" },
+  { img: gallery2, title: "Splash Pool View" },
+  { img: gallery3, title: "Semi Arena View" },
+  { img: gallery4, title: "Gymnasium View" },
+  { img: gallery5, title: "Kids Play Area View" },
+  { img: gallery6, title: "Premium Elevation View" },
+  { img: gallery7, title: "Indoor Games View" },
+  { img: gallery8, title: "Main Entrance View" },
+];
 
 class Gallery extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      selectedIndex: null,
+      activeIndex: null,
+      zoom: 1,
     };
-
-    this.galleryImages = [
-      { image: eveningView, title: "Gymnasium", className: "gallery-tall" },
-      { image: lobbyLounge, title: "Community Hall", className: "gallery-wide" },
-      { image: mainEntrance, title: "Main Entrance", className: "gallery-small" },
-      { image: kidsPlayArea, title: "Kids Play Area", className: "gallery-small" },
-      { image: indoorGames, title: "Indoor Games Room", className: "gallery-bottom" },
-      { image: gymnasium, title: "Semi-Aerial View", className: "gallery-bottom" },
-      { image: splashPool, title: "Splash Pool", className: "gallery-bottom" },
-      { image: picture1, title: "Semi-Aerial View", className: "gallery-bottom" },
-    ];
   }
 
-  openImage = (index) => {
-    this.setState({ selectedIndex: index });
-    document.body.classList.add("gallery-open");
+  openModal = (index) => {
+    this.setState({ activeIndex: index, zoom: 1 });
+    document.body.classList.add("gallery-modal-open");
   };
 
-  closeImage = () => {
-    this.setState({ selectedIndex: null });
-    document.body.classList.remove("gallery-open");
+  closeModal = () => {
+    this.setState({ activeIndex: null, zoom: 1 });
+    document.body.classList.remove("gallery-modal-open");
   };
 
-  prevImage = (e) => {
-    e.stopPropagation();
-
-    this.setState((prevState) => ({
-      selectedIndex:
-        prevState.selectedIndex === 0
-          ? this.galleryImages.length - 1
-          : prevState.selectedIndex - 1,
+  nextImage = () => {
+    this.setState((prev) => ({
+      activeIndex: (prev.activeIndex + 1) % galleryImages.length,
+      zoom: 1,
     }));
   };
 
-  nextImage = (e) => {
-    e.stopPropagation();
-
-    this.setState((prevState) => ({
-      selectedIndex:
-        prevState.selectedIndex === this.galleryImages.length - 1
-          ? 0
-          : prevState.selectedIndex + 1,
+  prevImage = () => {
+    this.setState((prev) => ({
+      activeIndex:
+        (prev.activeIndex - 1 + galleryImages.length) % galleryImages.length,
+      zoom: 1,
     }));
+  };
+
+  zoomIn = () => {
+    this.setState((prev) => ({
+      zoom: Math.min(prev.zoom + 0.2, 2),
+    }));
+  };
+
+  zoomOut = () => {
+    this.setState((prev) => ({
+      zoom: Math.max(prev.zoom - 0.2, 0.8),
+    }));
+  };
+
+  handleBookVisit = () => {
+    if (this.props.onOpenPopup) {
+      this.props.onOpenPopup();
+    }
   };
 
   componentWillUnmount() {
-    document.body.classList.remove("gallery-open");
+    document.body.classList.remove("gallery-modal-open");
   }
 
   render() {
-    const { selectedIndex } = this.state;
-    const selectedImage =
-      selectedIndex !== null ? this.galleryImages[selectedIndex] : null;
+    const { activeIndex, zoom } = this.state;
+    const activeImage =
+      activeIndex !== null ? galleryImages[activeIndex] : null;
 
     return (
-      <>
-        <section className="gallery-section" id="gallery">
-          <div className="gallery-header">
-            <div className="gallery-label">
-              <span></span>
-              <p>Gallery</p>
-              <span></span>
-            </div>
+      <section className="gallery-section" id="gallery">
+        <div className="gallery-heading">
+          <h2>Gallery</h2>
+          <p>Crafted for comfort. Built for life.</p>
+        </div>
 
-            <h2>
-              Spaces That Inspire <br />
-              <strong>Details That Matter</strong>
-            </h2>
+        <div className="gallery-grid">
+          {galleryImages.map((item, index) => (
+            <button
+              type="button"
+              className="gallery-card"
+              key={index}
+              onClick={() => this.openModal(index)}
+            >
+              <img src={item.img} alt={item.title} />
 
-            <p className="gallery-subtitle">
-              Explore the design, comfort, and craftsmanship that define Subham Park
-              Bongaigaon. Every image tells a story of quality living.
-            </p>
+              <div className="gallery-overlay">
+                <h3>{item.title}</h3>
 
-            <div className="gallery-divider">
-              <span></span>
-            </div>
-          </div>
-
-          <div className="gallery-grid">
-            {this.galleryImages.map((item, index) => (
-              <div
-                className={`gallery-card ${item.className}`}
-                key={index}
-                onClick={() => this.openImage(index)}
-              >
-                <img src={item.image} alt={item.title} />
-                <div className="gallery-tag">{item.title}</div>
+                <span className="gallery-zoom">
+                  <Search size={18} />
+                </span>
               </div>
-            ))}
-          </div>
-        </section>
+            </button>
+          ))}
+        </div>
 
-        {selectedImage && (
-          <div className="gallery-modal" onClick={this.closeImage}>
+        <button
+          type="button"
+          className="gallery-visit-btn"
+          onClick={this.handleBookVisit}
+        >
+          Book A Visit <b>→</b>
+        </button>
+
+        {activeImage && (
+          <div className="gallery-lightbox">
             <button
-              className="gallery-modal-close"
-              onClick={this.closeImage}
               type="button"
+              className="gallery-close"
+              onClick={this.closeModal}
             >
-              ×
+              <X size={30} />
             </button>
 
             <button
-              className="gallery-modal-arrow gallery-modal-prev"
+              type="button"
+              className="gallery-nav gallery-prev"
               onClick={this.prevImage}
-              type="button"
             >
-              ‹
+              <ArrowLeft size={28} />
             </button>
 
-            <img
-              src={selectedImage.image}
-              alt={selectedImage.title}
-              onClick={(e) => e.stopPropagation()}
-            />
+            <div className="gallery-lightbox-image-wrap">
+              <img
+                src={activeImage.img}
+                alt={activeImage.title}
+                style={{ transform: `scale(${zoom})` }}
+              />
+
+              <div className="gallery-zoom-controls">
+                <button type="button" onClick={this.zoomOut}>
+                  <ZoomOut size={20} />
+                </button>
+
+                <span>{Math.round(zoom * 100)}%</span>
+
+                <button type="button" onClick={this.zoomIn}>
+                  <ZoomIn size={20} />
+                </button>
+              </div>
+            </div>
 
             <button
-              className="gallery-modal-arrow gallery-modal-next"
-              onClick={this.nextImage}
               type="button"
+              className="gallery-nav gallery-next"
+              onClick={this.nextImage}
             >
-              ›
+              <ArrowRight size={28} />
             </button>
           </div>
         )}
-      </>
+      </section>
     );
   }
 }

@@ -1,98 +1,51 @@
 ﻿import React from "react";
 import {
-  Dumbbell,
-  Building2,
-  Trees,
-  Baby,
-  Waves,
-  ShieldCheck,
-  Car,
-  Zap,
+  Paintbrush, Bath, ArrowUpDown, PlugZap, Building2,
+  Toilet, CookingPot, Flame, Cctv, BatteryCharging, CalendarDays
 } from "lucide-react";
 import "../App.css";
 
-const Amenities = () => {
-  const amenities = [
-    {
-      icon: <Dumbbell />,
-      title: "Gymnasium",
-      description: "State-of-the-art gym for a healthy & active lifestyle.",
-    },
-    {
-      icon: <Building2 />,
-      title: "Club house",
-      description: "Elegant club house for celebrations & social gatherings.",
-    },
-    {
-      icon: <Trees />,
-      title: "Landscaped Gardens",
-      description: "Beautifully landscaped gardens & open spaces.",
-    },
-    {
-      icon: <Baby />,
-      title: "Kids Play Area",
-      description: "Safe & engaging play area for children to learn & grow.",
-    },
-    {
-      icon: <Waves />,
-      title: "Splash Pool",
-      description: "Relax & rejuvenate in our luxurious splash pool.",
-    },
-    {
-      icon: <ShieldCheck />,
-      title: "24×7 Security",
-      description: "Advanced security with CCTV surveillance.",
-    },
-    {
-      icon: <Car />,
-      title: "Covered Parking",
-      description: "Ample & secure parking space for residents & guests.",
-    },
-    {
-      icon: <Zap />,
-      title: "Power Backup",
-      description:
-        "Uninterrupted power backup for common areas only.",
-    },
-  ];
+const amenities = [
+  { no: "01", icon: <Paintbrush />, title: "Internal Finish", text: "Premium quality materials for elegant interiors." },
+  { no: "02", icon: <Bath />, title: "Sanitary Wares", text: "High quality fittings for style and durability." },
+  { no: "03", icon: <ArrowUpDown />, title: "Elevator", text: "Smooth & safe elevators for every floor." },
+  { no: "04", icon: <PlugZap />, title: "Electrical", text: "Concealed wiring with premium fixtures." },
+  { no: "05", icon: <Building2 />, title: "Structure", text: "RCC framed structure for lasting strength." },
+  { no: "06", icon: <Toilet />, title: "Toilets", text: "Stylish & durable tiles with premium fittings." },
+  { no: "07", icon: <CookingPot />, title: "Kitchen", text: "Functional kitchen with modern design." },
+  { no: "08", icon: <Flame />, title: "Fire Safety", text: "Advanced fire safety systems for protection." },
+  { no: "09", icon: <Cctv />, title: "Security", text: "24x7 security with CCTV surveillance." },
+  { no: "10", icon: <BatteryCharging />, title: "Power Backup", text: "24/7 power backup for comfort." },
+];
 
+const Amenities = ({ onOpenPopup }) => {
   return (
     <section className="amenities-section" id="amenities">
-      <div className="amenities-header">
-        <div className="amenities-label-wrap">
-          <span></span>
-          <p>Amenities</p>
-          <span></span>
-        </div>
+      <div className="amenities-orbit one"></div>
+      <div className="amenities-orbit two"></div>
 
-        <h2>
-          Designed for Comfort <br />
-          <strong>Build for Modern Living</strong>
-        </h2>
-
-        <div className="amenities-divider">
-          <span></span>
-          <i></i>
-          <span></span>
-        </div>
-
-        <p className="amenities-subtitle">
-          At Subham Park Bongaigaon, every amenity is crafted to elevate your
-          lifestyle. Experience the perfect blend of luxury, convenience, and
-          well-being.
-        </p>
+      <div className="amenities-heading">
+        <h2>Amenities</h2>
+        <p>Crafted for comfort. Built for life.</p>
       </div>
 
-      <div className="amenities-flow">
-        {amenities.map((item, index) => (
-          <div className="amenity-flow-item" key={index}>
+      <div className="amenities-grid">
+        {amenities.map((item) => (
+          <div className="amenity-card" key={item.no}>
+            <span className="amenity-number">{item.no}</span>
             <div className="amenity-icon">{item.icon}</div>
             <h3>{item.title}</h3>
-            <div className="amenity-small-line"></div>
-            <p>{item.description}</p>
+            <p>{item.text}</p>
+            <i></i>
           </div>
         ))}
       </div>
+
+      <button className="amenities-visit-btn" onClick={onOpenPopup}>
+        <span><CalendarDays size={18} /></span>
+        Book A Visit
+        <b>→</b>
+      </button>
     </section>
   );
 };

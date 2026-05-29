@@ -42,20 +42,20 @@ class Contact extends React.Component {
   handleSubmit = async (e) => {
     e.preventDefault();
 
-    this.setState({ loading: true });
-
     const { formData } = this.state;
 
-   const { error } = await supabase.from("subham-bongaigon").insert([
-  {
-    name: formData.name,
-    phone: formData.phone,
-    email: formData.email,
-    interested_in: formData.interestedIn,
-    requirement: formData.requirement,
-    timing: formData.timing || null,
-  },
-]);
+    this.setState({ loading: true });
+
+    const { error } = await supabase.from("subham-bongaigon").insert([
+      {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        interested_in: formData.interestedIn,
+        requirement: formData.requirement,
+        timing: null,
+      },
+    ]);
 
     if (error) {
       console.log("SUPABASE ERROR:", error);
@@ -85,11 +85,6 @@ class Contact extends React.Component {
     return (
       <section className="contact-premium-section" id="contact">
         <div className="contact-left">
-          <div className="contact-label">
-            <i></i>
-            <span>Get in Touch</span>
-          </div>
-
           <h2>
             Let's Build Something <br />
             <strong>Extraordinary Together</strong>
@@ -133,15 +128,8 @@ class Contact extends React.Component {
           </h3>
 
           {this.state.success ? (
-            <div className="success-animation-box">
-              <div className="success-orbit">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-
+            <div className="form-success-box">
               <div className="form-success-check">✓</div>
-
               <h4>Submitted Successfully</h4>
               <p>Please wait, redirecting...</p>
             </div>
@@ -163,7 +151,7 @@ class Contact extends React.Component {
                 <div className="input-box">
                   <Phone />
                   <input
-                    type="text"
+                    type="tel"
                     name="phone"
                     placeholder="Phone Number"
                     required
@@ -216,7 +204,7 @@ class Contact extends React.Component {
                 className="contact-submit-btn"
                 disabled={this.state.loading}
               >
-                {this.state.loading ? "Submitting..." : "Enquire Now"}{" "}
+                {this.state.loading ? "Submitting..." : "Enquire Now"}
                 <ArrowRight size={18} />
               </button>
             </form>

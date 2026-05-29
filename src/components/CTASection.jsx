@@ -1,3 +1,4 @@
+{/*
 import React from "react";
 import { CalendarCheck, PhoneCall } from "lucide-react";
 import "../App.css";
@@ -40,6 +41,6 @@ const CTASection = ({
       </div>
     </section>
   );
-};
+}; */}
 
 export default CTASection;

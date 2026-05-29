@@ -1,45 +1,22 @@
-﻿// src/components/Navbar.jsx
-
-import React from "react";
+﻿import React from "react";
+import { Phone } from "lucide-react";
 import "../App.css";
-import logo from "../assets/images/logoimage.png";
+
+import logoimage from "../assets/images/logoimage.png";
 
 const Navbar = ({ onOpenPopup }) => {
   const navItems = [
-    { name: "Overview", id: "about-project" },
+    { name: "Home", id: "home" },
+    { name: "About", id: "about" },
     { name: "Amenities", id: "amenities" },
+    { name: "Floor Plans", id: "floor-plans" },
     { name: "Gallery", id: "gallery" },
-    { name: "Plans", id: "plan" },
     { name: "Location", id: "location" },
-    { name: "About Us", id: "about-builder" },
+    { name: "Contact", id: "contact" },
   ];
 
-  const closeMenu = () => {
-    const checkbox = document.getElementById("nav-toggle");
-    if (checkbox) checkbox.checked = false;
-  };
-
-  const handleScroll = (e, id) => {
+  const handleBookVisit = (e) => {
     e.preventDefault();
-
-    const section = document.getElementById(id);
-    if (!section) return;
-
-    const navbarHeight =
-      document.querySelector(".navbar")?.offsetHeight || 90;
-
-    window.scrollTo({
-      top: section.offsetTop - navbarHeight,
-      behavior: "smooth",
-    });
-
-    closeMenu();
-  };
-
-  // Enquire Now button click -> Popup Open
-  const handleEnquireClick = (e) => {
-    e.preventDefault();
-    closeMenu();
 
     if (onOpenPopup) {
       onOpenPopup();
@@ -47,47 +24,34 @@ const Navbar = ({ onOpenPopup }) => {
   };
 
   return (
-    <nav className="navbar">
+    <header className="navbar">
       <div className="navbar-container">
-        <div className="navbar-logo-box">
+        <a href="#home" className="navbar-logo-box">
           <img
-            src={logo}
-            alt="Subham Park Bongaigaon Logo"
+            src={logoimage}
+            alt="Subham Park Logo"
             className="navbar-logo"
           />
-        </div>
+        </a>
 
-        <input type="checkbox" id="nav-toggle" className="nav-toggle" />
-
-        <label htmlFor="nav-toggle" className="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-
-        <ul className="navbar-menu">
+        <nav className="navbar-menu">
           {navItems.map((item) => (
-            <li key={item.name}>
-              <a
-                href={`#${item.id}`}
-                onClick={(e) => handleScroll(e, item.id)}
-              >
-                {item.name}
-              </a>
-            </li>
+            <a key={item.id} href={`#${item.id}`}>
+              {item.name}
+            </a>
           ))}
-        </ul>
+        </nav>
 
-        {/* CLICK করলে Popup Form Open হবে */}
         <button
           type="button"
           className="navbar-btn"
-          onClick={handleEnquireClick}
+          onClick={handleBookVisit}
         >
-          Enquire Now
+          <Phone size={16} />
+          <span>Book a Visit</span>
         </button>
       </div>
-    </nav>
+    </header>
   );
 };
 
