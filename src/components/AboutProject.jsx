@@ -8,7 +8,7 @@ const AboutProject = () => {
     <section className="about-project-section" id="about">
       <div className="about-project-container">
         <div className="about-project-left">
-          <p className="about-project-label">About Subham Park</p>
+          <p className="about-project-label">Overview</p>
 
           <h2>
             Crafted For <br />
