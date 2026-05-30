@@ -246,7 +246,7 @@ body {
   text-transform: none;
   color: #000000;
   margin: 0 0 14px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .hero-title span {
@@ -254,7 +254,7 @@ body {
   font-family: "Cormorant Garamond", serif;
    text-transform: none;
   color: #b95e2f;
-  font-size: 42px;
+  font-size: 56px;
   line-height: 1;
   letter-spacing: 0.01em;
   font-weight: 300;
@@ -592,7 +592,7 @@ body {
   font-size: 16px;
   color: #c86b39;
   margin: 0 0 12px 0;
-  text-transform: capitalize;
+text-transform: uppercase;
 }
 
 .about-project-line,
@@ -604,7 +604,7 @@ body {
 
 .about-project-left h2 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 46px;
+  font-size: 55px;
   line-height: 1.03;
   text-transform: none;
   color: #000000;
@@ -616,7 +616,7 @@ body {
   color: #c86b39;
   font-weight: 400;
   font-family: "Cormorant Garamond", serif;
-  font-size: 46px;
+  font-size: 55px;
   text-transform: none;
 }
 
@@ -836,10 +836,7 @@ body {
 .amenities-section {
   width: 100%;
   padding: 58px 5.5% 54px;
-  background:
-    radial-gradient(circle at 8% 10%, rgba(120, 131, 68, 0.08), transparent 24%),
-    radial-gradient(circle at 92% 12%, rgba(200, 107, 57, 0.08), transparent 25%),
-    linear-gradient(135deg, #fbf7ef 0%, #f8f4ec 58%, #fffaf1 100%);
+  background: #fbedd8;
   position: relative;
   overflow: hidden;
 }
@@ -894,7 +891,7 @@ body {
   font-family: "Outfit", sans-serif;
   font-size: 16px;
   line-height: 1;
-  text-transform: none;
+  text-transform: uppercase;
   font-weight: 400;
   color: #c86b39;
   margin: 0;
@@ -902,23 +899,23 @@ body {
 
 .amenities-heading p {
   font-family: "Cormorant Garamond", serif;
-  font-size: 42px;
+  font-size: 55px;
   font-weight: 300;
   margin: 10px 0 0;
 }
 
 .amenities-heading p span {
   font-family: "Cormorant Garamond", serif;
-  font-size: 42px;
+  font-size: 55px;
   font-weight: 300;
-  color: #253419;
+  color: #000000;
 }
 
 .amenities-heading p strong {
   color: #c86b39;
   font-weight: 300;
   font-family: "Cormorant Garamond", serif;
-  font-size: 42px;
+  font-size: 55px;
 }
 
 .amenities-grid {
@@ -1179,7 +1176,7 @@ body {
   font-family: "Outfit", sans-serif;
   font-size: 16px;
   line-height: 1;
-  text-transform: none;
+  text-transform: uppercase;
   color: #ffd86f;
   font-weight: 300;
   margin: 0;
@@ -1190,7 +1187,7 @@ body {
   margin: 6px 0 0;
   font-family: "Cormorant Garamond", serif;
   text-transform: none;
-  font-size: 42px;
+  font-size: 55px;
   font-weight: 300;
   line-height: 1.15;
 }
@@ -1199,7 +1196,7 @@ body {
   color: #ffffff !important;
   font-family: "Cormorant Garamond", serif;
   text-transform: none;
-  font-size: 42px;
+  font-size: 55px;
   font-weight: 300;
 }
 
@@ -1220,13 +1217,13 @@ body {
 
 .gallery-card {
   height: 178px;
-  border: 1px solid rgba(255, 216, 111, 0.24);
+  border: 1.5px solid rgba(161, 151, 125, 0.55);
   border-radius: 16px;
   overflow: hidden;
   position: relative;
   padding: 0;
   cursor: pointer;
-  background: #ffd86f;
+  background: #ffffff;
   box-shadow: 0 14px 32px rgba(37, 52, 25, 0.22);
 }
 
@@ -1496,9 +1493,9 @@ body.gallery-modal-open {
 
 .floorplan-heading h2 {
   font-family: "Outfit", sans-serif;
-  font-size: 16px;
+  font-size: 17px;
   color: #c86b39;
-  text-transform: none;
+  text-transform: uppercase;
   letter-spacing: normal;
   font-weight: 400;
   margin: 0;
@@ -1518,17 +1515,17 @@ body.gallery-modal-open {
 }
 
 .floorplan-heading p span {
-  color: #253419;
+  color: #000000;
   font-family: "Cormorant Garamond", serif;
   font-weight: 300;
-  font-size: 42px;
+  font-size: 55px;
 }
 
 .floorplan-heading p strong {
   color: #c86b39;
   font-family: "Cormorant Garamond", serif;
   font-weight: 300;
-  font-size: 42px;
+  font-size: 55px;
 }
 
 .floorplan-shell {
@@ -1949,6 +1946,7 @@ body.floor-modal-open {
   line-height: 1;
   color: #ffd86f;
   font-weight: 400;
+  text-transform: uppercase;
   margin: 0;
   letter-spacing: none;
 }
@@ -1956,7 +1954,7 @@ body.floor-modal-open {
 .location-heading p {
   margin: 12px auto 0;
   font-family: "Outfit", sans-serif;
-  font-size: 42px;
+  font-size: 55px;
   line-height: 1.15;
   font-weight: 300;
   white-space: nowrap;
@@ -1965,14 +1963,14 @@ body.floor-modal-open {
 .location-heading p span {
   color: #ffffff;
   font-family: "Cormorant Garamond", serif;
-  font-size: 42px;
+  font-size: 55px;
    font-weight: 300;
 }
 
 .location-heading p strong {
   color: #ffd86f;
  font-family: "Cormorant Garamond", serif;
-  font-size: 42px;
+  font-size: 55px;
    font-weight: 300;
 }
 
@@ -2272,10 +2270,9 @@ body.floor-modal-open {
   width: 100%;
   min-height: 780px;
   padding: 75px 8% 90px;
-  background:
-    radial-gradient(circle at 8% 14%, rgba(120, 131, 68, 0.06), transparent 25%),
-    radial-gradient(circle at 90% 10%, rgba(200, 107, 57, 0.06), transparent 28%),
-    linear-gradient(135deg, #fbf7ef 0%, #f8f4ec 62%, #fffaf1 100%);
+
+  background: #fbedd8;
+
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
@@ -2288,6 +2285,17 @@ body.floor-modal-open {
   transform: translateY(-10px);
 }
 
+.contact-section-label {
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #c86b39 !important;
+  text-transform: uppercase;
+
+  margin: 0 0 6px;
+  position: relative;
+  top: -20px;   /* upore uthbe */
+}
 .contact-label {
   display: none;
 }
@@ -2295,17 +2303,17 @@ body.floor-modal-open {
 .contact-left h2 {
   margin: 0;
   font-family: "Cormorant Garamond", serif;
-  font-size: 42px;
+  font-size: 55px;
   line-height: 1.08;
   font-weight: 300;
-  color: #253419;
+  color: #000000;
 }
 
 .contact-left h2 strong {
   display: block;
   margin-top: 8px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 42px;
+  font-size: 55px;
   line-height: 1;
   color: #c86b39;
   font-weight: 300;
@@ -2314,7 +2322,7 @@ body.floor-modal-open {
 
 .contact-left p {
   margin: 25px 0 0;
- font-family: "Outfit", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 17px;
   line-height: 1.6;
   color: rgba(2, 4, 0, 0.74);
@@ -2339,7 +2347,7 @@ body.floor-modal-open {
   width: 40px;
   height: 40px;
   color: #c86b39;
-  background: rgba(200, 107, 57, 0.1);
+  background: rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(200, 107, 57, 0.24);
   border-radius: 50%;
   padding: 9px;
@@ -2350,14 +2358,14 @@ body.floor-modal-open {
   margin: 0 0 4px;
   font-family: "Cormorant Garamond", serif;
   font-size: 20px;
-  color: #253419;
+  color: #000000;
   font-weight: 500;
 }
 
 .contact-highlight-item span {
   font-family: "Outfit", sans-serif;
   font-size: 14px;
-  color: rgba(37, 52, 25, 0.68);
+  color: #000000;
   font-weight: 400;
 }
 
@@ -2377,7 +2385,7 @@ body.floor-modal-open {
   text-align: center;
   font-family: "Cormorant Garamond", serif;
   font-size: 34px;
-  color: #253419;
+  color: #000000;
   margin-bottom: 35px;
   font-weight: 600;
 }
@@ -2426,30 +2434,13 @@ body.floor-modal-open {
   outline: none;
   font-family: "Outfit", sans-serif;
   font-size: 14px;
-  color: #253419;
+  color: #000000;
   background: transparent !important;
 }
 
 .input-box input::placeholder,
 .input-box textarea::placeholder {
-  color: rgba(37, 52, 25, 0.46);
-}
-
-.input-box input:-webkit-autofill,
-.input-box input:-webkit-autofill:hover,
-.input-box input:-webkit-autofill:focus,
-.input-box textarea:-webkit-autofill,
-.input-box select:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
-  -webkit-text-fill-color: #253419 !important;
-  caret-color: #253419;
-  transition: background-color 9999s ease-in-out 0s;
-}
-
-.input-box input::selection,
-.input-box textarea::selection {
-  background: rgba(200, 107, 57, 0.18);
-  color: #253419;
+  color: rgba(0, 0, 0, 0.46);
 }
 
 .textarea-box {
@@ -2489,62 +2480,6 @@ body.floor-modal-open {
   box-shadow: 0 16px 34px rgba(200, 107, 57, 0.22);
 }
 
-/* SUCCESS */
-
-.form-success-box {
-  text-align: center;
-  padding: 45px 20px 35px;
-}
-
-.form-success-check {
-  width: 84px;
-  height: 84px;
-  margin: 0 auto 24px;
-  border-radius: 50%;
-  background: #788344;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 42px;
-  font-weight: 700;
-  box-shadow: 0 18px 40px rgba(120, 131, 68, 0.28);
-  animation: successPop 0.55s ease forwards;
-}
-
-@keyframes successPop {
-  0% {
-    transform: scale(0.35);
-    opacity: 0;
-  }
-
-  70% {
-    transform: scale(1.12);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-.form-success-box h4 {
-font-family: "Cormorant Garamond", serif;
-  font-size: 30px;
-  color: #253419;
-  margin: 0 0 10px;
-  font-weight: 600;
-}
-
-.form-success-box p {
- font-family: "Outfit", sans-serif;
-  color: rgba(37, 52, 25, 0.72);
-  font-size: 15px;
-  margin: 0;
-}
-
-/* ================= RESPONSIVE ================= */
-
 @media (max-width: 1100px) {
   .contact-premium-section {
     grid-template-columns: 1fr;
@@ -2556,6 +2491,10 @@ font-family: "Cormorant Garamond", serif;
     max-width: 100%;
     margin-bottom: 40px;
     transform: translateY(0);
+  }
+
+  .contact-section-label {
+    text-align: center;
   }
 
   .contact-left p {
@@ -2940,13 +2879,13 @@ body:has(.thankyou-hero-page) {
 
 .about-builder-section {
   width: 100%;
-  padding: 48px 5.5% 90px;
+  padding: 48px 0 90px;
   background: #f8f4ec;
   overflow: hidden;
 }
 
 .builder-top-area {
-  margin: -48px -5.5% 0;
+  margin: -48px 0 0;
   padding: 48px 5.5% 34px;
   background:
     radial-gradient(circle at 8% 14%, rgba(255, 216, 111, 0.12), transparent 25%),
@@ -2961,6 +2900,7 @@ body:has(.thankyou-hero-page) {
 
 .builder-heading p {
   font-family: "Outfit", sans-serif;
+  text-transform: uppercase;
   color: #ffd86f;
   font-size: 16px;
   margin: 0 0 4px;
@@ -2969,7 +2909,7 @@ body:has(.thankyou-hero-page) {
 
 .builder-heading h2 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 42px;
+  font-size: 55px;
   color: #ffffff;
   font-weight: 300;
   margin: 0;
@@ -2979,7 +2919,7 @@ body:has(.thankyou-hero-page) {
   color: #ffd86f;
   font-weight: 300;
   font-family: "Cormorant Garamond", serif;
-  font-size: 42px;
+  font-size: 55px;
 }
 
 .builder-intro-card {
@@ -3750,7 +3690,7 @@ body:has(.thankyou-hero-page) {
 
 .popup-form p {
   margin: 10px 0 24px;
-  font-family: "Inter", sans-serif;
+  font-family: outfit, sans-serif;
   color: #6e6652;
   font-size: 14px;
   line-height: 1.6;
@@ -3775,13 +3715,13 @@ body:has(.thankyou-hero-page) {
   border: none;
   outline: none;
   background: transparent;
-  font-family: "Inter", sans-serif;
+  font-family: "Outfit", sans-serif;
   color: #263119;
 }
 
 .select-box {
   width: 100%;
-  font-family: "Inter", sans-serif;
+  font-family: "Outfit", sans-serif;
   color: #263119;
 }
 
@@ -3792,7 +3732,7 @@ body:has(.thankyou-hero-page) {
   border-radius: 14px;
   background: #b95e2f;
   color: #fff;
-  font-family: "Inter", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -3827,7 +3767,7 @@ body:has(.thankyou-hero-page) {
     color: #fff;
     align-items: center;
     justify-content: center;
-    font-family: "Inter", sans-serif;
+    font-family: "Outfit", sans-serif;
     font-size: 15px;
     text-transform: uppercase;
     font-weight: 700;
@@ -3903,4 +3843,9 @@ body:has(.thankyou-hero-page) {
 .location-mini-features div.scroll-reveal.scroll-show,
 .footer-info-block.scroll-reveal.scroll-show {
   transform: translateY(0) scale(1);
+}
+
+.hero-title,
+.hero-title span {
+  font-size: 55px !important;
 }

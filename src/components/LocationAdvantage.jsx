@@ -81,7 +81,7 @@ class LocationAdvantage extends React.Component {
     return (
       <section className="location-section" id="location">
         <div className="location-heading">
-          <h2>The Harmony Of Time</h2>
+          <h2>Location</h2>
           <p>
             <span>Perfectly Connected</span>{" "}
             <strong>Everyday Living</strong>

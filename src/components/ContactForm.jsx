@@ -85,10 +85,13 @@ class Contact extends React.Component {
     return (
       <section className="contact-premium-section" id="contact">
         <div className="contact-left">
-          <h2>
-            Take The First Step <br />
-            <strong>Towards Your Dream Home</strong>
-          </h2>
+          
+       <p className="contact-section-label">Get In Touch</p>
+
+<h2>
+  Take The First Step <br />
+  <strong>Towards Your Dream Home</strong>
+</h2>
 
           <p>
             Share your requirements with us and our team will get back to you with
