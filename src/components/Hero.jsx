@@ -28,7 +28,7 @@ const Hero = ({ onOpenPopup }) => {
           <div className="hero-info">
             <div className="hero-info-card">
               <small>Starts From</small>
-              <strong>₹64.13L</strong>
+              <strong>₹64 Lakhs</strong>
             </div>
 
             <div className="hero-info-card">
