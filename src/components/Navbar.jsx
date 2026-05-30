@@ -6,13 +6,13 @@ import logoimage from "../assets/images/logoimage.png";
 
 const Navbar = ({ onOpenPopup }) => {
   const navItems = [
-    { name: "Home", id: "home" },
-    { name: "About", id: "about" },
+    { name: "Overview", id: "about" },
     { name: "Amenities", id: "amenities" },
-    { name: "Floor Plans", id: "floor-plans" },
     { name: "Gallery", id: "gallery" },
+    { name: "Floor Plans", id: "floor-plans" },
     { name: "Location", id: "location" },
     { name: "Contact", id: "contact" },
+    { name: "About", id: "about-builder" },
   ];
 
   const handleBookVisit = (e) => {

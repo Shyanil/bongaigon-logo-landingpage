@@ -12,6 +12,11 @@ import {
 } from "lucide-react";
 import "../App.css";
 
+import mapImage from "../assets/images/map.png";
+
+const googleMapLink =
+  "https://www.google.com/maps?q=Subham%20Park%20Bongaigaon%20Assam";
+
 const locationGroups = [
   {
     title: "Education",
@@ -130,20 +135,34 @@ class LocationAdvantage extends React.Component {
 
           <div className="location-right">
             <div className="map-box">
-              <iframe
-                title="Subham Park Location"
-                src="https://www.google.com/maps?q=Subham%20Park%20Bongaigaon%20Assam&output=embed"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+              <img
+                className="location-map-img"
+                src={mapImage}
+                alt="Subham Park Location Map"
+              />
 
-              <div className="map-floating-card">
+              <a
+                href={googleMapLink}
+                target="_blank"
+                rel="noreferrer"
+                className="location-map-pin"
+              >
+                <MapPin size={38} />
+                <span>Subham Park</span>
+              </a>
+
+              <a
+                href={googleMapLink}
+                target="_blank"
+                rel="noreferrer"
+                className="map-floating-card"
+              >
                 <MapPin size={20} />
                 <div>
                   <h4>Subham Park</h4>
                   <p>Bongaigaon, Assam</p>
                 </div>
-              </div>
+              </a>
             </div>
 
             <div className="location-mini-features">

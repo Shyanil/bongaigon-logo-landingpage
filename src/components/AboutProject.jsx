@@ -3,27 +3,27 @@ import { Building2, Landmark, Home } from "lucide-react";
 import "../App.css";
 import aboutImage from "../assets/images/aboutimage.png";
 
-const AboutBuilder = () => {
+const AboutProject = () => {
   return (
-    <section className="about-builder-section" id="about">
-      <div className="about-builder-container">
-        <div className="about-builder-left">
-          <p className="about-builder-label">About Subham Park</p>
+    <section className="about-project-section" id="about">
+      <div className="about-project-container">
+        <div className="about-project-left">
+          <p className="about-project-label">About Subham Park</p>
 
           <h2>
             Crafted For <br />
             <strong>Modern Life</strong>
           </h2>
 
-          <p className="about-builder-text">
+          <p className="about-project-text">
             A thoughtfully planned community in Bongaigaon, offering modern
             living, excellent connectivity, and a peaceful environment for
             families to thrive.
           </p>
 
-          <div className="about-builder-features">
-            <div className="about-builder-feature">
-              <div className="about-builder-icon">
+          <div className="about-project-features">
+            <div className="about-project-feature">
+              <div className="about-project-icon">
                 <Building2 />
               </div>
               <div>
@@ -32,8 +32,8 @@ const AboutBuilder = () => {
               </div>
             </div>
 
-            <div className="about-builder-feature">
-              <div className="about-builder-icon">
+            <div className="about-project-feature">
+              <div className="about-project-icon">
                 <Landmark />
               </div>
               <div>
@@ -42,8 +42,8 @@ const AboutBuilder = () => {
               </div>
             </div>
 
-            <div className="about-builder-feature">
-              <div className="about-builder-icon">
+            <div className="about-project-feature">
+              <div className="about-project-icon">
                 <Home />
               </div>
               <div>
@@ -54,7 +54,7 @@ const AboutBuilder = () => {
           </div>
         </div>
 
-        <div className="about-builder-image-box">
+        <div className="about-project-image-box">
           <img src={aboutImage} alt="Subham Park" />
         </div>
       </div>
@@ -62,4 +62,4 @@ const AboutBuilder = () => {
   );
 };
 
-export default AboutBuilder;
+export default AboutProject;

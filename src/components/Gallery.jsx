@@ -12,13 +12,13 @@ import gallery7 from "../assets/images/indoorgamesroom.jpeg";
 import gallery8 from "../assets/images/mainentrance.jpeg";
 
 const galleryImages = [
-  { img: gallery1, title: "Lobby Lounge View" },
-  { img: gallery2, title: "Splash Pool View" },
-  { img: gallery3, title: "Semi Arena View" },
-  { img: gallery4, title: "Gymnasium View" },
-  { img: gallery5, title: "Kids Play Area View" },
-  { img: gallery6, title: "Premium Elevation View" },
-  { img: gallery7, title: "Indoor Games View" },
+  { img: gallery1, title: "Lobby Lounge" },
+  { img: gallery2, title: "Splash Pool" },
+  { img: gallery3, title: "Semi Arena" },
+  { img: gallery4, title: "Gymnasium" },
+  { img: gallery5, title: "Kids Play Area" },
+  { img: gallery6, title: "Premium Elevation" },
+  { img: gallery7, title: "Indoor Games" },
   { img: gallery8, title: "Main Entrance View" },
 ];
 

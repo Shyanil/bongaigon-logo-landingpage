@@ -4,12 +4,6 @@ import {
   Ruler,
   HardHat,
   Users,
-  Award,
-  ShieldCheck,
-  Gem,
-  Handshake,
-  Leaf,
-  UserCheck,
 } from "lucide-react";
 import "../App.css";
 
@@ -23,38 +17,42 @@ const stats = [
 ];
 
 const ongoingProjects = [
-  "Subham Garden",
-  "Subham Solitaire",
-  "Subham Ashray",
-  "Subham Park",
-  "Subham Kishori Heights",
+  { name: "Subham Garden", address: "Jorhat, Assam" },
+  { name: "Subham Solitaire", address: "Azara, Guwahati, Assam" },
+  { name: "Subham Ashray", address: "Garal, Guwahati, Assam" },
+  {
+    name: "Subham Park",
+    address:
+      "Near Durga Mandir, Gurunanak Nagar, Chapaguri Road, Bongaigaon, Assam - 783380",
+  },
+  { name: "Subham Kishori Heights", address: "Guwahati, Assam" },
 ];
 
 const completedProjects = [
-  "Subham Heights",
-  "Subham Enclave",
-  "Subham Park View",
-  "Subham Elite",
-  "Subham Classic",
-  "Subham Regency",
-  "Subham Residency",
-  "Subham Sapphire",
-  "Subham Velocity",
-  "Subham Redstone",
-  "Bijay Crescent",
-  "Subham Square",
-  "Subham Greens",
-];
-
-const strengths = [
-  { icon: ShieldCheck, title: "RERA Registered" },
-  { icon: Gem, title: "Quality Construction" },
-  { icon: Handshake, title: "Timely Delivery" },
-  { icon: Leaf, title: "Sustainable Living" },
-  { icon: UserCheck, title: "Customer First" },
+  { name: "Subham Heights", address: "Kahilipara, Guwahati, Assam" },
+  { name: "Subham Enclave", address: "Hatigaon, Guwahati, Assam" },
+  { name: "Subham Park View", address: "Fatasil, Guwahati, Assam" },
+  { name: "Subham Elite", address: "Gandhibasti, Guwahati, Assam" },
+  { name: "Subham Classic", address: "Ambikagiri Nagar, Guwahati, Assam" },
+  { name: "Subham Manjushree", address: "Datalpara, Guwahati, Assam" },
+  { name: "Subham Regency", address: "Hengrabari, Guwahati, Assam" },
+  { name: "Subham Residency", address: "Kharguli, Guwahati, Assam" },
+  { name: "Subham Sapphire", address: "Nalapara, Guwahati, Assam" },
+  { name: "Subham Greens", address: "Lokhra, Guwahati, Assam" },
+  { name: "Subham Buildwell", address: "Zoo Road, Guwahati, Assam" },
+  { name: "Subham Garden", address: "Kalapahar, Guwahati, Assam" },
+  { name: "Subham Velocity", address: "G.S. Road, Guwahati, Assam" },
+  { name: "Subham Redstone", address: "Downtown, Guwahati, Assam" },
+  { name: "Bijay Crescent", address: "Pibco, Guwahati, Assam" },
+  { name: "Subham Square", address: "Lokhra, Guwahati, Assam" },
 ];
 
 class AboutBuilder extends React.Component {
+  state = {
+    selectedProject: ongoingProjects[0],
+    selectedType: "ongoing",
+  };
+
   componentDidMount() {
     const items = document.querySelectorAll(".builder-reveal");
 
@@ -72,87 +70,108 @@ class AboutBuilder extends React.Component {
     items.forEach((item) => observer.observe(item));
   }
 
-  renderProjectPills(projects) {
-    return projects.map((project, index) => (
-      <span className="builder-project-pill" key={index}>
-        {project}
-      </span>
-    ));
-  }
-
   render() {
+    const { selectedProject, selectedType } = this.state;
+
     return (
       <section className="about-builder-section" id="about-builder">
-        <div className="builder-heading builder-reveal">
-          <p>About The Builder</p>
-          <h2>
-            About <strong>Subham Group</strong>
-          </h2>
-        </div>
-
-        <div className="builder-intro-card builder-reveal">
-          <div className="builder-logo-box">
-            <img src={subhamLogo} alt="Subham Group Logo" />
+        <div className="builder-top-area">
+          <div className="builder-heading builder-reveal">
+            <p>About The Builder</p>
+            <h2>
+              About <strong>Subham Group</strong>
+            </h2>
           </div>
 
-          <div className="builder-intro-text">
-            <p>
-              Since 2007, Subham Group has been a premier real estate builder
-              and developer based out of Guwahati, known for time-bound
-              projects, quality spaces and timeless customer relationships.
-            </p>
-          </div>
-        </div>
+          <div className="builder-intro-card builder-reveal">
+            <div className="builder-logo-box">
+              <img src={subhamLogo} alt="Subham Group Logo" />
+            </div>
 
-        <div className="builder-stats-grid builder-reveal">
-          {stats.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <div className="builder-stat-card" key={index}>
-                <span>
-                  <Icon size={26} />
-                </span>
-                <h3>{item.number}</h3>
-                <p>{item.label}</p>
-              </div>
-            );
-          })}
+            <div className="builder-intro-text">
+              <p>
+                Since 2007, Subham Group has been a premier real estate builder
+                and developer based out of Guwahati, known for time-bound
+                projects, quality spaces and timeless customer relationships.
+              </p>
+            </div>
+          </div>
+
+          <div className="builder-stats-grid builder-reveal">
+            {stats.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <div className="builder-stat-card" key={index}>
+                  <span>
+                    <Icon size={26} />
+                  </span>
+                  <h3>{item.number}</h3>
+                  <p>{item.label}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div className="builder-projects-card builder-reveal">
           <div className="builder-project-column">
-            <Award size={24} />
             <h3>Ongoing Projects</h3>
+
             <div className="builder-project-pills">
-              {this.renderProjectPills(ongoingProjects)}
+              {ongoingProjects.map((project, index) => (
+                <button
+                  type="button"
+                  className={
+                    selectedType === "ongoing" &&
+                    selectedProject.name === project.name
+                      ? "builder-project-pill active"
+                      : "builder-project-pill"
+                  }
+                  key={index}
+                  onClick={() =>
+                    this.setState({
+                      selectedProject: project,
+                      selectedType: "ongoing",
+                    })
+                  }
+                >
+                  {project.name}
+                </button>
+              ))}
             </div>
           </div>
 
-          <div className="builder-project-column">
-            <Award size={24} />
+          <div className="builder-project-column completed">
             <h3>Completed Projects</h3>
+
             <div className="builder-project-pills">
-              {this.renderProjectPills(completedProjects)}
+              {completedProjects.map((project, index) => (
+                <button
+                  type="button"
+                  className={
+                    selectedType === "completed" &&
+                    selectedProject.name === project.name
+                      ? "builder-project-pill completed-pill active"
+                      : "builder-project-pill completed-pill"
+                  }
+                  key={index}
+                  onClick={() =>
+                    this.setState({
+                      selectedProject: project,
+                      selectedType: "completed",
+                    })
+                  }
+                >
+                  {project.name}
+                </button>
+              ))}
             </div>
           </div>
-        </div>
 
-        <div className="builder-strength-bar builder-reveal">
-          {strengths.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <div className="builder-strength-item" key={index}>
-                <span>
-                  <Icon size={24} />
-                </span>
-                <p>{item.title}</p>
-              </div>
-            );
-          })}
-
-          <div className="builder-quote">
-            Building not just structures, but <strong>trust</strong> that lasts
-            forever.
+          <div className="builder-project-address">
+            <h4>{selectedProject.name}</h4>
+            <p>{selectedProject.address}</p>
           </div>
         </div>
       </section>
