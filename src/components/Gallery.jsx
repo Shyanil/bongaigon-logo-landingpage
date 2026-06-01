@@ -1,25 +1,29 @@
 ﻿import React from "react";
-import { Search, X, ZoomIn, ZoomOut, ArrowLeft, ArrowRight } from "lucide-react";
+import { X, ZoomIn, ZoomOut, ArrowLeft, ArrowRight } from "lucide-react";
 import "../App.css";
 
-import gallery1 from "../assets/images/lobbylounge.jpeg";
-import gallery2 from "../assets/images/splashpool.jpeg";
+import gallery1 from "../assets/images/splashpool.jpeg";
+import gallery2 from "../assets/images/lobbylounge.jpeg";
 import gallery3 from "../assets/images/semiarenaview.jpeg";
 import gallery4 from "../assets/images/gymnasium.jpeg";
 import gallery5 from "../assets/images/kidsplayarea.jpeg";
 import gallery6 from "../assets/images/picture1.jpeg";
 import gallery7 from "../assets/images/indoorgamesroom.jpeg";
 import gallery8 from "../assets/images/mainentrance.jpeg";
+import gallery9 from "../assets/images/g9.jpeg";
+import gallery10 from "../assets/images/g10.jpeg";
 
 const galleryImages = [
-  { img: gallery1, title: "Lobby Lounge" },
-  { img: gallery2, title: "Splash Pool" },
-  { img: gallery3, title: "Semi Arena" },
-  { img: gallery4, title: "Gymnasium" },
-  { img: gallery5, title: "Kids Play Area" },
-  { img: gallery6, title: "Premium Elevation" },
-  { img: gallery7, title: "Indoor Games" },
-  { img: gallery8, title: "Main Entrance View" },
+  { img: gallery1, title: "Splash Pool", desc: "Dive into relaxation and luxury." },
+  { img: gallery2, title: "Lobby Lounge", desc: "A grand welcome to refined living." },
+  { img: gallery3, title: "Semi Arena", desc: "Where energy meets excellence." },
+  { img: gallery10, title: "Grand Entrance", desc: "A distinguished address for modern living." },
+  { img: gallery5, title: "Kids Play Area", desc: "A world of joy and imagination." },
+  { img: gallery6, title: "Premium Elevation", desc: "Architectural brilliance redefined.", fit: "contain" },
+  { img: gallery7, title: "Indoor Games", desc: "Entertainment for every mood." },
+  { img: gallery8, title: "Main Entrance View", desc: "A statement of elegance." },
+  { img: gallery9, title: "Signature Elevation", desc: "Designed to leave a lasting impression." },
+  { img: gallery4, title: "Gymnasium", desc: "Strength, wellness and you." },
 ];
 
 class Gallery extends React.Component {
@@ -29,11 +33,14 @@ class Gallery extends React.Component {
     this.state = {
       activeIndex: null,
       zoom: 1,
+      cursorX: 0,
+      cursorY: 0,
+      showCursor: false,
     };
   }
 
   openModal = (index) => {
-    this.setState({ activeIndex: index, zoom: 1 });
+    this.setState({ activeIndex: index, zoom: 1, showCursor: false });
     document.body.classList.add("gallery-modal-open");
   };
 
@@ -58,15 +65,23 @@ class Gallery extends React.Component {
   };
 
   zoomIn = () => {
-    this.setState((prev) => ({
-      zoom: Math.min(prev.zoom + 0.2, 2),
-    }));
+    this.setState((prev) => ({ zoom: Math.min(prev.zoom + 0.2, 2) }));
   };
 
   zoomOut = () => {
-    this.setState((prev) => ({
-      zoom: Math.max(prev.zoom - 0.2, 0.8),
-    }));
+    this.setState((prev) => ({ zoom: Math.max(prev.zoom - 0.2, 0.8) }));
+  };
+
+  handleCursorMove = (e) => {
+    this.setState({
+      cursorX: e.clientX,
+      cursorY: e.clientY,
+      showCursor: true,
+    });
+  };
+
+  hideCursor = () => {
+    this.setState({ showCursor: false });
   };
 
   handleBookVisit = () => {
@@ -80,48 +95,73 @@ class Gallery extends React.Component {
   }
 
   render() {
-    const { activeIndex, zoom } = this.state;
+    const { activeIndex, zoom, cursorX, cursorY, showCursor } = this.state;
     const activeImage =
       activeIndex !== null ? galleryImages[activeIndex] : null;
 
     return (
       <section className="gallery-section" id="gallery">
+        <div className="gallery-dot-pattern"></div>
+
         <div className="gallery-heading">
           <h2>Gallery</h2>
           <p>
             <span>A Symphony</span>{" "}
             <strong>Of Spaces</strong>
           </p>
+          <small>
+            Thoughtfully designed spaces that blend luxury, comfort and nature,
+            crafted to elevate every moment of your life.
+          </small>
         </div>
 
-        <div className="gallery-grid">
+        <div
+          className="gallery-grid"
+          onMouseMove={this.handleCursorMove}
+          onMouseLeave={this.hideCursor}
+        >
+          <span
+            className={`gallery-view-cursor ${showCursor ? "show" : ""}`}
+            style={{
+              left: `${cursorX}px`,
+              top: `${cursorY}px`,
+            }}
+          >
+            View
+          </span>
+
           {galleryImages.map((item, index) => (
             <button
               type="button"
-              className="gallery-card"
+              className={`gallery-card gallery-card-${index + 1}`}
               key={index}
               onClick={() => this.openModal(index)}
             >
-              <img src={item.img} alt={item.title} />
+              <img
+                src={item.img}
+                alt={item.title}
+                className={item.fit === "contain" ? "gallery-img-contain" : ""}
+              />
 
               <div className="gallery-overlay">
                 <h3>{item.title}</h3>
-
-                <span className="gallery-zoom">
-                  <Search size={18} />
-                </span>
+                <p>{item.desc}</p>
               </div>
             </button>
           ))}
         </div>
 
-        <button
-          type="button"
-          className="gallery-visit-btn"
-          onClick={this.handleBookVisit}
-        >
-          Download Brochure <b>→</b>
-        </button>
+        <div className="gallery-btn-wrap">
+          <button
+            type="button"
+            className="gallery-visit-btn"
+            onClick={this.handleBookVisit}
+          >
+            <span>⇩</span>
+            Download Brochure
+            <b>→</b>
+          </button>
+        </div>
 
         {activeImage && (
           <div className="gallery-lightbox">
@@ -145,6 +185,11 @@ class Gallery extends React.Component {
               <img
                 src={activeImage.img}
                 alt={activeImage.title}
+                className={
+                  activeImage.fit === "contain"
+                    ? "gallery-modal-img-contain"
+                    : "gallery-modal-img-cover"
+                }
                 style={{ transform: `scale(${zoom})` }}
               />
 

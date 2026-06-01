@@ -4,7 +4,7 @@ import {
   Phone,
   Mail,
   Building,
-  PenTool,
+  Clock,
   ArrowRight,
   BadgeCheck,
   Home,
@@ -25,7 +25,7 @@ class Contact extends React.Component {
         phone: "",
         email: "",
         interestedIn: "",
-        requirement: "",
+        timing: "",
       },
     };
   }
@@ -52,8 +52,8 @@ class Contact extends React.Component {
         phone: formData.phone,
         email: formData.email,
         interested_in: formData.interestedIn,
-        requirement: formData.requirement,
-        timing: null,
+        requirement: "Download Brochure",
+        timing: formData.timing || null,
       },
     ]);
 
@@ -72,7 +72,7 @@ class Contact extends React.Component {
         phone: "",
         email: "",
         interestedIn: "",
-        requirement: "",
+        timing: "",
       },
     });
 
@@ -85,13 +85,12 @@ class Contact extends React.Component {
     return (
       <section className="contact-premium-section" id="contact">
         <div className="contact-left">
-          
-       <p className="contact-section-label">Get In Touch</p>
+          <p className="contact-section-label">Get In Touch</p>
 
-<h2>
-  Take The First Step <br />
-  <strong>Towards Your Dream Home</strong>
-</h2>
+          <h2>
+            Take The First Step <br />
+            <strong>Towards Your Dream Home</strong>
+          </h2>
 
           <p>
             Share your requirements with us and our team will get back to you with
@@ -192,14 +191,21 @@ class Contact extends React.Component {
                 </select>
               </div>
 
-              <div className="input-box textarea-box">
-                <PenTool />
-                <textarea
-                  name="requirement"
-                  placeholder="Tell us about your requirement..."
-                  value={this.state.formData.requirement}
+              <div className="input-box">
+                <Clock />
+                <select
+                  required
+                  name="timing"
+                  value={this.state.formData.timing}
                   onChange={this.handleChange}
-                ></textarea>
+                >
+                  <option value="" disabled>
+                    Preferred Time
+                  </option>
+                  <option value="Morning">Morning</option>
+                  <option value="Afternoon">Afternoon</option>
+                  <option value="Evening">Evening</option>
+                </select>
               </div>
 
               <button

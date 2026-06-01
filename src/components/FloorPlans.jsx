@@ -6,27 +6,24 @@ import {
   X,
   ZoomIn,
   ZoomOut,
-  ArrowLeft,
   ArrowRight,
+  Building2,
+  Clock3,
 } from "lucide-react";
 import "../App.css";
 
 import mainPlan from "../assets/images/mainplan.jpg";
-
 import unit1 from "../assets/images/unitmap1.jpg";
 import unit2 from "../assets/images/unitmap2.jpg";
 import unit3 from "../assets/images/unitmap3.jpg";
 import unit4 from "../assets/images/unitmap4.jpg";
-
 import floor1 from "../assets/images/map1.jpg";
 import floor2 from "../assets/images/map2.jpg";
 import floor3 from "../assets/images/map3.jpg";
 import floor4 from "../assets/images/map4.jpg";
 
 const plans = {
-  master: [
-    { title: "Master Plan", img: mainPlan, type: "Main Layout" },
-  ],
+  master: [{ title: "Master Plan", img: mainPlan, type: "Master Plan" }],
   unit: [
     { title: "1st Floor", img: unit1, type: "Unit Plan" },
     { title: "2nd & 5th Floor", img: unit2, type: "Unit Plan" },
@@ -34,10 +31,10 @@ const plans = {
     { title: "4th Floor", img: unit4, type: "Unit Plan" },
   ],
   floor: [
-    { title: "1st Floor", img: floor1, type: "Floor Layout" },
-    { title: "2nd & 5th Floor", img: floor2, type: "Floor Layout" },
-    { title: "3rd & 6th Floor", img: floor3, type: "Floor Layout" },
-    { title: "4th Floor", img: floor4, type: "Floor Layout" },
+    { title: "1st Floor", img: floor1, type: "Floor Plan" },
+    { title: "2nd & 5th Floor", img: floor2, type: "Floor Plan" },
+    { title: "3rd & 6th Floor", img: floor3, type: "Floor Plan" },
+    { title: "4th Floor", img: floor4, type: "Floor Plan" },
   ],
 };
 
@@ -68,8 +65,13 @@ class FloorPlans extends React.Component {
     document.body.classList.remove("floor-modal-open");
   };
 
-  zoomIn = () => this.setState((p) => ({ zoom: Math.min(p.zoom + 0.2, 2.2) }));
-  zoomOut = () => this.setState((p) => ({ zoom: Math.max(p.zoom - 0.2, 0.8) }));
+  zoomIn = () => {
+    this.setState((p) => ({ zoom: Math.min(p.zoom + 0.2, 2.2) }));
+  };
+
+  zoomOut = () => {
+    this.setState((p) => ({ zoom: Math.max(p.zoom - 0.2, 0.8) }));
+  };
 
   componentWillUnmount() {
     document.body.classList.remove("floor-modal-open");
@@ -83,76 +85,105 @@ class FloorPlans extends React.Component {
 
     return (
       <section className="floorplan-section" id="floor-plans">
-        <div className="floorplan-heading">
-  <h2>Floor Plans</h2>
-  <p>
-  <span>Explore Your Ideal </span>
-  <strong>Home Layout</strong>
-</p>
-</div>
+        <div className="floorplan-tabs-luxury">
+          <button
+            className={activeTab === "master" ? "active" : ""}
+            onClick={() => this.setTab("master")}
+          >
+            <LayoutPanelLeft size={18} /> Master Plan
+          </button>
 
-        <div className="floorplan-shell">
-          <div className="floorplan-main">
-            <div className="floorplan-tabs">
-              <button className={activeTab === "master" ? "active" : ""} onClick={() => this.setTab("master")}>
-                <LayoutPanelLeft size={18} /> Master Plan
-              </button>
+          <button
+            className={activeTab === "unit" ? "active" : ""}
+            onClick={() => this.setTab("unit")}
+          >
+            <Grid3X3 size={18} /> Unit Plan
+          </button>
 
-              <button className={activeTab === "unit" ? "active" : ""} onClick={() => this.setTab("unit")}>
-                <Grid3X3 size={18} /> Unit Plan
-              </button>
+          <button
+            className={activeTab === "floor" ? "active" : ""}
+            onClick={() => this.setTab("floor")}
+          >
+            <Layers size={18} /> Floor Plan
+          </button>
+        </div>
 
-              <button className={activeTab === "floor" ? "active" : ""} onClick={() => this.setTab("floor")}>
-                <Layers size={18} /> Floor Plan
-              </button>
-            </div>
+        <div
+          className={
+            activeTab === "master"
+              ? "floorplan-luxury-grid master-only"
+              : "floorplan-luxury-grid"
+          }
+        >
+          <div className="floorplan-left-panel">
+            <span className="floorplan-label">Floor Plans</span>
 
-            <div className="floorplan-options">
-              {currentPlans.map((plan, index) => (
-                <button key={index} className={activeIndex === index ? "active" : ""} onClick={() => this.setPlan(index)}>
-                  {plan.title}
-                  <span>{plan.sub}</span>
-                </button>
-              ))}
-            </div>
+            <h2>
+              Crafted For <br />
+              <strong>Elegant Living</strong>
+            </h2>
 
-            <div className="floorplan-viewer">
-              <div className="floorplan-info">
-                <span>{selectedPlan.type}</span>
-                <h3>{selectedPlan.title}</h3>
-                <p>{selectedPlan.sub}</p>
+            <p>
+              Thoughtfully designed layouts that blend spacious living with
+              timeless architecture and modern comfort.
+            </p>
 
-                <button onClick={() => this.openModal(activeIndex)}>
-                  <ZoomIn size={17} /> View Plan
-                </button>
+            <div className="floorplan-detail-list">
+              <div>
+                <Building2 size={22} />
+                <span>Total Area</span>
+                <strong>12.5 Acres</strong>
               </div>
 
-              <div className="floorplan-image-box" onClick={() => this.openModal(activeIndex)}>
-                <img src={selectedPlan.img} alt={selectedPlan.title} />
+              <div>
+                <LayoutPanelLeft size={22} />
+                <span>Configuration</span>
+                <strong>3 BHK & 4 BHK</strong>
+              </div>
+
+              <div>
+                <Clock3 size={22} />
+                <span>Status</span>
+                <strong>Available</strong>
               </div>
             </div>
           </div>
 
-          <div className="floorplan-side">
-            <h4>Select Plan</h4>
+          <div
+            className="floorplan-hero-frame"
+            onClick={() => this.openModal(activeIndex)}
+          >
+            <img src={selectedPlan.img} alt={selectedPlan.title} />
 
-            <div className="floorplan-mini-grid">
+            <div className="floorplan-drag-note">
+              <span></span>
+              Click to view
+              <span></span>
+            </div>
+          </div>
+
+          {activeTab !== "master" && (
+            <div className="floorplan-right-panel">
               {currentPlans.map((plan, index) => (
                 <button
                   key={index}
                   className={activeIndex === index ? "active" : ""}
-                  onClick={() => {
-                    this.setPlan(index);
-                    this.openModal(index);
-                  }}
+                  onClick={() => this.setPlan(index)}
                 >
+                  <i>{String(index + 1).padStart(2, "0")}</i>
+
                   <img src={plan.img} alt={plan.title} />
-                  <strong>{plan.title}</strong>
-                  <span>{plan.sub}</span>
+
+                  <div>
+                    <strong>{plan.title}</strong>
+                    <span>{plan.type}</span>
+                  </div>
+
+                  <ArrowRight size={17} />
                 </button>
               ))}
             </div>
-          </div>
+          )}
         </div>
 
         {modalOpen && (
@@ -169,9 +200,15 @@ class FloorPlans extends React.Component {
               />
 
               <div className="floorplan-modal-tools">
-                <button onClick={this.zoomOut}><ZoomOut size={18} /></button>
+                <button onClick={this.zoomOut}>
+                  <ZoomOut size={18} />
+                </button>
+
                 <span>{Math.round(zoom * 100)}%</span>
-                <button onClick={this.zoomIn}><ZoomIn size={18} /></button>
+
+                <button onClick={this.zoomIn}>
+                  <ZoomIn size={18} />
+                </button>
               </div>
             </div>
           </div>
