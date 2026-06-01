@@ -552,25 +552,18 @@ body {
 .about-project-section {
   width: 100%;
   padding: 52px 5% 0 !important;
-  background: #f8f4ec !important;
+  background: #ffffff !important;
   overflow: hidden;
   position: relative;
-}
-
-.about-project-section::before,
-.about-project-section::after,
-.about-project-container::before,
-.about-project-container::after {
-  display: none !important;
 }
 
 .about-project-container {
   max-width: 1240px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 0.82fr 0.95fr;
-  align-items: start;
-  gap: 42px;
+  grid-template-columns: 0.78fr 1.05fr;
+  align-items: center;
+  gap: 28px;
   position: relative;
   z-index: 2;
 }
@@ -580,7 +573,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 42px;
+  padding-top: 30px;
   margin-left: -2px;
   animation: aboutTextUp 0.9s ease both;
 }
@@ -589,7 +582,6 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
-
   font-family: "Outfit", sans-serif;
   font-size: 12px;
   color: #c86b39;
@@ -607,19 +599,11 @@ body {
   display: block;
 }
 
-.about-project-line,
-.about-project-line span,
-.about-project-line i,
-.about-project-small-line {
-  display: none !important;
-}
-
 .about-project-left h2 {
   font-family: "Cormorant Garamond", serif;
   font-size: 60px;
   line-height: 1.03;
-  text-transform: none;
-  color: #000000;
+  color: #000;
   font-weight: 400;
   margin: 0;
 }
@@ -627,9 +611,6 @@ body {
 .about-project-left h2 strong {
   color: #c86b39;
   font-weight: 400;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 60px;
-  text-transform: none;
 }
 
 .about-project-text {
@@ -638,73 +619,75 @@ body {
   font-family: "Outfit", sans-serif;
   line-height: 1.55;
   color: #2d2d2d;
-  text-align: left;
   margin: 24px 0 0 0 !important;
 }
 
+/* IMAGE MERGE FIX */
 .about-project-image-box {
-  width: 100%;
-  border-radius: 30px;
-  overflow: hidden;
-  box-shadow: 0 24px 55px rgba(37, 52, 25, 0.14);
+  width: 125%;
+  height: 560px;
+  margin-left: -90px;
+  margin-top: -25px;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  position: relative;
   animation: aboutImageFloat 5s ease-in-out infinite;
 }
 
 .about-project-image-box img {
   width: 100%;
-  height: 520px;
-  object-fit: cover;
-  object-position: center top;
+  height: 100%;
+  object-fit: cover !important;
+  object-position: center center !important;
   display: block;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
   transition: transform 0.6s ease;
 }
 
 .about-project-image-box:hover img {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .about-project-features {
   width: 100%;
-  max-width: 620px;
+  max-width: 550px;
   margin: 28px 0 0 0 !important;
   padding: 0 !important;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 28px;
+  gap: 15px;
   flex-wrap: nowrap;
+  size: border-box;
 }
 
 .about-project-feature {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 9px;
   flex-shrink: 0;
   transition: 0.35s ease;
 }
 
 .about-project-feature:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 }
 
 .about-project-icon {
   width: 50px;
   height: 50px;
   border-radius: 15px;
-  background: #f7f1e7;
-  border: 1px solid rgba(200, 107, 57, 0.25);
+  background: #fff;
+  border: 1px solid rgba(200, 107, 57, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #c86b39;
-  box-shadow: 0 10px 24px rgba(85, 96, 46, 0.1);
-  transition: 0.35s ease;
-}
-
-.about-project-feature:hover .about-project-icon {
-  background: #c86b39;
-  color: #fff;
-  transform: rotate(-6deg) scale(1.08);
+  box-shadow: 0 10px 24px rgba(85, 96, 46, 0.08);
 }
 
 .about-project-icon svg {
@@ -715,12 +698,10 @@ body {
 
 .about-project-feature h3 {
   font-family: "Outfit", sans-serif;
-  font-size: 15px;
+  font-size: 12px;
   color: #c86b39;
   margin: 0;
-  line-height: 1.15;
   font-weight: 700;
-  text-transform: capitalize;
 }
 
 .about-project-feature p {
@@ -728,13 +709,18 @@ body {
   font-size: 10px;
   color: #1f2b17;
   font-weight: 600;
-  letter-spacing: 0.3px;
-  text-transform: capitalize;
   margin: 3px 0 0;
-  line-height: 1.2;
 }
 
-.about-project-feature span {
+.about-project-feature span,
+.about-project-line,
+.about-project-line span,
+.about-project-line i,
+.about-project-small-line,
+.about-project-section::before,
+.about-project-section::after,
+.about-project-container::before,
+.about-project-container::after {
   display: none !important;
 }
 
@@ -756,39 +742,42 @@ body {
   }
 
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
 }
 
-@media (max-width: 1200px) {
-  .about-project-left {
-    padding-left: 35px;
+@media (max-width: 1100px) {
+  .about-project-image-box {
+    width: 118%;
+    margin-left: -55px;
   }
 }
 
 @media (max-width: 900px) {
   .about-project-container {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 22px;
   }
 
   .about-project-left {
-    padding-left: 0;
     padding-top: 20px;
   }
 
-  .about-project-left h2 {
+  .about-project-left h2,
+  .about-project-left h2 strong {
     font-size: 42px;
   }
 
-  .about-project-image-box img {
-    height: 360px;
+  .about-project-image-box {
+    width: 100%;
+    height: 390px;
+    margin-left: 0;
+    margin-top: 0;
   }
 
   .about-project-features {
-    margin-top: 18px !important;
-    gap: 16px;
     flex-wrap: wrap;
+    gap: 16px;
   }
 }
 
@@ -797,31 +786,17 @@ body {
     padding: 42px 5% 0 !important;
   }
 
-  .about-project-left {
-    padding-left: 0;
-    padding-top: 8px;
-  }
-
-  .about-project-left h2 {
+  .about-project-left h2,
+  .about-project-left h2 strong {
     font-size: 38px;
   }
 
   .about-project-text {
     font-size: 14px;
-    line-height: 1.55;
   }
 
   .about-project-image-box {
-    border-radius: 22px;
-  }
-
-  .about-project-image-box img {
-    height: 280px;
-  }
-
-  .about-project-features {
-    margin-top: 16px !important;
-    gap: 12px;
+    height: 300px;
   }
 
   .about-project-icon {
@@ -2730,7 +2705,7 @@ body.floor-modal-open {
   min-height: 780px;
   padding: 75px 8% 90px;
 
-  background: #fbedd8;
+  background: #ffffff;
 
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;

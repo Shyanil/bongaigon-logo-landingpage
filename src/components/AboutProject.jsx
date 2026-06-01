@@ -1,7 +1,7 @@
 import React from "react";
 import { Building2, Landmark, Home } from "lucide-react";
 import "../App.css";
-import aboutImage from "../assets/images/about2.jpeg";
+import aboutImage from "../assets/images/aboutimage.png";
 
 const AboutProject = () => {
   return (
