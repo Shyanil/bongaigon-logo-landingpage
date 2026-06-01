@@ -14,16 +14,16 @@ import gallery9 from "../assets/images/g9.jpeg";
 import gallery10 from "../assets/images/g10.jpeg";
 
 const galleryImages = [
-  { img: gallery1, title: "Splash Pool", desc: "Dive into relaxation and luxury." },
-  { img: gallery2, title: "Lobby Lounge", desc: "A grand welcome to refined living." },
-  { img: gallery3, title: "Semi Arena", desc: "Where energy meets excellence." },
-  { img: gallery10, title: "Grand Entrance", desc: "A distinguished address for modern living." },
-  { img: gallery5, title: "Kids Play Area", desc: "A world of joy and imagination." },
-  { img: gallery6, title: "Premium Elevation", desc: "Architectural brilliance redefined.", fit: "contain" },
-  { img: gallery7, title: "Indoor Games", desc: "Entertainment for every mood." },
-  { img: gallery8, title: "Main Entrance View", desc: "A statement of elegance." },
-  { img: gallery9, title: "Signature Elevation", desc: "Designed to leave a lasting impression." },
-  { img: gallery4, title: "Gymnasium", desc: "Strength, wellness and you." },
+  { img: gallery1, title: "Splash Pool" },
+  { img: gallery2, title: "Lobby Lounge"},
+  { img: gallery3, title: "Semi Arena" },
+  { img: gallery10, title: "Grand Entrance" },
+  { img: gallery5, title: "Kids Play Area" },
+  { img: gallery6, title: "Premium Elevation"},
+  { img: gallery7, title: "Indoor Games" },
+  { img: gallery8, title: "Main Entrance View" },
+  { img: gallery9, title: "Signature Elevation"},
+  { img: gallery4, title: "Gymnasium" },
 ];
 
 class Gallery extends React.Component {

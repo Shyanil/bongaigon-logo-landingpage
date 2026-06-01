@@ -79,7 +79,7 @@ class AboutBuilder extends React.Component {
           <div className="builder-heading builder-reveal">
             <p>About The Builder</p>
             <h2>
-              About <strong>Subham Group</strong>
+              Time-Bound Projects <strong>and Timeless Relationships</strong>
             </h2>
           </div>
 
