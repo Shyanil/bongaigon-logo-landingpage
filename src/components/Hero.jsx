@@ -36,7 +36,7 @@ const Hero = ({ onOpenPopup }) => {
                 <MapPin size={14} />
                 Location
               </small>
-              <strong>Guru nanak nagar,Chapaguri road</strong>
+              <strong>Guru Nanak Nagar,Chapaguri Road</strong>
             </div>
           </div>
 
