@@ -71,7 +71,7 @@ class Gallery extends React.Component {
 
   handleBookVisit = () => {
     if (this.props.onOpenPopup) {
-      this.props.onOpenPopup();
+      this.props.onOpenPopup("Download Brochure");
     }
   };
 
@@ -88,10 +88,10 @@ class Gallery extends React.Component {
       <section className="gallery-section" id="gallery">
         <div className="gallery-heading">
           <h2>Gallery</h2>
-         <p>
-  <span>A Symphony</span>{" "}
-  <strong>Of Spaces</strong>
-</p>
+          <p>
+            <span>A Symphony</span>{" "}
+            <strong>Of Spaces</strong>
+          </p>
         </div>
 
         <div className="gallery-grid">

@@ -13,7 +13,7 @@ const Hero = ({ onOpenPopup }) => {
 
       <div className="hero-content">
         <h1 className="hero-title">
-         Step Into
+          Step Into
           <span>Spotlight Of</span>
           Modern Living.
         </h1>
@@ -21,8 +21,8 @@ const Hero = ({ onOpenPopup }) => {
         <div className="hero-description">
           <p>
             Experience premium 3BHK & 4 BHK residences designed for refined
-            living, elegant comfort, and a lifestyle inspired by modern sensibilities.
-           
+            living, elegant comfort, and a lifestyle inspired by modern
+            sensibilities.
           </p>
 
           <div className="hero-info">
@@ -41,7 +41,11 @@ const Hero = ({ onOpenPopup }) => {
           </div>
 
           <div className="hero-buttons">
-            <button type="button" className="hero-btn hero-btn-brochure" onClick={onOpenPopup}>
+            <button
+              type="button"
+              className="hero-btn hero-btn-brochure"
+              onClick={() => onOpenPopup("Download Brochure")}
+            >
               Download Brochure
               <Download size={17} />
             </button>

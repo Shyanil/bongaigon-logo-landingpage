@@ -23,6 +23,7 @@ class App extends React.Component {
 
     this.state = {
       isPopupOpen: false,
+      popupTitle: "Book A Site Visit",
       showLoader: true,
     };
 
@@ -153,8 +154,15 @@ class App extends React.Component {
     }
   }
 
-  openPopup = () => {
-    this.setState({ isPopupOpen: true });
+  openPopup = (title = "Book A Site Visit") => {
+    if (typeof title !== "string") {
+      title = "Book A Site Visit";
+    }
+
+    this.setState({
+      isPopupOpen: true,
+      popupTitle: title,
+    });
   };
 
   closePopup = () => {
@@ -187,6 +195,7 @@ class App extends React.Component {
         <PopupForm
           isOpen={this.state.isPopupOpen}
           onClose={this.closePopup}
+          title={this.state.popupTitle}
         />
 
         <Footer />

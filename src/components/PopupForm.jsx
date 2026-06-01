@@ -45,13 +45,21 @@ class PopupForm extends React.Component {
 
     this.setState({ loading: true });
 
+    const popupTitle =
+      typeof this.props.title === "string"
+        ? this.props.title
+        : "Book A Site Visit";
+
     const { error } = await supabase.from("subham-bongaigon").insert([
       {
         name: formData.name,
         phone: formData.phone,
         email: formData.email,
         interested_in: formData.interestedIn,
-        requirement: "Site Visit",
+        requirement:
+          popupTitle === "Download Brochure"
+            ? "Download Brochure"
+            : "Site Visit",
         timing: formData.timing || null,
       },
     ]);
@@ -83,6 +91,11 @@ class PopupForm extends React.Component {
   render() {
     if (!this.props.isOpen) return null;
 
+    const popupTitle =
+      typeof this.props.title === "string"
+        ? this.props.title
+        : "Book A Site Visit";
+
     return (
       <div className="popup-overlay">
         <div className="popup-form">
@@ -105,8 +118,13 @@ class PopupForm extends React.Component {
             </div>
           ) : (
             <>
-              <h2>Book A Site Visit</h2>
-              <p>Fill your details and our team will connect with you shortly.</p>
+              <h2>{popupTitle}</h2>
+
+              <p>
+                {popupTitle === "Download Brochure"
+                  ? "Fill your details to download the brochure."
+                  : "Fill your details and our team will connect with you shortly."}
+              </p>
 
               <div className="popup-input">
                 <User size={16} />

@@ -48,7 +48,7 @@ const Navbar = ({ onOpenPopup }) => {
           onClick={handleBookVisit}
         >
           <Phone size={16} />
-          <span>Book a Visit</span>
+          <span>Book a Site Visit</span>
         </button>
       </div>
     </header>
