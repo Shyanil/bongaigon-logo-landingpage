@@ -1,21 +1,19 @@
 ﻿import React from "react";
 import {
   MapPin,
-  ChevronDown,
   School,
   Trees,
   Hospital,
   Train,
-  Building2,
   Film,
-  Shield,
+  Navigation,
 } from "lucide-react";
 import "../App.css";
 
 import mapImage from "../assets/images/map.png";
 
 const googleMapLink =
-  "https://www.google.com/maps?q=Subham%20Park%20Bongaigaon%20Assam";
+  "https://www.google.com/maps?q=Guru%20Nanak%20Nagar%2C%20Chapaguri%20Road%2C%20Bongaigaon%2C%20Assam";
 
 const locationGroups = [
   {
@@ -66,133 +64,102 @@ const locationGroups = [
   },
 ];
 
-class LocationAdvantage extends React.Component {
-  state = {
-    openIndex: 0,
-  };
+const LocationAdvantage = () => {
+  return (
+    <section className="location-section" id="location">
+      <span className="location-orb location-orb-one"></span>
+      <span className="location-orb location-orb-two"></span>
+      <span className="location-orb location-orb-three"></span>
 
-  toggleGroup = (index) => {
-    this.setState({
-      openIndex: this.state.openIndex === index ? null : index,
-    });
-  };
+      <div className="location-heading">
+        <h2>Location</h2>
 
-  render() {
-    return (
-      <section className="location-section" id="location">
-        <div className="location-heading">
-          <h2>Location</h2>
+        <p className="location-title">
+          <span>Perfectly Connected</span>{" "}
+          <strong>Everyday Living</strong>
+        </p>
 
-          <p className="location-title">
-            <span>Perfectly Connected</span>{" "}
-            <strong>Everyday Living</strong>
-          </p>
+        <p className="location-subtext">
+          Experience the ease of living at Subham Park, where schools,
+          healthcare, railway connectivity, shopping and everyday essentials
+          are all thoughtfully placed within minutes from your home.
+        </p>
+      </div>
 
-          <p className="location-subtext">
-            Experience the ease of living at Subham Park, where schools,
-            healthcare, railway connectivity, shopping and everyday essentials
-            are all thoughtfully placed within minutes from your home.
-          </p>
+      <div className="location-container">
+        <div className="location-map-card">
+          <div className="map-box">
+            <img
+              className="location-map-img"
+              src={mapImage}
+              alt="Subham Park Location Map"
+            />
+
+            <a
+              href={googleMapLink}
+              target="_blank"
+              rel="noreferrer"
+              className="map-floating-card"
+            >
+              <MapPin size={22} />
+              <div>
+                <h4>Subham Park</h4>
+                <p>Bongaigaon, Assam</p>
+              </div>
+            </a>
+
+            <a
+              href={googleMapLink}
+              target="_blank"
+              rel="noreferrer"
+              className="map-direction-card"
+            >
+              <span>
+                <Navigation size={22} />
+              </span>
+              <b>Get Directions</b>
+            </a>
+          </div>
         </div>
 
-        <div className="location-container">
-          <div className="location-left">
-            <div className="location-accordion">
-              {locationGroups.map((group, index) => {
-                const Icon = group.icon;
-                const isOpen = this.state.openIndex === index;
+        <div className="location-card-grid">
+          {locationGroups.map((group, index) => {
+            const Icon = group.icon;
 
-                return (
-                  <div className="location-accordion-item" key={index}>
-                    <button
-                      type="button"
-                      className="location-accordion-head"
-                      onClick={() => this.toggleGroup(index)}
-                    >
-                      <span>
-                        <Icon size={18} />
-                        {group.title}
-                      </span>
-
-                      <ChevronDown
-                        size={18}
-                        className={isOpen ? "rotate" : ""}
-                      />
-                    </button>
-
-                    <div
-                      className={
-                        isOpen
-                          ? "location-accordion-body show"
-                          : "location-accordion-body"
-                      }
-                    >
-                      {group.items.map((item, i) => (
-                        <div className="location-distance-row" key={i}>
-                          <p>{item[0]}</p>
-                          <b>{item[1]}</b>
-                        </div>
-                      ))}
-                    </div>
+            return (
+              <div
+                className={`location-proximity-card ${
+                  index === 4 ? "location-wide-card" : ""
+                }`}
+                key={index}
+              >
+                <div className="location-card-top">
+                  <div className="location-icon-box">
+                    <Icon size={26} />
                   </div>
-                );
-              })}
-            </div>
-          </div>
 
-          <div className="location-right">
-            <div className="map-box">
-              <img
-                className="location-map-img"
-                src={mapImage}
-                alt="Subham Park Location Map"
-              />
-
-              <a
-                href={googleMapLink}
-                target="_blank"
-                rel="noreferrer"
-                className="location-map-pin"
-              >
-                <MapPin size={38} />
-                <span>Subham Park</span>
-              </a>
-
-              <a
-                href={googleMapLink}
-                target="_blank"
-                rel="noreferrer"
-                className="map-floating-card"
-              >
-                <MapPin size={20} />
-                <div>
-                  <h4>Subham Park</h4>
-                  <p>Bongaigaon, Assam</p>
+                  <div>
+                    <small>{group.items.length} nearby points</small>
+                    <h3>{group.title}</h3>
+                  </div>
                 </div>
-              </a>
-            </div>
 
-            <div className="location-mini-features">
-              <div>
-                <Building2 size={22} />
-                <span>Daily Essentials Nearby</span>
+                <div className="location-list">
+                  {group.items.map((item, i) => (
+                    <div className="location-list-row" key={i}>
+                      <span>{String(i + 1).padStart(2, "0")}</span>
+                      <p>{item[0]}</p>
+                      <b>{item[1]}</b>
+                    </div>
+                  ))}
+                </div>
               </div>
-
-              <div>
-                <Train size={22} />
-                <span>Railway Connectivity</span>
-              </div>
-
-              <div>
-                <Shield size={22} />
-                <span>Safe Residential Zone</span>
-              </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
-      </section>
-    );
-  }
-}
+      </div>
+    </section>
+  );
+};
 
 export default LocationAdvantage;
