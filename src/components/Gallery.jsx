@@ -15,8 +15,8 @@ import gallery10 from "../assets/images/g10.jpeg";
 
 const galleryImages = [
   { img: gallery1, title: "Splash Pool" },
-  { img: gallery2, title: "Lobby Lounge"},
-  { img: gallery3, title: "Semi Arena" },
+  { img: gallery2, title: "Community Hall"},
+  { img: gallery3, title: "Aerial View" },
   { img: gallery10, title: "Grand Entrance" },
   { img: gallery5, title: "Kids Play Area" },
   { img: gallery6, title: "Premium Elevation"},

@@ -19,7 +19,7 @@ const amenities = [
   { icon: <Gamepad2 />, title: "Indoor Games", text: "Engaging recreation for all age groups." },
   { icon: <Waves />, title: "Splash Pool", text: "Relaxing water zone for leisure moments." },
   { icon: <Baby />, title: "Kid's Play Area", text: "Safe and joyful play space for children." },
-  { icon: <BatteryCharging />, title: "Power Backup", text: "Reliable backup for uninterrupted comfort." },
+  { icon: <BatteryCharging />, title: "Power Backup", text: "Reliable backup for common areas only." },
   { icon: <ShieldCheck />, title: "Security", text: "Safe living with dedicated security support." },
 ];
 

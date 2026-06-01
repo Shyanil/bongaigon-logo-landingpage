@@ -36,7 +36,7 @@ const Hero = ({ onOpenPopup }) => {
                 <MapPin size={14} />
                 Location
               </small>
-              <strong>Sonari Gaon, Assam</strong>
+              <strong>Guru nanak nagar,Chapaguri road</strong>
             </div>
           </div>
 

@@ -132,7 +132,7 @@ class FloorPlans extends React.Component {
               <div>
                 <Building2 size={22} />
                 <span>Total Area</span>
-                <strong>12.5 Acres</strong>
+                <strong>28800 SQ.FT Approx</strong>
               </div>
 
               <div>
