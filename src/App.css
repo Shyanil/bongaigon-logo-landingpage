@@ -2231,7 +2231,7 @@ body.floor-modal-open {
 
 .location-section {
   width: 100%;
-  padding: 68px 5.5% 78px;
+  padding: 58px 5.5% 64px;
   background:
     radial-gradient(circle at 8% 14%, rgba(255, 216, 111, 0.12), transparent 25%),
     radial-gradient(circle at 92% 18%, rgba(255, 216, 111, 0.08), transparent 28%),
@@ -2297,14 +2297,16 @@ body.floor-modal-open {
 }
 
 .location-heading,
-.location-container {
+.location-layout {
   position: relative;
   z-index: 2;
 }
 
+/* ================= HEADING ================= */
+
 .location-heading {
   text-align: center;
-  margin-bottom: 36px;
+  margin-bottom: 30px;
 }
 
 .location-heading h2 {
@@ -2322,7 +2324,8 @@ body.floor-modal-open {
   letter-spacing: 2.5px;
 }
 
-.location-heading h2::before {
+.location-heading h2::before,
+.location-heading h2::after {
   content: "";
   width: 58px;
   height: 1px;
@@ -2364,39 +2367,52 @@ body.floor-modal-open {
   white-space: normal !important;
 }
 
-/* ================= MAIN LAYOUT ================= */
+/* ================= EXACT LAYOUT ================= */
 
-.location-container {
+.location-layout {
   max-width: 1320px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.03fr 1fr;
-  gap: 24px;
+  grid-template-columns: 1.45fr 0.78fr 0.86fr;
+  gap: 16px;
   align-items: stretch;
 }
 
-.location-map-card {
-  width: 100%;
-  height: 100%;
+.location-left-stack {
+  display: grid;
+  grid-template-rows: 330px 1fr;
+  gap: 16px;
+}
+
+.location-bottom-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.location-right-stack {
+  display: grid;
+  grid-template-rows: 1fr 1.4fr;
+  gap: 16px;
 }
 
 /* ================= MAP ================= */
 
 .map-box {
   width: 100%;
-  height: 590px;
-  border-radius: 28px;
+  height: 330px;
+  border-radius: 16px;
   overflow: hidden;
   position: relative;
   background: #ffffff;
   border: 1px solid rgba(255, 216, 111, 0.45);
-  box-shadow: 0 24px 58px rgba(37, 52, 25, 0.26);
+  box-shadow: 0 18px 44px rgba(37, 52, 25, 0.24);
   transition: 0.45s ease;
 }
 
 .map-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 30px 70px rgba(37, 52, 25, 0.34);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 58px rgba(37, 52, 25, 0.32);
 }
 
 .location-map-img {
@@ -2414,15 +2430,15 @@ body.floor-modal-open {
 
 .map-floating-card {
   position: absolute;
-  top: 34px;
-  left: 34px;
-  padding: 18px 22px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.9);
+  top: 22px;
+  left: 22px;
+  padding: 14px 17px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
   display: flex;
   align-items: center;
-  gap: 14px;
-  box-shadow: 0 14px 32px rgba(37, 52, 25, 0.16);
+  gap: 12px;
+  box-shadow: 0 12px 28px rgba(37, 52, 25, 0.16);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   text-decoration: none;
@@ -2442,31 +2458,31 @@ body.floor-modal-open {
 .map-floating-card h4 {
   margin: 0;
   color: #253419;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 23px;
-  font-weight: 600;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
 }
 
 .map-floating-card p {
-  margin: 4px 0 0;
+  margin: 3px 0 0;
   color: #6f6f6f;
   font-family: "Outfit", sans-serif;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .map-direction-card {
   position: absolute;
-  left: 34px;
-  bottom: 34px;
-  width: 305px;
-  padding: 24px 28px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.92);
+  left: 22px;
+  bottom: 22px;
+  width: 210px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.94);
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 12px;
   text-decoration: none;
-  box-shadow: 0 18px 42px rgba(37, 52, 25, 0.18);
+  box-shadow: 0 16px 36px rgba(37, 52, 25, 0.18);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   z-index: 5;
@@ -2474,13 +2490,13 @@ body.floor-modal-open {
 }
 
 .map-direction-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   background: #fffaf1;
 }
 
 .map-direction-card span {
-  width: 52px;
-  height: 52px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: linear-gradient(135deg, #ffd86f, #d4b837);
   display: flex;
@@ -2493,28 +2509,20 @@ body.floor-modal-open {
 .map-direction-card b {
   font-family: "Outfit", sans-serif;
   color: #253419;
-  font-size: 19px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 800;
 }
 
-/* ================= RIGHT CARDS EXACT COMPACT ================= */
-
-.location-card-grid {
-  height: 590px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 170px 210px 192px;
-  gap: 14px;
-}
+/* ================= CARDS ================= */
 
 .location-proximity-card {
   height: 100%;
   min-height: 0;
-  border-radius: 12px;
-  padding: 18px 20px;
+  border-radius: 16px;
+  padding: 22px 24px;
   background: #fffaf1;
   border: 1px solid rgba(255, 255, 255, 0.55);
-  border-top: 4px solid #d6bd45;
+  border-top: 3px solid #d6bd45;
   box-shadow: 0 14px 34px rgba(37, 52, 25, 0.16);
   transition: 0.35s ease;
   position: relative;
@@ -2527,29 +2535,19 @@ body.floor-modal-open {
   box-shadow: 0 22px 48px rgba(37, 52, 25, 0.28);
 }
 
-.location-proximity-card::after {
-  display: none;
-}
-
-.location-wide-card {
-  grid-column: 1 / -1;
-}
-
 .location-card-top {
   display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 13px;
-  position: relative;
-  z-index: 2;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 
 .location-icon-box {
   width: 42px;
   height: 42px;
-  border-radius: 10px;
-  background: transparent;
-  border: none;
+  background: rgba(255, 216, 111, 0.14);
+  border: 1px solid rgba(214, 189, 69, 0.22);
+  border-radius: 13px;
   color: #6f793d;
   display: flex;
   align-items: center;
@@ -2559,51 +2557,49 @@ body.floor-modal-open {
 
 .location-card-top small {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
   font-family: "Outfit", sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   line-height: 1;
-  font-weight: 500;
-  letter-spacing: 0;
-  text-transform: none;
-  color: rgba(37, 52, 25, 0.58);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(37, 52, 25, 0.5);
 }
 
 .location-card-top h3 {
   margin: 0;
   font-family: "Outfit", sans-serif;
-  font-size: 19px;
-  line-height: 1.05;
-  color: #5f6933;
-  font-weight: 700;
+  font-size: 21px;
+  line-height: 1.08;
+  color: #111111;
+  font-weight: 800;
 }
 
 .location-list {
   position: relative;
   z-index: 2;
   border-top: 1px solid rgba(37, 52, 25, 0.1);
-  padding-top: 8px;
-}
-
-.location-wide-card .location-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 34px;
+  padding-top: 12px;
 }
 
 .location-list-row {
   display: grid;
   grid-template-columns: 28px 1fr auto;
   align-items: center;
-  gap: 8px;
-  padding: 6px 0;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(37, 52, 25, 0.08);
+}
+
+.location-list-row:last-child {
   border-bottom: none;
 }
 
 .location-list-row span {
-  width: 20px;
-  height: 20px;
-  border-radius: 6px;
+  width: 22px;
+  height: 22px;
+  border-radius: 8px;
   background: rgba(255, 216, 111, 0.22);
   color: #c86b39;
   display: flex;
@@ -2611,8 +2607,7 @@ body.floor-modal-open {
   justify-content: center;
   font-family: "Outfit", sans-serif;
   font-size: 9px;
-  font-weight: 700;
-  flex-shrink: 0;
+  font-weight: 800;
 }
 
 .location-list-row p {
@@ -2620,16 +2615,46 @@ body.floor-modal-open {
   font-family: "Outfit", sans-serif;
   color: #1c1c1c;
   font-size: 12.5px;
-  line-height: 1.25;
-  font-weight: 500;
+  line-height: 1.2;
+  font-weight: 700;
 }
 
 .location-list-row b {
   font-family: "Outfit", sans-serif;
   color: #c86b39;
   font-size: 12.5px;
-  font-weight: 700;
+  font-weight: 800;
   white-space: nowrap;
+}
+
+/* ================= CARD-SPECIFIC ================= */
+
+.location-parks-card {
+  padding: 24px 26px;
+}
+
+.location-parks-card .location-list-row {
+  padding: 12px 0;
+}
+
+.location-parks-card .location-list-row p {
+  font-size: 13px;
+}
+
+.location-parks-card .location-list-row b {
+  font-size: 13px;
+}
+
+.location-right-stack .location-proximity-card:first-child {
+  min-height: 235px;
+}
+
+.location-right-stack .location-proximity-card:last-child {
+  min-height: 320px;
+}
+
+.location-bottom-cards .location-proximity-card {
+  min-height: 220px;
 }
 
 /* ================= ANIMATION ================= */
@@ -2661,17 +2686,17 @@ body.floor-modal-open {
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 1100px) {
-  .location-container {
+  .location-layout {
     grid-template-columns: 1fr;
   }
 
-  .map-box {
-    height: 470px;
+  .location-left-stack,
+  .location-right-stack {
+    grid-template-rows: auto;
   }
 
-  .location-card-grid {
-    height: auto;
-    grid-template-rows: auto;
+  .map-box {
+    height: 420px;
   }
 }
 
@@ -2689,194 +2714,14 @@ body.floor-modal-open {
     font-size: 38px;
   }
 
-  .location-card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .location-wide-card {
-    grid-column: auto;
-  }
-
-  .location-wide-card .location-list {
+  .location-bottom-cards,
+  .location-right-stack {
     grid-template-columns: 1fr;
   }
 
   .map-box {
-    height: 360px;
-    border-radius: 22px;
+    height: 340px;
   }
-
-  .map-floating-card {
-    top: 18px;
-    left: 18px;
-    right: 18px;
-  }
-
-  .map-direction-card {
-    left: 18px;
-    right: 18px;
-    bottom: 18px;
-    width: auto;
-  }
-}
-
-@media (max-width: 520px) {
-  .location-heading h2 {
-    font-size: 11px;
-  }
-
-  .location-heading h2::before,
-  .location-heading h2::after {
-    width: 34px;
-  }
-
-  .location-title span,
-  .location-title strong {
-    font-size: 32px;
-  }
-
-  .location-subtext {
-    font-size: 14px !important;
-  }
-
-  .location-proximity-card {
-    padding: 18px;
-  }
-
-  .location-list-row {
-    grid-template-columns: 26px 1fr;
-  }
-
-  .location-list-row b {
-    grid-column: 2;
-  }
-}
-
-/* ================= RIGHT CARDS EXACT COMPACT FIX ================= */
-
-.location-card-grid {
-  height: 590px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 158px 205px 213px;
-  gap: 14px;
-}
-
-.location-proximity-card {
-  height: 100%;
-  min-height: 0;
-  border-radius: 12px;
-  padding: 14px 18px;
-  background: #fffaf1;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-top: 4px solid #d6bd45;
-  box-shadow: 0 14px 34px rgba(37, 52, 25, 0.16);
-  transition: 0.35s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.location-card-top {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 8px;
-  position: relative;
-  z-index: 2;
-}
-
-.location-icon-box {
-  width: 34px;
-  height: 34px;
-  color: #6f793d;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.location-icon-box svg {
-  width: 24px;
-  height: 24px;
-}
-
-.location-card-top h3 {
-  margin: 0;
-  font-family: "Outfit", sans-serif;
-  font-size: 17px;
-  line-height: 1.05;
-  color: #5f6933;
-  font-weight: 700;
-}
-
-.location-card-top small {
-  display: block;
-  margin-top: 4px;
-  font-family: "Outfit", sans-serif;
-  font-size: 10px;
-  line-height: 1;
-  font-weight: 500;
-  color: rgba(37, 52, 25, 0.58);
-  letter-spacing: 0;
-  text-transform: none;
-}
-
-.location-list {
-  position: relative;
-  z-index: 2;
-  border-top: 1px solid rgba(37, 52, 25, 0.1);
-  padding-top: 6px;
-}
-
-.location-list-row {
-  display: grid;
-  grid-template-columns: 24px 1fr auto;
-  align-items: center;
-  gap: 7px;
-  padding: 5px 0;
-  border-bottom: none;
-}
-
-.location-list-row span {
-  width: 18px;
-  height: 18px;
-  border-radius: 6px;
-  background: rgba(255, 216, 111, 0.22);
-  color: #c86b39;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Outfit", sans-serif;
-  font-size: 8px;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.location-list-row p {
-  margin: 0;
-  font-family: "Outfit", sans-serif;
-  color: #1c1c1c;
-  font-size: 11.6px;
-  line-height: 1.22;
-  font-weight: 500;
-}
-
-.location-list-row b {
-  font-family: "Outfit", sans-serif;
-  color: #c86b39;
-  font-size: 11.6px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.location-wide-card {
-  grid-column: 1 / -1;
-}
-
-.location-wide-card .location-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 28px;
 }
 /* ================= CONTACT PREMIUM SECTION ================= */
 

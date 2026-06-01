@@ -15,41 +15,8 @@ import mapImage from "../assets/images/map.png";
 const googleMapLink =
   "https://www.google.com/maps?q=Guru%20Nanak%20Nagar%2C%20Chapaguri%20Road%2C%20Bongaigaon%2C%20Assam";
 
-const locationGroups = [
-  {
-    title: "Education",
-    icon: School,
-    items: [
-      ["Bongaigaon HS School EM", "2 Min"],
-      ["Bongaigaon College", "5 Min"],
-      ["Little Flower School", "7 Min"],
-    ],
-  },
-  {
-    title: "Connectivity",
-    icon: Train,
-    items: [["New Bongaigaon Railway Station", "8 Min"]],
-  },
-  {
-    title: "Health & Safety",
-    icon: Hospital,
-    items: [
-      ["Lower Assam Hospital & Research Centre", "3 Min"],
-      ["DIGP OPS CRPF", "7 Min"],
-    ],
-  },
-  {
-    title: "Lifestyle & Entertainment",
-    icon: Film,
-    items: [
-      ["Domino's Pizza", "3 Min"],
-      ["Jolly Max Cinemas", "5 Min"],
-      ["Cygnett Hotel", "6 Min"],
-      ["Universal Studio Mall", "6 Min"],
-      ["Reliance Digital", "7 Min"],
-    ],
-  },
-  {
+const locationGroups = {
+  parks: {
     title: "Parks & Landmarks",
     icon: Trees,
     items: [
@@ -62,7 +29,69 @@ const locationGroups = [
       ["Ecological Park Bngn Refinery", "12 Min"],
     ],
   },
-];
+  education: {
+    title: "Education",
+    icon: School,
+    items: [
+      ["Bongaigaon HS School EM", "2 Min"],
+      ["Bongaigaon College", "5 Min"],
+      ["Little Flower School", "7 Min"],
+    ],
+  },
+  connectivity: {
+    title: "Connectivity",
+    icon: Train,
+    items: [["New Bongaigaon Railway Station", "8 Min"]],
+  },
+  health: {
+    title: "Health & Safety",
+    icon: Hospital,
+    items: [
+      ["Lower Assam Hospital & Research Centre", "3 Min"],
+      ["DIGP OPS CRPF", "7 Min"],
+    ],
+  },
+  lifestyle: {
+    title: "Lifestyle & Entertainment",
+    icon: Film,
+    items: [
+      ["Domino's Pizza", "3 Min"],
+      ["Jolly Max Cinemas", "5 Min"],
+      ["Cygnett Hotel", "6 Min"],
+      ["Universal Studio Mall", "6 Min"],
+      ["Reliance Digital", "7 Min"],
+    ],
+  },
+};
+
+const LocationCard = ({ group, className = "" }) => {
+  const Icon = group.icon;
+
+  return (
+    <div className={`location-proximity-card ${className}`}>
+      <div className="location-card-top">
+        <div className="location-icon-box">
+          <Icon size={24} />
+        </div>
+
+        <div>
+          <small>{group.items.length} nearby points</small>
+          <h3>{group.title}</h3>
+        </div>
+      </div>
+
+      <div className="location-list">
+        {group.items.map((item, i) => (
+          <div className="location-list-row" key={i}>
+            <span>{String(i + 1).padStart(2, "0")}</span>
+            <p>{item[0]}</p>
+            <b>{item[1]}</b>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const LocationAdvantage = () => {
   return (
@@ -86,8 +115,8 @@ const LocationAdvantage = () => {
         </p>
       </div>
 
-      <div className="location-container">
-        <div className="location-map-card">
+      <div className="location-layout">
+        <div className="location-left-stack">
           <div className="map-box">
             <img
               className="location-map-img"
@@ -115,47 +144,26 @@ const LocationAdvantage = () => {
               className="map-direction-card"
             >
               <span>
-                <Navigation size={22} />
+                <Navigation size={20} />
               </span>
               <b>Get Directions</b>
             </a>
           </div>
+
+          <div className="location-bottom-cards">
+            <LocationCard group={locationGroups.connectivity} />
+            <LocationCard group={locationGroups.health} />
+          </div>
         </div>
 
-        <div className="location-card-grid">
-          {locationGroups.map((group, index) => {
-            const Icon = group.icon;
+        <LocationCard
+          group={locationGroups.parks}
+          className="location-parks-card"
+        />
 
-            return (
-              <div
-                className={`location-proximity-card ${
-                  index === 4 ? "location-wide-card" : ""
-                }`}
-                key={index}
-              >
-                <div className="location-card-top">
-                  <div className="location-icon-box">
-                    <Icon size={26} />
-                  </div>
-
-                  <div>
-                    <small>{group.items.length} nearby points</small>
-                    <h3>{group.title}</h3>
-                  </div>
-                </div>
-
-                <div className="location-list">
-                  {group.items.map((item, i) => (
-                    <div className="location-list-row" key={i}>
-                      <span>{String(i + 1).padStart(2, "0")}</span>
-                      <p>{item[0]}</p>
-                      <b>{item[1]}</b>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
+        <div className="location-right-stack">
+          <LocationCard group={locationGroups.education} />
+          <LocationCard group={locationGroups.lifestyle} />
         </div>
       </div>
     </section>
