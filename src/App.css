@@ -3968,7 +3968,7 @@ body:has(.thankyou-hero-page) {
   padding: 0 10px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
 }
 
 .sticky-icon {
@@ -4007,18 +4007,29 @@ body:has(.thankyou-hero-page) {
 .sticky-input {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 0 12px;
+  justify-content: flex-start;
+  gap: 6px;
+  padding: 0 11px;
+}
+
+.sticky-input svg {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
 }
 
 .sticky-input input {
-  width: 100%;
+  width: auto;
+  flex: 0 1 auto;
+  min-width: 0;
   border: none;
   outline: none;
   background: transparent !important;
   color: #ffffff;
   font-size: 12px;
   font-weight: 500;
+  padding: 0;
+  margin: 0;
 }
 
 .sticky-input input::placeholder {
