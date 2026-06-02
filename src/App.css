@@ -4419,12 +4419,17 @@ body:has(.thankyou-hero-page) {
   }
 
   .key-loader::after {
-    inset: 18px !important;
+    inset: 0 !important;
     background:
-      linear-gradient(135deg, transparent 0 46%, rgba(185, 94, 47, 0.48) 47% 49%, transparent 50%) top left / 82px 82px no-repeat,
-      linear-gradient(45deg, transparent 0 46%, rgba(120, 131, 68, 0.48) 47% 49%, transparent 50%) top right / 82px 82px no-repeat,
-      linear-gradient(45deg, transparent 0 46%, rgba(185, 94, 47, 0.48) 47% 49%, transparent 50%) bottom left / 82px 82px no-repeat,
-      linear-gradient(135deg, transparent 0 46%, rgba(120, 131, 68, 0.48) 47% 49%, transparent 50%) bottom right / 82px 82px no-repeat !important;
+      linear-gradient(45deg, transparent 0 43%, rgba(185, 94, 47, 0.58) 44% 46%, transparent 47%) top left / 175px 175px no-repeat,
+      linear-gradient(-45deg, transparent 0 43%, rgba(120, 131, 68, 0.58) 44% 46%, transparent 47%) top right / 175px 175px no-repeat,
+      linear-gradient(-45deg, transparent 0 43%, rgba(185, 94, 47, 0.58) 44% 46%, transparent 47%) bottom left / 175px 175px no-repeat,
+      linear-gradient(45deg, transparent 0 43%, rgba(120, 131, 68, 0.58) 44% 46%, transparent 47%) bottom right / 175px 175px no-repeat !important;
+    background-position:
+      -18px 44px,
+      calc(100% + 18px) 44px,
+      -18px calc(100% - 44px),
+      calc(100% + 18px) calc(100% - 44px) !important;
   }
 
   .key-loader-content {
@@ -4477,33 +4482,20 @@ body:has(.thankyou-hero-page) {
     width: 190px !important;
     margin-top: 24px !important;
   }
+}
 
-  @keyframes keyLineGrow {
-    from {
-      width: 0;
-      opacity: 0;
-    }
-
-    to {
-      width: 190px;
-      opacity: 1;
-    }
-  }
-
-  @keyframes keyTitleReveal {
-    from {
-      opacity: 0;
-      transform: translateY(22px) scale(0.96);
-      letter-spacing: 9px;
-      filter: blur(8px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      letter-spacing: 2.4px;
-      filter: blur(0);
-    }
+@media (max-width: 390px) {
+  .key-loader::after {
+    background:
+      linear-gradient(45deg, transparent 0 43%, rgba(185, 94, 47, 0.58) 44% 46%, transparent 47%) top left / 150px 150px no-repeat,
+      linear-gradient(-45deg, transparent 0 43%, rgba(120, 131, 68, 0.58) 44% 46%, transparent 47%) top right / 150px 150px no-repeat,
+      linear-gradient(-45deg, transparent 0 43%, rgba(185, 94, 47, 0.58) 44% 46%, transparent 47%) bottom left / 150px 150px no-repeat,
+      linear-gradient(45deg, transparent 0 43%, rgba(120, 131, 68, 0.58) 44% 46%, transparent 47%) bottom right / 150px 150px no-repeat !important;
+    background-position:
+      -12px 54px,
+      calc(100% + 12px) 54px,
+      -12px calc(100% - 54px),
+      calc(100% + 12px) calc(100% - 54px) !important;
   }
 }
 
@@ -4519,12 +4511,17 @@ body:has(.thankyou-hero-page) {
   }
 
   .key-loader::after {
-    inset: 30px !important;
+    inset: 0 !important;
     background:
-      linear-gradient(135deg, transparent 0 46%, rgba(185, 94, 47, 0.55) 47% 49%, transparent 50%) top left / 120px 120px no-repeat,
-      linear-gradient(45deg, transparent 0 46%, rgba(120, 131, 68, 0.55) 47% 49%, transparent 50%) top right / 120px 120px no-repeat,
-      linear-gradient(45deg, transparent 0 46%, rgba(185, 94, 47, 0.55) 47% 49%, transparent 50%) bottom left / 120px 120px no-repeat,
-      linear-gradient(135deg, transparent 0 46%, rgba(120, 131, 68, 0.55) 47% 49%, transparent 50%) bottom right / 120px 120px no-repeat !important;
+      linear-gradient(45deg, transparent 0 43%, rgba(185, 94, 47, 0.55) 44% 46%, transparent 47%) top left / 230px 230px no-repeat,
+      linear-gradient(-45deg, transparent 0 43%, rgba(120, 131, 68, 0.55) 44% 46%, transparent 47%) top right / 230px 230px no-repeat,
+      linear-gradient(-45deg, transparent 0 43%, rgba(185, 94, 47, 0.55) 44% 46%, transparent 47%) bottom left / 230px 230px no-repeat,
+      linear-gradient(45deg, transparent 0 43%, rgba(120, 131, 68, 0.55) 44% 46%, transparent 47%) bottom right / 230px 230px no-repeat !important;
+    background-position:
+      -18px 46px,
+      calc(100% + 18px) 46px,
+      -18px calc(100% - 46px),
+      calc(100% + 18px) calc(100% - 46px) !important;
   }
 
   .key-logo-ring {
@@ -4549,29 +4546,6 @@ body:has(.thankyou-hero-page) {
 }
 
 
-/* ================= KEY LOADER CORNER LINE EXACT MOBILE FIX ================= */
-
-@media (max-width: 767px) {
-  .key-loader::after {
-    inset: 0 !important;
-    background:
-      linear-gradient(45deg, transparent 0 43%, rgba(185, 94, 47, 0.58) 44% 47%, transparent 48%) top left / 210px 210px no-repeat,
-      linear-gradient(-45deg, transparent 0 43%, rgba(120, 131, 68, 0.58) 44% 47%, transparent 48%) top right / 210px 210px no-repeat,
-      linear-gradient(-45deg, transparent 0 43%, rgba(185, 94, 47, 0.58) 44% 47%, transparent 48%) bottom left / 210px 210px no-repeat,
-      linear-gradient(45deg, transparent 0 43%, rgba(120, 131, 68, 0.58) 44% 47%, transparent 48%) bottom right / 210px 210px no-repeat !important;
-    animation: keyCornerPulse 2.5s ease-in-out infinite !important;
-  }
-}
-
-@media (max-width: 390px) {
-  .key-loader::after {
-    background:
-      linear-gradient(45deg, transparent 0 43%, rgba(185, 94, 47, 0.58) 44% 47%, transparent 48%) top left / 185px 185px no-repeat,
-      linear-gradient(-45deg, transparent 0 43%, rgba(120, 131, 68, 0.58) 44% 47%, transparent 48%) top right / 185px 185px no-repeat,
-      linear-gradient(-45deg, transparent 0 43%, rgba(185, 94, 47, 0.58) 44% 47%, transparent 48%) bottom left / 185px 185px no-repeat,
-      linear-gradient(45deg, transparent 0 43%, rgba(120, 131, 68, 0.58) 44% 47%, transparent 48%) bottom right / 185px 185px no-repeat !important;
-  }
-}
 /* popup */
 .popup-overlay {
   position: fixed;
