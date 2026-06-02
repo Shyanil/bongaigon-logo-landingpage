@@ -17,35 +17,36 @@ const stats = [
 ];
 
 const ongoingProjects = [
-  { name: "Subham Garden", address: "Jorhat, Assam" },
-  { name: "Subham Solitaire", address: "Azara, Guwahati, Assam" },
-  { name: "Subham Ashray", address: "Garal, Guwahati, Assam" },
-   { name: "The Peak", address: "Guwahati" },
+  { name: "Subham Garden", address: "Jorhat" },
+  { name: "Subham Solitaire", address: "Agartala" },
+  { name: "Subham Ashray", address: "Aerocity" },
+   { name: "The Peak", address: "GS Road" },
+    { name: "The Park", address: "GS Jorhat" },
   {
     name: "Subham Park",
     address:
-      "Near Durga Mandir, Gurunanak Nagar, Chapaguri Road, Bongaigaon, Assam - 783380",
+      "Bongaigaon",
   },
-  { name: "Subham Kishori Heights", address: "Guwahati, Assam" },
+  { name: "Subham Kishori Heights", address: "Dibrugarh" },
 ];
 
 const completedProjects = [
-  { name: "Subham Heights", address: "Kahilipara, Guwahati, Assam" },
-  { name: "Subham Enclave", address: "Hatigaon, Guwahati, Assam" },
-  { name: "Subham Park View", address: "Fatasil, Guwahati, Assam" },
-  { name: "Subham Elite", address: "Gandhibasti, Guwahati, Assam" },
-  { name: "Subham Classic", address: "Ambikagiri Nagar, Guwahati, Assam" },
-  { name: "Subham Manjushree", address: "Datalpara, Guwahati, Assam" },
-  { name: "Subham Regency", address: "Hengrabari, Guwahati, Assam" },
-  { name: "Subham Residency", address: "Kharguli, Guwahati, Assam" },
-  { name: "Subham Sapphire", address: "Nalapara, Guwahati, Assam" },
-  { name: "Subham Greens", address: "Lokhra, Guwahati, Assam" },
-  { name: "Subham Buildwell", address: "Zoo Road, Guwahati, Assam" },
-  { name: "Subham Garden", address: "Kalapahar, Guwahati, Assam" },
-  { name: "Subham Velocity", address: "G.S. Road, Guwahati, Assam" },
-  { name: "Subham Redstone", address: "Downtown, Guwahati, Assam" },
-  { name: "Bijay Crescent", address: "Pibco, Guwahati, Assam" },
-  { name: "Subham Square", address: "Lokhra, Guwahati, Assam" },
+  { name: "Subham Heights", address: "Kahilipara" },
+  { name: "Subham Enclave", address: "Hatigaon" },
+  { name: "Subham Park View", address: "Fatasil" },
+  { name: "Subham Elite", address: "Gandhibasti" },
+  { name: "Subham Classic", address: "Ambikagiri Nagar" },
+  { name: "Subham Manjushree", address: "Datalpara" },
+  { name: "Subham Regency", address: "Hengrabari" },
+  { name: "Subham Residency", address: "Kharguli" },
+  { name: "Subham Sapphire", address: "Nalapara" },
+  { name: "Subham Greens", address: "Lokhra" },
+  { name: "Subham Buildwell", address: "Zoo Road" },
+  { name: "Subham Garden", address: "Kalapahar" },
+  { name: "Subham Velocity", address: "G.S. Road" },
+  { name: "Subham Redstone", address: "Downtown" },
+  { name: "Bijay Crescent", address: "Pibco" },
+  { name: "Subham Square", address: "Lokhra" },
 ];
 
 class AboutBuilder extends React.Component {

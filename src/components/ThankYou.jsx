@@ -15,12 +15,11 @@ const ThankYou = () => {
         <img src={logo} alt="Subham Park" className="thankyou-hero-logo" />
 
         <h1>
-          Inquiry <span>Received.</span>
+         Thank you for choosing <span> Subham Park Bongaigoan</span>
         </h1>
 
         <p>
-          Thank you for choosing Subham Park. We have successfully recorded your
-          interest.
+          We have successfully received your request and sincerely appreciate your interest in our project. Our sales team will contact you shortly.
         </p>
 
         <div className="thankyou-hero-buttons">
