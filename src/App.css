@@ -247,7 +247,8 @@ label {
   background: #ffffff;
   display: flex;
   align-items: center;
-  margin-top: -20px;
+  margin-top: 35px !important;
+  box-sizing: border-box;
 }
 
 .hero-bg {
@@ -280,13 +281,19 @@ label {
 .hero-content {
   position: relative;
   z-index: 3;
-  width: 100%;
-  max-width: 1400px;
+
+  /* NAVBAR LOGO ALIGNMENT LOCK */
+  width: min(1560px, 90%);
+  max-width: 1560px;
   margin: 0 auto;
+  padding-left: 25px;
+
   font-family: "Outfit", sans-serif;
-  padding-left: clamp(24px, 5vw, 120px);
   padding-top: 0;
-  transform: translateY(-45px);
+
+  /* HERO TEXT UP/DOWN FIX */
+  transform: translateY(42px) !important;
+
   box-sizing: border-box;
 }
 
@@ -355,7 +362,6 @@ label {
   display: none !important;
 }
 
-/* Price Card - Green */
 .hero-info-card:first-child {
   background: #788344;
   border-color: rgba(255, 216, 111, 0.65);
@@ -373,11 +379,10 @@ label {
 
 .hero-info-card:first-child strong {
   color: #fffaf1;
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: 0.01em;
 }
 
-/* Location Card - Orange */
 .hero-info-card:last-child {
   background: #c86b39;
   border-color: rgba(255, 216, 111, 0.65);
@@ -502,11 +507,13 @@ label {
     height: calc(100vh - 112px);
     min-height: 500px;
     max-height: 650px;
-    margin-top: -55px;
+    margin-top: 25px !important;
   }
 
   .hero-content {
-    transform: translateY(-36px);
+    width: min(1560px, 90%);
+    padding-left: 25px;
+    transform: translateY(36px) !important;
   }
 
   .hero-title {
@@ -564,37 +571,46 @@ label {
 }
 
 
-/* ===== HERO POSITION FINAL FORCE FIX ===== */
+
+
+
+/* ===== FINAL NAVBAR + HERO ALIGNMENT LOCK ===== */
+
+.navbar {
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+}
+
+.navbar-container {
+  max-width: 1560px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
 
 .hero-section {
-  margin-top: -55px !important;
-}
-
-.hero-content {
-  transform: translateY(70px) !important;
-}
-
-/* short height laptop fix */
-@media (max-height: 820px) {
-  .hero-section {
-    margin-top: 0 !important;
-  }
-
-  .hero-content {
-    transform: translateY(62px) !important;
-  }
-}
-
-/* ===== HERO SECTION DOWN FIX ===== */
-
-.hero-section {
+  padding-left: 5% !important;
+  padding-right: 5% !important;
   margin-top: 35px !important;
 }
 
-/* short laptop */
+.hero-content {
+  max-width: 1560px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 25px !important;
+  padding-right: 0 !important;
+  transform: translateY(42px) !important;
+}
+
 @media (max-height: 820px) {
   .hero-section {
     margin-top: 25px !important;
+  }
+
+  .hero-content {
+    transform: translateY(36px) !important;
   }
 }
 /* ================= HIGHLIGHT MOVING LINE ================= */
