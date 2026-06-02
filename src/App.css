@@ -4602,6 +4602,43 @@ body:has(.thankyou-hero-page) {
 }
 
 
+/* ================= KEY LOADER 4 CORNER LINE FINAL FIX ================= */
+
+@media (max-width: 1024px) {
+  .key-loader::after {
+    display: none !important;
+  }
+
+  .key-loader {
+    background:
+      linear-gradient(135deg, transparent 0 46%, rgba(185, 94, 47, 0.55) 47% 49%, transparent 50%) 28px 32px / 150px 150px no-repeat,
+      linear-gradient(45deg, transparent 0 46%, rgba(120, 131, 68, 0.55) 47% 49%, transparent 50%) calc(100% - 178px) 32px / 150px 150px no-repeat,
+      linear-gradient(45deg, transparent 0 46%, rgba(185, 94, 47, 0.55) 47% 49%, transparent 50%) 28px calc(100% - 182px) / 150px 150px no-repeat,
+      linear-gradient(135deg, transparent 0 46%, rgba(120, 131, 68, 0.55) 47% 49%, transparent 50%) calc(100% - 178px) calc(100% - 182px) / 150px 150px no-repeat,
+      radial-gradient(circle at 50% 45%, rgba(120, 131, 68, 0.22), transparent 28%),
+      radial-gradient(circle at 18% 18%, rgba(185, 94, 47, 0.10), transparent 26%),
+      radial-gradient(circle at 82% 82%, rgba(120, 131, 68, 0.10), transparent 26%),
+      linear-gradient(135deg, #F8F4EC 0%, #F1E7D6 48%, #EAE3D6 100%) !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .key-loader {
+    background:
+      linear-gradient(135deg, transparent 0 46%, rgba(185, 94, 47, 0.55) 47% 49%, transparent 50%) 24px 32px / 130px 130px no-repeat,
+      linear-gradient(45deg, transparent 0 46%, rgba(120, 131, 68, 0.55) 47% 49%, transparent 50%) calc(100% - 154px) 32px / 130px 130px no-repeat,
+      linear-gradient(45deg, transparent 0 46%, rgba(185, 94, 47, 0.55) 47% 49%, transparent 50%) 24px calc(100% - 162px) / 130px 130px no-repeat,
+      linear-gradient(135deg, transparent 0 46%, rgba(120, 131, 68, 0.55) 47% 49%, transparent 50%) calc(100% - 154px) calc(100% - 162px) / 130px 130px no-repeat,
+      radial-gradient(circle at 50% 45%, rgba(120, 131, 68, 0.22), transparent 28%),
+      radial-gradient(circle at 18% 18%, rgba(185, 94, 47, 0.10), transparent 26%),
+      radial-gradient(circle at 82% 82%, rgba(120, 131, 68, 0.10), transparent 26%),
+      linear-gradient(135deg, #F8F4EC 0%, #F1E7D6 48%, #EAE3D6 100%) !important;
+  }
+}
+
+
+
+
 /* popup */
 .popup-overlay {
   position: fixed;
