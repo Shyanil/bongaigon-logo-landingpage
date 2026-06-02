@@ -4547,6 +4547,31 @@ body:has(.thankyou-hero-page) {
     letter-spacing: 4px !important;
   }
 }
+
+
+/* ================= KEY LOADER CORNER LINE EXACT MOBILE FIX ================= */
+
+@media (max-width: 767px) {
+  .key-loader::after {
+    inset: 0 !important;
+    background:
+      linear-gradient(45deg, transparent 0 43%, rgba(185, 94, 47, 0.58) 44% 47%, transparent 48%) top left / 210px 210px no-repeat,
+      linear-gradient(-45deg, transparent 0 43%, rgba(120, 131, 68, 0.58) 44% 47%, transparent 48%) top right / 210px 210px no-repeat,
+      linear-gradient(-45deg, transparent 0 43%, rgba(185, 94, 47, 0.58) 44% 47%, transparent 48%) bottom left / 210px 210px no-repeat,
+      linear-gradient(45deg, transparent 0 43%, rgba(120, 131, 68, 0.58) 44% 47%, transparent 48%) bottom right / 210px 210px no-repeat !important;
+    animation: keyCornerPulse 2.5s ease-in-out infinite !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .key-loader::after {
+    background:
+      linear-gradient(45deg, transparent 0 43%, rgba(185, 94, 47, 0.58) 44% 47%, transparent 48%) top left / 185px 185px no-repeat,
+      linear-gradient(-45deg, transparent 0 43%, rgba(120, 131, 68, 0.58) 44% 47%, transparent 48%) top right / 185px 185px no-repeat,
+      linear-gradient(-45deg, transparent 0 43%, rgba(185, 94, 47, 0.58) 44% 47%, transparent 48%) bottom left / 185px 185px no-repeat,
+      linear-gradient(45deg, transparent 0 43%, rgba(120, 131, 68, 0.58) 44% 47%, transparent 48%) bottom right / 185px 185px no-repeat !important;
+  }
+}
 /* popup */
 .popup-overlay {
   position: fixed;
