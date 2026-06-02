@@ -4454,13 +4454,13 @@ body:has(.thankyou-hero-page) {
   }
 
   .key-small-title {
-    font-size: 11px !important;
+    font-size: 9px !important;
     letter-spacing: 5px !important;
     margin-bottom: 14px !important;
   }
 
   .key-loader h1 {
-    font-size: clamp(25px, 8vw, 34px) !important;
+    font-size: 12px !important;
     line-height: 1.18 !important;
     letter-spacing: 2.4px !important;
     max-width: 320px !important;
