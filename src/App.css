@@ -4419,17 +4419,17 @@ body:has(.thankyou-hero-page) {
   }
 
   .key-loader::after {
-    inset: 0 !important;
+    inset: 22px !important;
     background:
-      linear-gradient(45deg, transparent 0 43%, rgba(185, 94, 47, 0.58) 44% 46%, transparent 47%) top left / 175px 175px no-repeat,
-      linear-gradient(-45deg, transparent 0 43%, rgba(120, 131, 68, 0.58) 44% 46%, transparent 47%) top right / 175px 175px no-repeat,
-      linear-gradient(-45deg, transparent 0 43%, rgba(185, 94, 47, 0.58) 44% 46%, transparent 47%) bottom left / 175px 175px no-repeat,
-      linear-gradient(45deg, transparent 0 43%, rgba(120, 131, 68, 0.58) 44% 46%, transparent 47%) bottom right / 175px 175px no-repeat !important;
+      linear-gradient(135deg, transparent 0 46%, rgba(185, 94, 47, 0.55) 47% 49%, transparent 50%) top left / 150px 150px no-repeat,
+      linear-gradient(45deg, transparent 0 46%, rgba(120, 131, 68, 0.55) 47% 49%, transparent 50%) top right / 150px 150px no-repeat,
+      linear-gradient(45deg, transparent 0 46%, rgba(185, 94, 47, 0.55) 47% 49%, transparent 50%) bottom left / 150px 150px no-repeat,
+      linear-gradient(135deg, transparent 0 46%, rgba(120, 131, 68, 0.55) 47% 49%, transparent 50%) bottom right / 150px 150px no-repeat !important;
     background-position:
-      -18px 44px,
-      calc(100% + 18px) 44px,
-      -18px calc(100% - 44px),
-      calc(100% + 18px) calc(100% - 44px) !important;
+      top left,
+      top right,
+      bottom left,
+      bottom right !important;
   }
 
   .key-loader-content {
@@ -4484,21 +4484,6 @@ body:has(.thankyou-hero-page) {
   }
 }
 
-@media (max-width: 390px) {
-  .key-loader::after {
-    background:
-      linear-gradient(45deg, transparent 0 43%, rgba(185, 94, 47, 0.58) 44% 46%, transparent 47%) top left / 150px 150px no-repeat,
-      linear-gradient(-45deg, transparent 0 43%, rgba(120, 131, 68, 0.58) 44% 46%, transparent 47%) top right / 150px 150px no-repeat,
-      linear-gradient(-45deg, transparent 0 43%, rgba(185, 94, 47, 0.58) 44% 46%, transparent 47%) bottom left / 150px 150px no-repeat,
-      linear-gradient(45deg, transparent 0 43%, rgba(120, 131, 68, 0.58) 44% 46%, transparent 47%) bottom right / 150px 150px no-repeat !important;
-    background-position:
-      -12px 54px,
-      calc(100% + 12px) 54px,
-      -12px calc(100% - 54px),
-      calc(100% + 12px) calc(100% - 54px) !important;
-  }
-}
-
 @media (min-width: 768px) and (max-width: 1024px) {
   .key-loader {
     padding: 0 32px !important;
@@ -4511,17 +4496,12 @@ body:has(.thankyou-hero-page) {
   }
 
   .key-loader::after {
-    inset: 0 !important;
+    inset: 30px !important;
     background:
-      linear-gradient(45deg, transparent 0 43%, rgba(185, 94, 47, 0.55) 44% 46%, transparent 47%) top left / 230px 230px no-repeat,
-      linear-gradient(-45deg, transparent 0 43%, rgba(120, 131, 68, 0.55) 44% 46%, transparent 47%) top right / 230px 230px no-repeat,
-      linear-gradient(-45deg, transparent 0 43%, rgba(185, 94, 47, 0.55) 44% 46%, transparent 47%) bottom left / 230px 230px no-repeat,
-      linear-gradient(45deg, transparent 0 43%, rgba(120, 131, 68, 0.55) 44% 46%, transparent 47%) bottom right / 230px 230px no-repeat !important;
-    background-position:
-      -18px 46px,
-      calc(100% + 18px) 46px,
-      -18px calc(100% - 46px),
-      calc(100% + 18px) calc(100% - 46px) !important;
+      linear-gradient(135deg, transparent 0 46%, rgba(185, 94, 47, 0.55) 47% 49%, transparent 50%) top left / 150px 150px no-repeat,
+      linear-gradient(45deg, transparent 0 46%, rgba(120, 131, 68, 0.55) 47% 49%, transparent 50%) top right / 150px 150px no-repeat,
+      linear-gradient(45deg, transparent 0 46%, rgba(185, 94, 47, 0.55) 47% 49%, transparent 50%) bottom left / 150px 150px no-repeat,
+      linear-gradient(135deg, transparent 0 46%, rgba(120, 131, 68, 0.55) 47% 49%, transparent 50%) bottom right / 150px 150px no-repeat !important;
   }
 
   .key-logo-ring {
@@ -4544,7 +4524,6 @@ body:has(.thankyou-hero-page) {
     letter-spacing: 4px !important;
   }
 }
-
 
 /* popup */
 .popup-overlay {
