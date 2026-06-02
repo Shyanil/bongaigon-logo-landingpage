@@ -27,7 +27,7 @@ class Key extends React.Component {
             SUBHAM PARK
           </span>
 <h1>
-  Spotlight on <em>Modern Living</em>
+    A Spectacle <em>Of Lifestyle</em>
 </h1>
 
           <div className="key-line"></div>

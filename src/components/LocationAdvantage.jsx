@@ -41,7 +41,10 @@ const locationGroups = {
   connectivity: {
     title: "Connectivity",
     icon: Train,
-    items: [["New Bongaigaon Railway Station", "8 Min"]],
+    items: [
+      ["New Bongaigaon Railway Station", "8 Min"],
+      ["Lower Assam Bus Stand", "3 Min"],
+    ],
   },
   health: {
     title: "Health & Safety",
@@ -60,6 +63,7 @@ const locationGroups = {
       ["Cygnett Hotel", "6 Min"],
       ["Universal Studio Mall", "6 Min"],
       ["Reliance Digital", "7 Min"],
+      ["Reliance Smart Bazaar", "2 Min"],
     ],
   },
 };

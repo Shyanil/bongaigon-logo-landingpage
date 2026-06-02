@@ -47,8 +47,8 @@ const AboutProject = () => {
                 <Home />
               </div>
               <div>
-                <h3>3BHK & 4BHK</h3>
-                <p>Configurations</p>
+                <h3>Configurations</h3>
+                <p>3BHK & 4BHK</p>
               </div>
             </div>
           </div>

@@ -20,6 +20,7 @@ const ongoingProjects = [
   { name: "Subham Garden", address: "Jorhat, Assam" },
   { name: "Subham Solitaire", address: "Azara, Guwahati, Assam" },
   { name: "Subham Ashray", address: "Garal, Guwahati, Assam" },
+   { name: "The Peak", address: "Guwahati" },
   {
     name: "Subham Park",
     address:
