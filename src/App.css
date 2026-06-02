@@ -5917,123 +5917,105 @@ video {
 
 
 
-/* ===== FINAL MOBILE NAVBAR WITH MENU SHOW ===== */
+/* =========================================================
+   RESPONSIVE CSS ONLY
+   Paste this block at the very end of your CSS file.
+   Desktop design remains unchanged.
+========================================================= */
 
-@media (max-width: 768px) {
-  header.navbar {
-    display: block !important;
-    position: fixed !important;
-    top: 10px !important;
-    left: 0 !important;
+@media (max-width: 1024px) {
+  html,
+  body {
     width: 100% !important;
-    padding: 0 12px !important;
-    z-index: 999999 !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box !important;
+  }
+
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+  }
+
+  section {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .navbar {
+    top: 12px !important;
+    padding-left: 4% !important;
+    padding-right: 4% !important;
     overflow: visible !important;
   }
 
-  header.navbar .navbar-container {
+  .navbar-container {
     width: 100% !important;
-    max-width: none !important;
     height: auto !important;
-    min-height: 106px !important;
-    padding: 10px 12px 9px !important;
-
-    display: grid !important;
-    grid-template-columns: auto auto !important;
-    grid-template-rows: auto auto !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 8px !important;
-
-    background: rgba(248, 244, 236, 0.98) !important;
-    border-radius: 16px !important;
+    min-height: 62px !important;
+    padding: 8px 12px !important;
+    gap: 10px !important;
     overflow: hidden !important;
   }
 
-  header.navbar .navbar-logo-box {
-    grid-column: 1 !important;
-    grid-row: 1 !important;
-    display: flex !important;
+  .navbar-logo-box {
+    flex: 0 0 auto !important;
     width: auto !important;
     height: auto !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    padding-left: 0 !important;
   }
 
-  header.navbar .navbar-logo {
-    width: 88px !important;
-    max-height: 58px !important;
-    transform: none !important;
+  .navbar-logo {
+    width: 112px !important;
+    max-height: 54px !important;
+    transform: translateY(2px) translateX(0) !important;
   }
 
-  header.navbar .navbar-btn {
-    grid-column: 2 !important;
-    grid-row: 1 !important;
-    display: flex !important;
-    height: 40px !important;
-    padding: 0 14px !important;
-    margin: 0 !important;
-    font-size: 9px !important;
-    letter-spacing: 0.08em !important;
-    white-space: nowrap !important;
-  }
-
-  header.navbar .navbar-menu {
-    grid-column: 1 / -1 !important;
-    grid-row: 2 !important;
-
-    display: flex !important;
-    align-items: center !important;
+  .navbar-menu {
+    flex: 1 1 auto !important;
     justify-content: flex-start !important;
-
-    width: 100% !important;
     gap: 18px !important;
-    margin: 0 !important;
-    padding: 8px 2px 2px !important;
-
+    margin-left: 0 !important;
+    padding: 6px 4px !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
     scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 
-  header.navbar .navbar-menu::-webkit-scrollbar {
+  .navbar-menu::-webkit-scrollbar {
     display: none !important;
   }
 
-  header.navbar .navbar-menu a {
-    display: inline-block !important;
+  .navbar-menu a {
+    font-size: 9.5px !important;
+    letter-spacing: 0.08em !important;
     flex: 0 0 auto !important;
+  }
+
+  .navbar-btn {
+    height: 36px !important;
+    padding: 0 14px !important;
     font-size: 9px !important;
-    letter-spacing: 0.12em !important;
-    white-space: nowrap !important;
+    letter-spacing: 0.08em !important;
+    flex: 0 0 auto !important;
   }
 
   .hero-section {
-    padding-top: 145px !important;
-    margin-top: 0 !important;
     height: auto !important;
-    min-height: auto !important;
+    min-height: 650px !important;
     max-height: none !important;
-  }
-
-  .hero-content {
-    transform: none !important;
-  }
-}
-
-
-
-/* ===== FINAL MOBILE HERO RESPONSIVE FIX ===== */
-
-@media (max-width: 768px) {
-  .hero-section {
+    padding: 132px 4% 58px !important;
     margin-top: 0 !important;
-    padding: 155px 22px 48px !important;
-    height: auto !important;
-    min-height: 100vh !important;
-    max-height: none !important;
     align-items: flex-start !important;
-    background: #fffaf1 !important;
+    background: #ffffff !important;
   }
 
   .hero-bg {
@@ -6041,108 +6023,1080 @@ video {
     height: 100% !important;
     object-fit: cover !important;
     object-position: 68% top !important;
-    opacity: 0.32 !important;
+    opacity: 0.5 !important;
   }
 
   .hero-overlay {
     background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.96) 0%,
-      rgba(255, 250, 241, 0.9) 45%,
-      rgba(255, 250, 241, 0.65) 100%
+      180deg,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(248, 244, 236, 0.94) 38%,
+      rgba(248, 244, 236, 0.82) 68%,
+      rgba(255, 255, 255, 0.72) 100%
     ) !important;
   }
 
   .hero-content {
     width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 !important;
+    max-width: 620px !important;
     margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     transform: none !important;
   }
 
   .hero-title {
-    font-size: 39px !important;
-    line-height: 1.02 !important;
-    letter-spacing: 0.02em !important;
-    margin: 0 0 18px !important;
+    font-size: clamp(42px, 7vw, 58px) !important;
+    line-height: 0.98 !important;
+    margin-bottom: 16px !important;
   }
 
   .hero-title span {
-    font-size: 43px !important;
-    line-height: 1.02 !important;
-    margin: 8px 0 8px 0 !important;
+    font-size: clamp(46px, 7.5vw, 64px) !important;
+    margin-left: 0 !important;
+  }
+
+  .hero-description,
+  .hero-description p {
+    max-width: 100% !important;
   }
 
   .hero-description p {
-    max-width: 100% !important;
-    font-size: 14.5px !important;
+    font-size: 15px !important;
     line-height: 1.65 !important;
     text-align: left !important;
-    margin-bottom: 22px !important;
+  }
+
+  .hero-info {
+    max-width: 100% !important;
+    gap: 14px !important;
+  }
+
+  .hero-info-card {
+    min-height: 88px !important;
+  }
+
+  .hero-buttons {
+    max-width: 100% !important;
+  }
+
+  .about-project-container,
+  .contact-container,
+  .about-builder-container,
+  .builder-content,
+  .footer-container,
+  .simple-footer-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .about-project-section,
+  .amenities-section,
+  .gallery-section,
+  .floorplan-section,
+  .location-section,
+  .contact-premium-section,
+  .about-builder-section,
+  .footer-premium {
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+
+  .about-project-container {
+    grid-template-columns: 1fr !important;
+    gap: 26px !important;
+  }
+
+  .about-project-left {
+    margin-left: 0 !important;
+    padding-top: 10px !important;
+  }
+
+  .about-project-left h2,
+  .about-project-left h2 strong,
+  .amenities-heading p,
+  .amenities-heading p span,
+  .amenities-heading p strong,
+  .location-title span,
+  .location-title strong,
+  .builder-heading h2,
+  .builder-heading h2 span,
+  .builder-heading h2 strong {
+    font-size: clamp(38px, 7vw, 54px) !important;
+  }
+
+  .about-project-text {
+    max-width: 100% !important;
+  }
+
+  .about-project-image-box {
+    width: 100% !important;
+    height: 420px !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .about-project-features {
+    max-width: 100% !important;
+    flex-wrap: wrap !important;
+  }
+
+  .amenities-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: auto !important;
+    gap: 16px !important;
+  }
+
+  .gallery-card,
+  .gallery-card-1,
+  .gallery-card-2,
+  .gallery-card-3,
+  .gallery-card-4,
+  .gallery-card-5,
+  .gallery-card-6,
+  .gallery-card-7,
+  .gallery-card-8,
+  .gallery-card-9,
+  .gallery-card-10 {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    height: 270px !important;
+  }
+
+  .gallery-card-1 {
+    grid-column: span 2 !important;
+    height: 390px !important;
+  }
+
+  .gallery-view-cursor {
+    display: none !important;
+  }
+
+  .gallery-card {
+    cursor: pointer !important;
+  }
+
+  .floorplan-luxury-grid,
+  .floorplan-luxury-grid.master-only {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .floorplan-left-panel {
+    padding: 0 !important;
+  }
+
+  .floorplan-left-panel p {
+    max-width: 100% !important;
+  }
+
+  .floorplan-hero-frame,
+  .floorplan-luxury-grid.master-only .floorplan-hero-frame {
+    height: 460px !important;
+  }
+
+  .floorplan-right-panel {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .floorplan-right-panel button {
+    min-height: 104px !important;
+  }
+
+  .location-title {
+    white-space: normal !important;
+  }
+
+  .location-layout,
+  .location-left-stack,
+  .location-right-stack,
+  .location-bottom-cards {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+  }
+
+  .location-layout {
+    gap: 16px !important;
+  }
+
+  .map-box {
+    height: 390px !important;
+  }
+
+  .location-proximity-card {
+    min-height: auto !important;
+  }
+
+  .location-parks-card {
+    grid-column: auto !important;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .contact-left,
+  .contact-form-card {
+    width: 100% !important;
+  }
+
+  .form-row,
+  .booking-form,
+  .bottom-booking-form,
+  .site-visit-form {
+    grid-template-columns: 1fr !important;
+  }
+
+  .builder-content,
+  .builder-projects-grid,
+  .builder-stats-grid,
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .builder-logo-box,
+  .builder-intro-card,
+  .builder-projects-card,
+  .builder-strength-bar {
+    width: 100% !important;
+  }
+
+  .desktop-sticky-form,
+  .floating-booking-form {
+    left: 4% !important;
+    right: 4% !important;
+    width: auto !important;
+    max-width: none !important;
+    padding: 12px !important;
+    border-radius: 24px !important;
+  }
+
+  .sticky-left {
+    display: none !important;
+  }
+
+  .sticky-input,
+  .sticky-select,
+  .sticky-submit {
+    min-width: 0 !important;
+  }
+
+  .popup-form {
+    width: min(92vw, 460px) !important;
+    max-height: 88vh !important;
+    overflow-y: auto !important;
+  }
+
+  .thankyou-hero-content {
+    width: 92% !important;
+    max-width: 620px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html,
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .navbar {
+    top: 10px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .navbar-container {
+    min-height: 60px !important;
+    padding: 8px 10px !important;
+    border-radius: 14px !important;
+  }
+
+  .navbar-logo {
+    width: 92px !important;
+    max-height: 48px !important;
+  }
+
+  .navbar-menu {
+    gap: 15px !important;
+    padding: 5px 2px !important;
+  }
+
+  .navbar-menu a {
+    font-size: 8.6px !important;
+    letter-spacing: 0.06em !important;
+  }
+
+  .navbar-menu a::after {
+    bottom: -6px !important;
+  }
+
+  .navbar-btn {
+    height: 34px !important;
+    padding: 0 10px !important;
+    font-size: 8px !important;
+    gap: 6px !important;
+  }
+
+  .navbar-btn svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  .hero-section {
+    min-height: 720px !important;
+    padding: 124px 20px 48px !important;
+    margin-top: 0 !important;
+  }
+
+  .hero-bg {
+    object-position: 70% top !important;
+    opacity: 0.38 !important;
+  }
+
+  .hero-content {
+    max-width: 100% !important;
+  }
+
+  .hero-title {
+    font-size: clamp(36px, 11vw, 46px) !important;
+    line-height: 1 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero-title span {
+    font-size: clamp(40px, 12vw, 52px) !important;
+    line-height: 1.02 !important;
+    margin: 6px 0 8px 0 !important;
+  }
+
+  .hero-description p {
+    font-size: 14px !important;
+    line-height: 1.62 !important;
+    margin-bottom: 20px !important;
   }
 
   .hero-info {
     flex-direction: column !important;
-    max-width: 100% !important;
-    gap: 14px !important;
+    gap: 12px !important;
     margin-bottom: 22px !important;
   }
 
   .hero-info-card {
     width: 100% !important;
-    min-height: 96px !important;
-    padding: 18px 20px !important;
-    border-radius: 20px !important;
-  }
-
-  .hero-info-card small {
-    font-size: 10px !important;
-    margin-bottom: 10px !important;
+    min-height: 86px !important;
+    padding: 16px 18px !important;
+    border-radius: 18px !important;
   }
 
   .hero-info-card:first-child strong {
-    font-size: 24px !important;
+    font-size: 22px !important;
   }
 
   .hero-info-card:last-child strong {
-    font-size: 17px !important;
-    line-height: 1.35 !important;
+    font-size: 16px !important;
   }
 
   .hero-buttons {
     flex-direction: column !important;
     align-items: stretch !important;
-    gap: 16px !important;
-    max-width: 100% !important;
+    gap: 15px !important;
   }
 
   .hero-btn-brochure {
     width: 100% !important;
-    height: 54px !important;
-    border-radius: 14px !important;
+    height: 52px !important;
+    border-radius: 13px !important;
   }
 
   .hero-btn-explore {
-    justify-content: flex-start !important;
-    padding-left: 4px !important;
+    width: max-content !important;
+  }
+
+  .highlight-marquee-section {
+    margin-top: 22px !important;
+    margin-bottom: 22px !important;
+  }
+
+  .about-project-section,
+  .amenities-section,
+  .gallery-section,
+  .floorplan-section,
+  .location-section,
+  .contact-premium-section,
+  .about-builder-section,
+  .footer-premium {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .about-project-section {
+    padding-top: 44px !important;
+  }
+
+  .about-project-label,
+  .floorplan-label,
+  .contact-section-label {
+    font-size: 11px !important;
+    letter-spacing: 1.8px !important;
+  }
+
+  .about-project-label::before,
+  .amenities-heading h2::before,
+  .gallery-heading h2::before,
+  .location-heading h2::before,
+  .location-heading h2::after {
+    width: 42px !important;
+  }
+
+  .about-project-left h2,
+  .about-project-left h2 strong,
+  .floorplan-left-panel h2,
+  .floorplan-left-panel h2 strong,
+  .amenities-heading p,
+  .amenities-heading p span,
+  .amenities-heading p strong,
+  .gallery-heading p span,
+  .gallery-heading p strong,
+  .location-title span,
+  .location-title strong,
+  .builder-heading h2,
+  .builder-heading h2 span,
+  .builder-heading h2 strong {
+    font-size: clamp(34px, 10.5vw, 44px) !important;
+    line-height: 1.06 !important;
+  }
+
+  .about-project-text,
+  .amenity-card p,
+  .gallery-heading small,
+  .location-subtext,
+  .floorplan-left-panel p,
+  .builder-intro-text {
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+  }
+
+  .about-project-image-box {
+    height: 300px !important;
+  }
+
+  .about-project-features {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .about-project-feature {
+    width: 100% !important;
+  }
+
+  .amenities-section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .amenities-heading {
+    margin-bottom: 26px !important;
+  }
+
+  .amenities-heading h2,
+  .gallery-heading h2,
+  .location-heading h2 {
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+    gap: 10px !important;
+  }
+
+  .amenities-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+
+  .amenity-card {
+    min-height: auto !important;
+    padding: 22px 18px !important;
+    border-radius: 18px !important;
+  }
+
+  .amenity-icon {
+    margin-bottom: 18px !important;
+  }
+
+  .amenities-visit-btn,
+  .gallery-visit-btn,
+  .contact-submit-btn {
+    width: 100% !important;
+    height: 54px !important;
+    padding: 0 22px !important;
+    font-size: 14px !important;
+    border-radius: 999px !important;
+  }
+
+  .gallery-section {
+    padding-top: 56px !important;
+    padding-bottom: 78px !important;
+  }
+
+  .gallery-heading {
+    margin-bottom: 30px !important;
+  }
+
+  .gallery-heading p {
+    margin-top: 10px !important;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+
+  .gallery-card,
+  .gallery-card-1,
+  .gallery-card-2,
+  .gallery-card-3,
+  .gallery-card-4,
+  .gallery-card-5,
+  .gallery-card-6,
+  .gallery-card-7,
+  .gallery-card-8,
+  .gallery-card-9,
+  .gallery-card-10 {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    height: 250px !important;
+    border-radius: 16px !important;
+  }
+
+  .gallery-card-1 {
+    height: 300px !important;
+  }
+
+  .gallery-overlay,
+  .gallery-card-3 .gallery-overlay,
+  .gallery-card-4 .gallery-overlay,
+  .gallery-card-5 .gallery-overlay,
+  .gallery-card-6 .gallery-overlay,
+  .gallery-card-7 .gallery-overlay,
+  .gallery-card-8 .gallery-overlay,
+  .gallery-card-9 .gallery-overlay,
+  .gallery-card-10 .gallery-overlay {
+    left: 16px !important;
+    right: 16px !important;
+    bottom: 16px !important;
+    padding-left: 12px !important;
+  }
+
+  .gallery-overlay h3,
+  .gallery-card-3 .gallery-overlay h3,
+  .gallery-card-4 .gallery-overlay h3,
+  .gallery-card-5 .gallery-overlay h3,
+  .gallery-card-6 .gallery-overlay h3,
+  .gallery-card-7 .gallery-overlay h3,
+  .gallery-card-8 .gallery-overlay h3,
+  .gallery-card-9 .gallery-overlay h3,
+  .gallery-card-10 .gallery-overlay h3 {
+    font-size: 21px !important;
+  }
+
+  .gallery-overlay p {
+    font-size: 13px !important;
+  }
+
+  .gallery-btn-wrap {
+    margin-top: 28px !important;
+  }
+
+  .gallery-btn-wrap::before,
+  .gallery-btn-wrap::after {
+    display: none !important;
+  }
+
+  .gallery-lightbox,
+  .floorplan-modal {
+    padding: 70px 14px 34px !important;
+  }
+
+  .gallery-lightbox-image-wrap {
+    width: 100% !important;
+    height: 58vh !important;
+  }
+
+  .gallery-close,
+  .floorplan-modal-close {
+    top: 18px !important;
+    right: 18px !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .gallery-nav {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .gallery-prev {
+    left: 12px !important;
+  }
+
+  .gallery-next {
+    right: 12px !important;
+  }
+
+  .gallery-zoom-controls {
+    right: 16px !important;
+    bottom: 16px !important;
+    gap: 10px !important;
+    font-size: 14px !important;
+  }
+
+  .gallery-zoom-controls button {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .floorplan-section {
+    padding-top: 52px !important;
+    padding-bottom: 68px !important;
+  }
+
+  .floorplan-tabs-luxury {
+    width: 100% !important;
+    height: auto !important;
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+    padding: 8px !important;
+    border-radius: 22px !important;
+    margin-bottom: 34px !important;
+  }
+
+  .floorplan-tabs-luxury button {
+    height: 52px !important;
+    font-size: 12px !important;
+  }
+
+  .floorplan-detail-list {
+    gap: 15px !important;
+  }
+
+  .floorplan-detail-list div {
+    grid-template-columns: 40px 1fr !important;
+  }
+
+  .floorplan-detail-list svg {
+    width: 38px !important;
+    height: 38px !important;
+    padding: 9px !important;
+  }
+
+  .floorplan-hero-frame,
+  .floorplan-luxury-grid.master-only .floorplan-hero-frame {
+    height: 350px !important;
+    padding: 22px !important;
+    border-radius: 18px !important;
+  }
+
+  .floorplan-hero-frame::before {
+    inset: 10px !important;
+  }
+
+  .floorplan-hero-frame img,
+  .floorplan-luxury-grid.master-only .floorplan-hero-frame img {
+    max-height: 250px !important;
+  }
+
+  .floorplan-drag-note {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 12px !important;
+    bottom: 12px !important;
+  }
+
+  .floorplan-drag-note span {
+    width: 44px !important;
+  }
+
+  .floorplan-right-panel {
+    grid-template-columns: 1fr !important;
+  }
+
+  .floorplan-right-panel button {
+    grid-template-columns: 64px 1fr 16px !important;
+    min-height: 96px !important;
+    padding: 14px !important;
+  }
+
+  .floorplan-right-panel button img {
+    width: 64px !important;
+    height: 52px !important;
+  }
+
+  .floorplan-right-panel button i {
+    left: 8px !important;
+    top: 8px !important;
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 10px !important;
+    transform: none !important;
+  }
+
+  .floorplan-right-panel strong {
+    font-size: 18px !important;
+  }
+
+  .floorplan-modal-box {
+    width: 94vw !important;
+    height: 68vh !important;
+    border-radius: 18px !important;
+  }
+
+  .floorplan-modal-tools {
+    right: 14px !important;
+    bottom: 14px !important;
+    gap: 8px !important;
+  }
+
+  .floorplan-modal-tools button {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .location-section {
+    padding-top: 52px !important;
+    padding-bottom: 58px !important;
+  }
+
+  .location-heading {
+    margin-bottom: 28px !important;
+  }
+
+  .location-title {
+    white-space: normal !important;
+  }
+
+  .map-box {
+    height: 300px !important;
+    border-radius: 16px !important;
+  }
+
+  .map-floating-card {
+    top: 14px !important;
+    left: 14px !important;
+    right: 14px !important;
+    width: auto !important;
+    padding: 12px 14px !important;
+  }
+
+  .map-direction-card {
+    left: 14px !important;
+    bottom: 14px !important;
+    width: auto !important;
+    max-width: calc(100% - 28px) !important;
+    padding: 13px 15px !important;
+  }
+
+  .location-proximity-card {
+    padding: 20px 16px !important;
+    border-radius: 16px !important;
+  }
+
+  .location-card-top {
+    gap: 10px !important;
+  }
+
+  .location-icon-box {
+    width: 38px !important;
+    height: 38px !important;
+    flex: 0 0 38px !important;
+  }
+
+  .location-list {
+    gap: 0 !important;
+  }
+
+  .location-list-row {
+    grid-template-columns: auto 1fr auto !important;
+    gap: 8px !important;
+  }
+
+  .location-list-row span,
+  .location-list-row b,
+  .location-list-row strong {
+    font-size: 12px !important;
+  }
+
+  .contact-premium-section {
+    padding-top: 56px !important;
+    padding-bottom: 64px !important;
+  }
+
+  .contact-highlights {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .contact-form-card {
+    padding: 22px 18px !important;
+    border-radius: 20px !important;
+  }
+
+  .input-box,
+  .select-box,
+  .textarea-box,
+  .popup-input,
+  .sticky-input,
+  .sticky-select {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .input-box input,
+  .select-box select,
+  .textarea-box textarea,
+  .popup-input input,
+  .popup-input select,
+  .popup-input textarea,
+  .sticky-input input,
+  .sticky-select select {
+    width: 100% !important;
+    font-size: 14px !important;
+  }
+
+  .builder-top-area {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .builder-content,
+  .builder-projects-grid,
+  .builder-stats-grid,
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .builder-stat-card,
+  .builder-intro-card,
+  .builder-projects-card,
+  .builder-strength-bar {
+    border-radius: 18px !important;
+  }
+
+  .builder-project-pills,
+  .completed-pill {
+    grid-template-columns: 1fr !important;
+  }
+
+  .footer-premium,
+  .simple-footer-container {
+    text-align: center !important;
+  }
+
+  .footer-info-block {
+    justify-content: center !important;
+  }
+
+  .footer-logo {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .footer-bottom-copy {
+    text-align: center !important;
+  }
+
+  .desktop-sticky-form,
+  .floating-booking-form {
+    display: none !important;
+  }
+
+  .mobile-sticky-btn {
+    display: flex !important;
+    left: 14px !important;
+    right: 14px !important;
+    width: auto !important;
+    bottom: 14px !important;
+    height: 54px !important;
+    border-radius: 999px !important;
+    z-index: 9998 !important;
+  }
+
+  .popup-overlay {
+    padding: 18px !important;
+  }
+
+  .popup-form {
+    width: 100% !important;
+    max-width: 430px !important;
+    padding: 24px 18px !important;
+    border-radius: 22px !important;
+  }
+
+  .popup-close {
+    top: 14px !important;
+    right: 14px !important;
+  }
+
+  .popup-submit {
+    width: 100% !important;
+    height: 52px !important;
+  }
+
+  .thankyou-hero-page {
+    min-height: 100vh !important;
+    padding: 90px 20px 54px !important;
+  }
+
+  .thankyou-hero-content {
+    width: 100% !important;
+  }
+
+  .thankyou-hero-logo {
+    max-width: 150px !important;
+  }
+
+  .thankyou-hero-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 14px !important;
+  }
+
+  .thankyou-hero-home,
+  .thankyou-hero-download {
+    width: 100% !important;
   }
 }
 
 @media (max-width: 420px) {
+  .navbar-container {
+    gap: 8px !important;
+  }
+
+  .navbar-logo {
+    width: 82px !important;
+  }
+
+  .navbar-menu {
+    gap: 12px !important;
+  }
+
+  .navbar-menu a {
+    font-size: 8px !important;
+  }
+
+  .navbar-btn {
+    padding: 0 8px !important;
+    font-size: 7.5px !important;
+  }
+
   .hero-section {
-    padding: 150px 20px 44px !important;
+    padding: 118px 16px 44px !important;
+    min-height: 700px !important;
   }
 
   .hero-title {
-    font-size: 36px !important;
+    font-size: 34px !important;
   }
 
   .hero-title span {
-    font-size: 41px !important;
+    font-size: 39px !important;
   }
 
   .hero-description p {
+    font-size: 13.5px !important;
+  }
+
+  .hero-info-card {
+    padding: 15px 16px !important;
+  }
+
+  .about-project-section,
+  .amenities-section,
+  .gallery-section,
+  .floorplan-section,
+  .location-section,
+  .contact-premium-section,
+  .about-builder-section,
+  .footer-premium {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .about-project-left h2,
+  .about-project-left h2 strong,
+  .floorplan-left-panel h2,
+  .floorplan-left-panel h2 strong,
+  .amenities-heading p,
+  .amenities-heading p span,
+  .amenities-heading p strong,
+  .gallery-heading p span,
+  .gallery-heading p strong,
+  .location-title span,
+  .location-title strong,
+  .builder-heading h2,
+  .builder-heading h2 span,
+  .builder-heading h2 strong {
+    font-size: 34px !important;
+  }
+
+  .about-project-image-box {
+    height: 260px !important;
+  }
+
+  .gallery-card,
+  .gallery-card-1,
+  .gallery-card-2,
+  .gallery-card-3,
+  .gallery-card-4,
+  .gallery-card-5,
+  .gallery-card-6,
+  .gallery-card-7,
+  .gallery-card-8,
+  .gallery-card-9,
+  .gallery-card-10 {
+    height: 228px !important;
+  }
+
+  .gallery-card-1 {
+    height: 270px !important;
+  }
+
+  .floorplan-hero-frame,
+  .floorplan-luxury-grid.master-only .floorplan-hero-frame {
+    height: 315px !important;
+    padding: 18px !important;
+  }
+
+  .floorplan-hero-frame img,
+  .floorplan-luxury-grid.master-only .floorplan-hero-frame img {
+    max-height: 220px !important;
+  }
+
+  .map-box {
+    height: 270px !important;
+  }
+
+  .map-floating-card h4 {
     font-size: 14px !important;
+  }
+
+  .map-floating-card p,
+  .map-direction-card b {
+    font-size: 12px !important;
+  }
+
+  .location-proximity-card {
+    padding: 18px 14px !important;
+  }
+
+  .contact-form-card,
+  .popup-form {
+    padding: 22px 16px !important;
   }
 }
