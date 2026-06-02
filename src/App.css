@@ -4400,6 +4400,208 @@ body:has(.thankyou-hero-page) {
 
 
 
+
+
+
+/* ================= KEY LOADER RESPONSIVE FIX ================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .key-loader {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100svh !important;
+    padding: 0 32px !important;
+    box-sizing: border-box !important;
+  }
+
+  .key-loader::before {
+    width: 620px !important;
+    height: 620px !important;
+    filter: blur(34px) !important;
+  }
+
+  .key-loader::after {
+    inset: 34px !important;
+    background:
+      linear-gradient(135deg, transparent 0 46%, rgba(185, 94, 47, 0.55) 47% 49%, transparent 50%) top left / 150px 150px no-repeat,
+      linear-gradient(45deg, transparent 0 46%, rgba(120, 131, 68, 0.55) 47% 49%, transparent 50%) top right / 150px 150px no-repeat,
+      linear-gradient(45deg, transparent 0 46%, rgba(185, 94, 47, 0.55) 47% 49%, transparent 50%) bottom left / 150px 150px no-repeat,
+      linear-gradient(135deg, transparent 0 46%, rgba(120, 131, 68, 0.55) 47% 49%, transparent 50%) bottom right / 150px 150px no-repeat !important;
+  }
+
+  .key-loader-content {
+    width: 100% !important;
+    max-width: 720px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .key-logo-ring {
+    width: 132px !important;
+    height: 132px !important;
+    margin: 0 auto 30px !important;
+  }
+
+  .key-logo-ring::before {
+    inset: -18px !important;
+  }
+
+  .key-logo-ring::after {
+    inset: -34px !important;
+  }
+
+  .key-logo-ring img {
+    width: 84px !important;
+    height: auto !important;
+  }
+
+  .key-small-title {
+    font-size: 13px !important;
+    letter-spacing: 7px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .key-loader h1 {
+    font-size: clamp(38px, 5.2vw, 50px) !important;
+    line-height: 1.14 !important;
+    letter-spacing: 3.5px !important;
+    max-width: 720px !important;
+    margin: 0 auto !important;
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+  }
+
+  .key-loader h1 em {
+    font-style: normal !important;
+  }
+
+  .key-line {
+    width: 230px !important;
+    margin: 28px auto 0 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .key-loader {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100svh !important;
+    min-height: 100svh !important;
+    padding: 0 18px !important;
+    box-sizing: border-box !important;
+  }
+
+  .key-loader::before {
+    width: 440px !important;
+    height: 440px !important;
+    filter: blur(30px) !important;
+  }
+
+  .key-loader::after {
+    inset: 22px !important;
+    background:
+      linear-gradient(135deg, transparent 0 46%, rgba(185, 94, 47, 0.55) 47% 49%, transparent 50%) top left / 150px 150px no-repeat,
+      linear-gradient(45deg, transparent 0 46%, rgba(120, 131, 68, 0.55) 47% 49%, transparent 50%) top right / 150px 150px no-repeat,
+      linear-gradient(45deg, transparent 0 46%, rgba(185, 94, 47, 0.55) 47% 49%, transparent 50%) bottom left / 150px 150px no-repeat,
+      linear-gradient(135deg, transparent 0 46%, rgba(120, 131, 68, 0.55) 47% 49%, transparent 50%) bottom right / 150px 150px no-repeat !important;
+  }
+
+  .key-loader-content {
+    width: 100% !important;
+    max-width: 330px !important;
+    text-align: center !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .key-logo-ring {
+    width: 112px !important;
+    height: 112px !important;
+    margin: 0 auto 28px !important;
+  }
+
+  .key-logo-ring::before {
+    inset: -14px !important;
+  }
+
+  .key-logo-ring::after {
+    inset: -26px !important;
+  }
+
+  .key-logo-ring img {
+    width: 72px !important;
+    height: auto !important;
+  }
+
+  .key-small-title {
+    font-size: 11px !important;
+    letter-spacing: 5px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .key-loader h1 {
+    font-size: clamp(26px, 8.2vw, 34px) !important;
+    line-height: 1.18 !important;
+    letter-spacing: 2.4px !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+  }
+
+  .key-loader h1 em {
+    display: block !important;
+    margin-top: 4px !important;
+    font-style: normal !important;
+  }
+
+  .key-line {
+    width: 190px !important;
+    margin: 24px auto 0 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .key-loader::after {
+    inset: 18px !important;
+    background-size:
+      130px 130px,
+      130px 130px,
+      130px 130px,
+      130px 130px !important;
+  }
+
+  .key-loader-content {
+    max-width: 300px !important;
+  }
+
+  .key-logo-ring {
+    width: 104px !important;
+    height: 104px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .key-logo-ring img {
+    width: 66px !important;
+  }
+
+  .key-small-title {
+    font-size: 10px !important;
+    letter-spacing: 4px !important;
+  }
+
+  .key-loader h1 {
+    font-size: clamp(24px, 8vw, 30px) !important;
+    letter-spacing: 2px !important;
+    max-width: 290px !important;
+  }
+
+  .key-line {
+    width: 170px !important;
+  }
+}
+
+
 /* popup */
 .popup-overlay {
   position: fixed;
