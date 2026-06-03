@@ -7274,6 +7274,35 @@ body:has(.thankyou-hero-page) {
     margin-top: 86px !important;
   }
 
+  .floorplan-section {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .floorplan-luxury-grid {
+    order: 0 !important;
+  }
+
+  .floorplan-tabs-luxury {
+    order: 1 !important;
+    margin-top: 24px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .floorplan-modal {
+    order: 2 !important;
+  }
+
+  .floorplan-left-panel h2 {
+    font-size: clamp(32px, 9vw, 40px) !important;
+    line-height: 1.04 !important;
+  }
+
+  .floorplan-left-panel h2 strong {
+    font-size: clamp(32px, 9vw, 40px) !important;
+  }
+
   .amenities-section {
     padding: 48px 5% 44px !important;
     overflow: hidden !important;
