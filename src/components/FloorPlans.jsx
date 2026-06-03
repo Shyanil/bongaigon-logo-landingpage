@@ -77,6 +77,35 @@ class FloorPlans extends React.Component {
     document.body.classList.remove("floor-modal-open");
   }
 
+  renderTabs = (extraClass = "") => {
+    const { activeTab } = this.state;
+
+    return (
+      <div className={`floorplan-tabs-luxury ${extraClass}`}>
+        <button
+          className={activeTab === "master" ? "active" : ""}
+          onClick={() => this.setTab("master")}
+        >
+          <LayoutPanelLeft size={18} /> Master Plan
+        </button>
+
+        <button
+          className={activeTab === "unit" ? "active" : ""}
+          onClick={() => this.setTab("unit")}
+        >
+          <Grid3X3 size={18} /> Unit Plan
+        </button>
+
+        <button
+          className={activeTab === "floor" ? "active" : ""}
+          onClick={() => this.setTab("floor")}
+        >
+          <Layers size={18} /> Floor Plan
+        </button>
+      </div>
+    );
+  };
+
   render() {
     const { activeTab, activeIndex, modalOpen, modalIndex, zoom } = this.state;
     const currentPlans = plans[activeTab];
@@ -85,28 +114,7 @@ class FloorPlans extends React.Component {
 
     return (
       <section className="floorplan-section" id="floor-plans">
-        <div className="floorplan-tabs-luxury">
-          <button
-            className={activeTab === "master" ? "active" : ""}
-            onClick={() => this.setTab("master")}
-          >
-            <LayoutPanelLeft size={18} /> Master Plan
-          </button>
-
-          <button
-            className={activeTab === "unit" ? "active" : ""}
-            onClick={() => this.setTab("unit")}
-          >
-            <Grid3X3 size={18} /> Unit Plan
-          </button>
-
-          <button
-            className={activeTab === "floor" ? "active" : ""}
-            onClick={() => this.setTab("floor")}
-          >
-            <Layers size={18} /> Floor Plan
-          </button>
-        </div>
+        {this.renderTabs("floorplan-tabs-desktop")}
 
         <div
           className={
@@ -147,6 +155,8 @@ class FloorPlans extends React.Component {
                 <strong>Available</strong>
               </div>
             </div>
+
+            {this.renderTabs("floorplan-tabs-mobile-only")}
           </div>
 
           <div

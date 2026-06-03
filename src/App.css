@@ -8047,34 +8047,37 @@ body:has(.thankyou-hero-page) {
 }
 
 
-/* FORCE FLOORPLAN TABS BELOW AVAILABLE - MOBILE ONLY */
+.floorplan-tabs-mobile-only {
+  display: none !important;
+}
 
 @media (max-width: 768px) {
-  .floorplan-section {
-    display: flex !important;
-    flex-direction: column !important;
+  .floorplan-tabs-desktop {
+    display: none !important;
   }
 
-  .floorplan-tabs-luxury {
-    order: 2 !important;
-    margin: 0 0 14px !important;
+  .floorplan-tabs-mobile-only {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 5px !important;
+    width: 100% !important;
+    margin: 14px 0 14px !important;
+    padding: 5px !important;
+    border-radius: 14px !important;
   }
 
-  .floorplan-luxury-grid,
-  .floorplan-luxury-grid.master-only {
-    display: flex !important;
-    flex-direction: column !important;
+  .floorplan-tabs-mobile-only button {
+    height: 42px !important;
+    padding: 0 5px !important;
+    border-radius: 11px !important;
+    font-size: 8.5px !important;
+    letter-spacing: 0.25px !important;
+    gap: 4px !important;
+    white-space: nowrap !important;
   }
 
-  .floorplan-left-panel {
-    order: 1 !important;
-  }
-
-  .floorplan-hero-frame {
-    order: 3 !important;
-  }
-
-  .floorplan-right-panel {
-    order: 4 !important;
+  .floorplan-tabs-mobile-only button svg {
+    width: 13px !important;
+    height: 13px !important;
   }
 }
