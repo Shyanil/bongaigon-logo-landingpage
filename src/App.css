@@ -208,44 +208,47 @@ label {
     }
 
     .navbar-btn {
-      /* Turn existing CTA button into compact icon slot on mobile while preserving click handler */
-      width: 48px !important;
-      height: 44px !important;
-      padding: 0 !important;
-      border-radius: 12px !important;
+      /* Keep Book a Visit visible on mobile but slightly slimmer */
+      height: 40px !important;
+      padding: 0 12px !important;
+      border-radius: 10px !important;
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      background: rgba(120,131,68,0.95) !important;
+      background: #788344 !important;
       transition: transform 220ms ease, background 220ms ease !important;
       position: relative !important;
       overflow: visible !important;
+      gap: 8px !important;
+      font-size: 11px !important;
     }
 
-    .navbar-btn span { display: none !important; }
-    .navbar-btn svg { display: none !important; }
-
-    /* Hamburger lines (3) using pseudo elements */
-    .navbar-btn::before,
-    .navbar-btn::after {
+    /* Create a separate visual hamburger using the container so Book button stays functioning */
+    .navbar-container::before {
       content: "";
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: #f8f4ec;
-      border-radius: 2px;
-      transition: transform 220ms ease, opacity 220ms ease, top 220ms ease;
       position: absolute;
+      right: 96px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 18px;
+      display: block;
+      pointer-events: auto;
     }
 
-    .navbar-btn::before { top: 14px; }
-    .navbar-btn::after { top: 28px; }
-    /* middle line via box-shadow */
-    .navbar-btn {
-      box-shadow: 0 -6px 0 0 #f8f4ec inset;
+    .navbar-container::before {
+      background-image: linear-gradient(#f8f4ec 0 0);
+      box-shadow: 0 -6px 0 0 #f8f4ec inset, 0 0 0 0 transparent;
     }
 
-    /* When header has focus within (user taps the button) show mobile menu */
+    /* draw three small lines for hamburger using box-shadow trick */
+    .navbar-container::before {
+      box-shadow: 0 -6px 0 0 #f8f4ec, 0 0 0 0 transparent, 0 6px 0 0 #f8f4ec;
+      border-radius: 2px;
+    }
+
+    /* When header is hovered/tapped show mobile menu (hover works as first-tap on many touch devices) */
+    .navbar-container:hover .navbar-menu,
     .navbar-container:focus-within .navbar-menu {
       display: flex !important;
       position: fixed !important;
@@ -323,6 +326,79 @@ label {
 
     /* Make menu links touch-friendly and prevent overflow */
     .navbar-menu { max-height: calc(100vh - 130px) !important; overflow-y: auto !important; -webkit-overflow-scrolling: touch !important; }
+  }
+
+  @media (max-width: 768px) {
+    /* HERO - compact price & location cards side-by-side */
+    .hero-description {
+      max-width: 100% !important;
+      padding-right: 12px !important;
+    }
+
+    .hero-info {
+      display: flex !important;
+      gap: 10px !important;
+      flex-wrap: nowrap !important;
+      margin: 0 0 16px !important;
+      max-width: 100% !important;
+      align-items: stretch !important;
+    }
+
+    .hero-info-card {
+      flex: 1 1 50% !important;
+      min-height: 60px !important;
+      padding: 10px 12px !important;
+      border-radius: 12px !important;
+      box-shadow: 0 10px 26px rgba(37,52,25,0.12) !important;
+    }
+
+    .hero-info-card small {
+      font-size: 9px !important;
+      margin-bottom: 6px !important;
+      letter-spacing: 0.12em !important;
+    }
+
+    .hero-info-card:first-child strong {
+      font-size: 16px !important;
+    }
+
+    .hero-info-card:last-child strong {
+      font-size: 13px !important;
+      line-height: 1.25 !important;
+    }
+
+    /* HERO BUTTONS - keep side-by-side and compact */
+    .hero-buttons {
+      display: flex !important;
+      gap: 10px !important;
+      align-items: center !important;
+      flex-wrap: nowrap !important;
+      margin-top: 6px !important;
+    }
+
+    .hero-btn-brochure {
+      width: calc(50% - 6px) !important;
+      height: 44px !important;
+      padding: 0 12px !important;
+      border-radius: 10px !important;
+      font-size: 12px !important;
+    }
+
+    .hero-btn-explore {
+      width: calc(50% - 6px) !important;
+      height: 44px !important;
+      padding: 0 10px !important;
+      justify-content: center !important;
+      font-size: 12px !important;
+      gap: 8px !important;
+    }
+
+    /* reduce hero title spacing slightly on small devices */
+    .hero-title { font-size: clamp(20px, 5.4vw, 36px) !important; }
+    .hero-title span { font-size: clamp(20px, 6vw, 34px) !important; margin-left: 4px !important; }
+
+    /* Ensure no overflow from hero content */
+    .hero-section { height: auto !important; min-height: 420px !important; padding-bottom: 22px !important; }
   }
 
 
