@@ -10,6 +10,8 @@ class Navbar extends React.Component {
     this.state = {
       menuOpen: false,
     };
+
+    this.navbarRef = React.createRef();
   }
 
   navItems = [
@@ -22,6 +24,11 @@ class Navbar extends React.Component {
     { name: "About", id: "about-builder" },
   ];
 
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleOutsideClick);
+    document.addEventListener("touchstart", this.handleOutsideClick);
+  }
+
   componentDidUpdate() {
     if (this.state.menuOpen) {
       document.body.classList.add("mobile-nav-open");
@@ -32,10 +39,23 @@ class Navbar extends React.Component {
 
   componentWillUnmount() {
     document.body.classList.remove("mobile-nav-open");
+    document.removeEventListener("mousedown", this.handleOutsideClick);
+    document.removeEventListener("touchstart", this.handleOutsideClick);
   }
+
+  handleOutsideClick = (e) => {
+    if (
+      this.state.menuOpen &&
+      this.navbarRef.current &&
+      !this.navbarRef.current.contains(e.target)
+    ) {
+      this.closeMenu();
+    }
+  };
 
   handleBookVisit = (e) => {
     e.preventDefault();
+    this.closeMenu();
 
     if (this.props.onOpenPopup) {
       this.props.onOpenPopup();
@@ -43,10 +63,8 @@ class Navbar extends React.Component {
   };
 
   toggleMenu = (e) => {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
+    e.preventDefault();
+    e.stopPropagation();
 
     this.setState((prev) => ({
       menuOpen: !prev.menuOpen,
@@ -59,7 +77,7 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <header className="navbar">
+      <header className="navbar" ref={this.navbarRef}>
         <div className="navbar-container">
           <a href="#home" className="navbar-logo-box" onClick={this.closeMenu}>
             <img
@@ -95,8 +113,9 @@ class Navbar extends React.Component {
             className={`navbar-hamburger ${
               this.state.menuOpen ? "active" : ""
             }`}
-            onPointerDown={this.toggleMenu}
+            onClick={this.toggleMenu}
             aria-label="Toggle menu"
+            aria-expanded={this.state.menuOpen}
           >
             <span></span>
             <span></span>
