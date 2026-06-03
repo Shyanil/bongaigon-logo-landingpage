@@ -5759,3 +5759,10 @@ body:has(.thankyou-hero-page) {
     display: none !important;
   }
 }
+
+
+@media (min-width: 769px) {
+  .navbar-hamburger {
+    display: none !important;
+  }
+}
