@@ -200,6 +200,132 @@ label {
   }
 }
 
+  /* ================= MOBILE NAVBAR - HAMBURGER (CSS only, no JSX changes) ================= */
+  @media (max-width: 768px) {
+    /* Hide desktop links, show compact hamburger button */
+    .navbar-menu {
+      display: none !important;
+    }
+
+    .navbar-btn {
+      /* Turn existing CTA button into compact icon slot on mobile while preserving click handler */
+      width: 48px !important;
+      height: 44px !important;
+      padding: 0 !important;
+      border-radius: 12px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      background: rgba(120,131,68,0.95) !important;
+      transition: transform 220ms ease, background 220ms ease !important;
+      position: relative !important;
+      overflow: visible !important;
+    }
+
+    .navbar-btn span { display: none !important; }
+    .navbar-btn svg { display: none !important; }
+
+    /* Hamburger lines (3) using pseudo elements */
+    .navbar-btn::before,
+    .navbar-btn::after {
+      content: "";
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #f8f4ec;
+      border-radius: 2px;
+      transition: transform 220ms ease, opacity 220ms ease, top 220ms ease;
+      position: absolute;
+    }
+
+    .navbar-btn::before { top: 14px; }
+    .navbar-btn::after { top: 28px; }
+    /* middle line via box-shadow */
+    .navbar-btn {
+      box-shadow: 0 -6px 0 0 #f8f4ec inset;
+    }
+
+    /* When header has focus within (user taps the button) show mobile menu */
+    .navbar-container:focus-within .navbar-menu {
+      display: flex !important;
+      position: fixed !important;
+      left: 12px !important;
+      right: 12px !important;
+      top: calc(100% + 8px) !important;
+      z-index: 999999 !important;
+      flex-direction: column !important;
+      gap: 12px !important;
+      padding: 14px !important;
+      border-radius: 14px !important;
+      background: rgba(248, 244, 236, 0.98) !important;
+      box-shadow: 0 18px 60px rgba(31,49,34,0.12) !important;
+      transform-origin: top center !important;
+      transform: translateY(0) scale(1) !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      transition: transform 260ms ease, opacity 260ms ease !important;
+    }
+
+    /* Hidden state (default) for transition smoothness */
+    .navbar-menu {
+      display: flex !important;
+      position: fixed !important;
+      left: 12px !important;
+      right: 12px !important;
+      top: calc(100% + 8px) !important;
+      z-index: 999999 !important;
+      flex-direction: column !important;
+      gap: 12px !important;
+      padding: 14px !important;
+      border-radius: 14px !important;
+      background: rgba(248, 244, 236, 0.98) !important;
+      box-shadow: 0 18px 60px rgba(31,49,34,0.06) !important;
+      transform-origin: top center !important;
+      transform: translateY(-6px) scale(0.995) !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transition: transform 260ms ease, opacity 260ms ease !important;
+    }
+
+    .navbar-menu a {
+      display: block !important;
+      padding: 12px 16px !important;
+      border-radius: 10px !important;
+      background: transparent !important;
+      color: #2f2f2f !important;
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      text-transform: none !important;
+      letter-spacing: 0.04em !important;
+      text-align: left !important;
+    }
+
+    /* Ensure logo remains aligned and CTA still visible */
+    .navbar-logo {
+      width: 96px !important;
+      transform: none !important;
+    }
+
+    /* When menu open, change hamburger to close styling */
+    .navbar-container:focus-within .navbar-btn::before {
+      transform: translateY(7px) rotate(45deg) !important;
+      top: 50% !important;
+    }
+
+    .navbar-container:focus-within .navbar-btn::after {
+      transform: translateY(-7px) rotate(-45deg) !important;
+      top: 50% !important;
+    }
+
+    .navbar-container:focus-within .navbar-btn {
+      box-shadow: none !important;
+    }
+
+    /* Make menu links touch-friendly and prevent overflow */
+    .navbar-menu { max-height: calc(100vh - 130px) !important; overflow-y: auto !important; -webkit-overflow-scrolling: touch !important; }
+  }
+
+
 @media (max-width: 1150px) {
   .navbar {
     padding: 0 4%;
