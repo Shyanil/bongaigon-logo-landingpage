@@ -8004,7 +8004,7 @@ body:has(.thankyou-hero-page) {
   }
 
   .contact-form-card {
-    margin-top: 0 !important;
+    margin-top: 20px !important;
     justify-self: stretch !important;
     max-width: 100% !important;
     padding: 34px 22px 30px !important;
