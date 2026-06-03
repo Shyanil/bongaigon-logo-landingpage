@@ -4,8 +4,15 @@ import "../App.css";
 
 import logoimage from "../assets/images/logoimage.png";
 
-const Navbar = ({ onOpenPopup }) => {
-  const navItems = [
+class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuOpen: false,
+    };
+  }
+
+  navItems = [
     { name: "Overview", id: "about" },
     { name: "Amenities", id: "amenities" },
     { name: "Gallery", id: "gallery" },
@@ -15,44 +22,72 @@ const Navbar = ({ onOpenPopup }) => {
     { name: "About", id: "about-builder" },
   ];
 
-  const handleBookVisit = (e) => {
+  handleBookVisit = (e) => {
     e.preventDefault();
 
-    if (onOpenPopup) {
-      onOpenPopup();
+    if (this.props.onOpenPopup) {
+      this.props.onOpenPopup();
     }
   };
 
-  return (
-    <header className="navbar">
-      <div className="navbar-container">
-        <a href="#home" className="navbar-logo-box">
-          <img
-            src={logoimage}
-            alt="Subham Park Logo"
-            className="navbar-logo"
-          />
-        </a>
+  toggleMenu = () => {
+    this.setState((prev) => ({
+      menuOpen: !prev.menuOpen,
+    }));
+  };
 
-        <nav className="navbar-menu">
-          {navItems.map((item) => (
-            <a key={item.id} href={`#${item.id}`}>
-              {item.name}
-            </a>
-          ))}
-        </nav>
+  closeMenu = () => {
+    this.setState({ menuOpen: false });
+  };
 
-        <button
-          type="button"
-          className="navbar-btn"
-          onClick={handleBookVisit}
-        >
-          <Phone size={16} />
-          <span>Book a Site Visit</span>
-        </button>
-      </div>
-    </header>
-  );
-};
+  render() {
+    return (
+      <header className="navbar">
+        <div className="navbar-container">
+          <a href="#home" className="navbar-logo-box">
+            <img
+              src={logoimage}
+              alt="Subham Park Logo"
+              className="navbar-logo"
+            />
+          </a>
+
+          <nav
+            className={`navbar-menu ${
+              this.state.menuOpen ? "navbar-menu-open" : ""
+            }`}
+          >
+            {this.navItems.map((item) => (
+              <a key={item.id} href={`#${item.id}`} onClick={this.closeMenu}>
+                {item.name}
+              </a>
+            ))}
+          </nav>
+
+          <button
+            type="button"
+            className="navbar-btn"
+            onClick={this.handleBookVisit}
+          >
+            <Phone size={16} />
+            <span>Book a Site Visit</span>
+          </button>
+
+          <button
+            type="button"
+            className={`navbar-hamburger ${
+              this.state.menuOpen ? "active" : ""
+            }`}
+            onClick={this.toggleMenu}
+            aria-label="Toggle Menu"
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
+    );
+  }
+}
 
 export default Navbar;
