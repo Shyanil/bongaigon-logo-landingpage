@@ -3286,6 +3286,90 @@ body.gallery-modal-open {
     width: 46px;
     height: 46px;
   }
+
+/* ================= GALLERY MOBILE FIX ================= */
+
+@media (max-width: 768px) {
+
+  .gallery-section {
+    padding: 48px 5% 60px !important;
+  }
+
+  .gallery-heading {
+    margin-bottom: 24px !important;
+  }
+
+  .gallery-heading h2 {
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+  }
+
+  .gallery-heading p,
+  .gallery-heading p span,
+  .gallery-heading p strong {
+    font-size: 48px !important;
+    line-height: 0.95 !important;
+  }
+
+  .gallery-heading-description,
+  .gallery-heading-desc,
+  .gallery-description {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    max-width: 100% !important;
+    margin-top: 14px !important;
+  }
+
+  /* 2 COLUMN GRID */
+
+  .gallery-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .gallery-card {
+    height: 165px !important;
+    min-height: 165px !important;
+    border-radius: 14px !important;
+  }
+
+  .gallery-card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .gallery-overlay {
+    padding: 10px !important;
+  }
+
+  .gallery-overlay h3 {
+    font-size: 14px !important;
+    line-height: 1.15 !important;
+  }
+
+  .gallery-overlay p {
+    display: none !important;
+  }
+}
+
+/* EXTRA SMALL DEVICE */
+
+@media (max-width: 420px) {
+
+  .gallery-heading p,
+  .gallery-heading p span,
+  .gallery-heading p strong {
+    font-size: 40px !important;
+  }
+
+  .gallery-card {
+    height: 145px !important;
+    min-height: 145px !important;
+  }
+}
+
 }
 
 /* ================= LUXURY FLOOR PLAN SECTION ================= */
