@@ -7277,21 +7277,34 @@ body:has(.thankyou-hero-page) {
   .floorplan-section {
     display: flex !important;
     flex-direction: column !important;
+    align-items: stretch !important;
   }
 
-  .floorplan-luxury-grid {
+  .floorplan-section > .floorplan-luxury-grid {
     order: 0 !important;
+    width: 100% !important;
   }
 
-  .floorplan-tabs-luxury {
+  .floorplan-section > .floorplan-tabs-luxury {
     order: 1 !important;
     margin-top: 24px !important;
     width: 100% !important;
     max-width: 100% !important;
   }
 
-  .floorplan-modal {
+  .floorplan-section > .floorplan-modal {
     order: 2 !important;
+    width: 100% !important;
+  }
+
+  .floorplan-tabs-luxury {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+  }
+
+  .floorplan-tabs-luxury button {
+    width: 100% !important;
   }
 
   .floorplan-left-panel h2 {
