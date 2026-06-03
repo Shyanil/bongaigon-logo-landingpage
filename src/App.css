@@ -4448,11 +4448,11 @@ body:has(.thankyou-hero-page) {
   }
 
   .key-logo-ring::before {
-    inset: -22px !important;
+    display: none !important;
   }
 
   .key-logo-ring::after {
-    inset: -40px !important;
+    display: none !important;
   }
 
   .key-logo-ring img {
@@ -4536,11 +4536,11 @@ body:has(.thankyou-hero-page) {
   }
 
   .key-logo-ring::before {
-    inset: -20px !important;
+    display: none !important;
   }
 
   .key-logo-ring::after {
-    inset: -36px !important;
+    display: none !important;
   }
 
   .key-logo-ring img {
@@ -4621,11 +4621,11 @@ body:has(.thankyou-hero-page) {
   }
 
   .key-logo-ring::before {
-    inset: -18px !important;
+    display: none !important;
   }
 
   .key-logo-ring::after {
-    inset: -32px !important;
+    display: none !important;
   }
 
   .key-logo-ring img {
@@ -4706,11 +4706,11 @@ body:has(.thankyou-hero-page) {
   }
 
   .key-logo-ring::before {
-    inset: -16px !important;
+    display: none !important;
   }
 
   .key-logo-ring::after {
-    inset: -28px !important;
+    display: none !important;
   }
 
   .key-logo-ring img {
