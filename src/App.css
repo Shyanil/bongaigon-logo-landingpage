@@ -553,6 +553,14 @@ label {
       transition: transform 260ms ease, opacity 260ms ease !important;
     }
 
+    .navbar-menu.navbar-menu-open {
+      display: flex !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) scale(1) !important;
+      pointer-events: auto !important;
+    }
+
     .navbar-menu a {
       display: block !important;
       padding: 12px 16px !important;
@@ -6177,6 +6185,7 @@ body:has(.thankyou-hero-page) {
 
   .navbar-menu.navbar-menu-open,
   body.mobile-nav-open .navbar-menu {
+    display: flex !important;
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
