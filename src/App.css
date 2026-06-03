@@ -7301,6 +7301,23 @@ body:has(.thankyou-hero-page) {
     width: 100% !important;
   }
 
+  .floorplan-right-panel {
+    order: 1 !important;
+    width: 100% !important;
+  }
+
+  .floorplan-hero-frame {
+    order: 2 !important;
+    height: clamp(260px, 48vw, 300px) !important;
+    min-height: 260px !important;
+  }
+
+  .floorplan-hero-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
   .floorplan-tabs-luxury {
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
