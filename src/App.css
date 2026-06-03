@@ -8017,134 +8017,85 @@ body:has(.thankyou-hero-page) {
   }
 }
 
-/* ================= ABOUT BUILDER MOBILE EXACT 2x2 FIX ================= */
+/* ===== ABOUT BUILDER MOBILE FINAL REAL FIX ===== */
 
-@media (max-width: 768px) {
-  .about-builder-section {
-    padding: 0 !important;
-    margin: 0 !important;
+@media only screen and (max-width: 768px) {
+  section.about-builder-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     background: #6f793d !important;
-    overflow: hidden !important;
   }
 
-  .builder-top-area {
+  section.about-builder-section .builder-top-area {
     margin: 0 !important;
-    padding: 54px 5% 42px !important;
-    background:
-      radial-gradient(circle at 15% 20%, rgba(255, 216, 111, 0.11), transparent 28%),
-      radial-gradient(circle at 90% 10%, rgba(255, 216, 111, 0.08), transparent 30%),
-      linear-gradient(135deg, #788344 0%, #6f793d 58%, #5f6933 100%) !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 50px 5% 42px !important;
+    background: linear-gradient(
+      135deg,
+      #788344 0%,
+      #6f793d 60%,
+      #5f6933 100%
+    ) !important;
   }
 
-  .builder-intro-card {
-    width: 100% !important;
-    margin: 0 0 26px !important;
-    padding: 26px 20px !important;
-    border-radius: 28px !important;
-  }
-
-  .builder-intro-text p {
-    font-size: 18px !important;
-    line-height: 1.75 !important;
-    text-align: center !important;
-    margin: 0 !important;
-  }
-
-  .builder-stats-grid {
-    width: 100% !important;
-    max-width: 100% !important;
-
+  section.about-builder-section .builder-mobile-stats-grid {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 14px !important;
-
-    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 24px 0 0 !important;
     padding: 0 !important;
   }
 
-  .builder-stat-card {
+  section.about-builder-section .builder-mobile-stat-card {
     width: 100% !important;
-    min-height: 172px !important;
-    padding: 20px 10px 18px !important;
+    min-height: 168px !important;
+    padding: 18px 8px !important;
     border-radius: 24px !important;
+    background: #f8f4ec !important;
 
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-
     text-align: center !important;
-    background: rgba(248, 244, 236, 0.96) !important;
-    box-shadow: 0 18px 40px rgba(37, 52, 25, 0.16) !important;
+
+    box-shadow: 0 18px 38px rgba(37, 52, 25, 0.18) !important;
   }
 
-  .builder-stat-card span {
-    width: 66px !important;
-    height: 66px !important;
+  section.about-builder-section .builder-mobile-stat-card span {
+    width: 64px !important;
+    height: 64px !important;
     margin: 0 0 14px !important;
     border-radius: 50% !important;
+    background: rgba(120, 131, 68, 0.1) !important;
 
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+  }
 
-    background: rgba(120, 131, 68, 0.10) !important;
+  section.about-builder-section .builder-mobile-stat-card span svg {
+    width: 32px !important;
+    height: 32px !important;
     color: #c86b39 !important;
   }
 
-  .builder-stat-card span svg {
-    width: 32px !important;
-    height: 32px !important;
-  }
-
-  .builder-stat-card h3 {
-    font-size: 34px !important;
+  section.about-builder-section .builder-mobile-stat-card h3 {
+    font-size: 30px !important;
     line-height: 1 !important;
-    margin: 0 0 14px !important;
-    color: #111 !important;
+    margin: 0 0 10px !important;
     font-family: "Outfit", sans-serif !important;
     font-weight: 800 !important;
+    color: #111 !important;
   }
 
-  .builder-stat-card h3::after {
-    content: "";
-    display: block;
-    width: 38px;
-    height: 2px;
-    background: #c86b39;
-    margin: 12px auto 0;
-    border-radius: 20px;
-  }
-
-  .builder-stat-card p {
-    font-size: 15px !important;
+  section.about-builder-section .builder-mobile-stat-card p {
+    font-size: 14px !important;
     line-height: 1.25 !important;
     margin: 0 !important;
     color: #111 !important;
-    font-weight: 500 !important;
-    text-align: center !important;
-  }
-
-  .builder-projects-card {
-    margin: 0 5% 50px !important;
-  }
-}
-
-@media (max-width: 380px) {
-  .builder-stats-grid {
-    gap: 10px !important;
-  }
-
-  .builder-stat-card {
-    min-height: 155px !important;
-    padding: 18px 8px !important;
-  }
-
-  .builder-stat-card h3 {
-    font-size: 28px !important;
-  }
-
-  .builder-stat-card p {
-    font-size: 13px !important;
   }
 }

@@ -1,10 +1,5 @@
 ﻿import React from "react";
-import {
-  Building2,
-  Ruler,
-  HardHat,
-  Users,
-} from "lucide-react";
+import { Building2, Ruler, HardHat, Users } from "lucide-react";
 import "../App.css";
 
 import subhamLogo from "../assets/images/aboutbuilderlogo.png";
@@ -20,12 +15,11 @@ const ongoingProjects = [
   { name: "Subham Garden", address: "Jorhat" },
   { name: "Subham Solitaire", address: "Agartala" },
   { name: "Subham Ashray", address: "Aerocity" },
-   { name: "The Peak", address: "GS Road" },
-    { name: "The Park", address: "GS Jorhat" },
+  { name: "The Peak", address: "GS Road" },
+  { name: "The Park", address: "GS Jorhat" },
   {
     name: "Subham Park",
-    address:
-      "Bongaigaon",
+    address: "Bongaigaon",
   },
   { name: "Subham Kishori Heights", address: "Dibrugarh" },
 ];
@@ -99,12 +93,15 @@ class AboutBuilder extends React.Component {
             </div>
           </div>
 
-          <div className="builder-stats-grid builder-reveal">
+          <div className="builder-stats-grid builder-mobile-stats-grid builder-reveal">
             {stats.map((item, index) => {
               const Icon = item.icon;
 
               return (
-                <div className="builder-stat-card" key={index}>
+                <div
+                  className="builder-stat-card builder-mobile-stat-card"
+                  key={index}
+                >
                   <span>
                     <Icon size={26} />
                   </span>
