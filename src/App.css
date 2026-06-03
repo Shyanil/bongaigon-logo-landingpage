@@ -7284,20 +7284,16 @@ body:has(.thankyou-hero-page) {
     align-items: stretch !important;
   }
 
-  .floorplan-section > .floorplan-luxury-grid {
+  .floorplan-luxury-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    align-items: stretch !important;
+    width: 100% !important;
+  }
+
+  .floorplan-left-panel {
     order: 0 !important;
-    width: 100% !important;
-  }
-
-  .floorplan-section > .floorplan-tabs-luxury {
-    order: 1 !important;
-    margin-top: 24px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .floorplan-section > .floorplan-modal {
-    order: 2 !important;
     width: 100% !important;
   }
 
@@ -7308,20 +7304,21 @@ body:has(.thankyou-hero-page) {
 
   .floorplan-hero-frame {
     order: 2 !important;
-    height: clamp(260px, 48vw, 300px) !important;
-    min-height: 260px !important;
+    height: clamp(240px, 42vw, 280px) !important;
+    min-height: 240px !important;
   }
 
   .floorplan-hero-frame img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: contain !important;
+    object-fit: cover !important;
   }
 
   .floorplan-tabs-luxury {
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     gap: 6px !important;
+    order: -1 !important;
   }
 
   .floorplan-tabs-luxury button {
