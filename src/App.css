@@ -2767,8 +2767,8 @@ label {
   font-size: 12px;
   text-transform: uppercase;
   color: #ffd86f;
-  font-weight: 500;
-  letter-spacing: 6px;
+  font-weight: 600;
+  letter-spacing: 2px;
   margin: 0;
 }
 
@@ -3892,9 +3892,9 @@ body.floor-modal-open {
   font-size: 12px;
   line-height: 1;
   color: #ffd86f;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
+  letter-spacing: 2px;
 }
 
 .location-heading h2::before,
@@ -7688,9 +7688,6 @@ body:has(.thankyou-hero-page) {
 
   .about-project-left h2,
   .builder-heading h2,
-  .amenities-heading h2,
-  .gallery-heading h2,
-  .location-heading h2,
   .floorplan-left-panel h2 {
     font-size: 34px !important;
     line-height: 1.05 !important;
@@ -7698,8 +7695,6 @@ body:has(.thankyou-hero-page) {
 
   .about-project-left h2 strong,
   .builder-heading h2 strong,
-  .gallery-heading h2 strong,
-  .location-heading h2 strong,
   .floorplan-left-panel h2 strong {
     font-size: 34px !important;
   }
