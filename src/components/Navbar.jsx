@@ -1,5 +1,5 @@
 ﻿import React from "react";
-import { Phone } from "lucide-react";
+import { Phone, X } from "lucide-react";
 import "../App.css";
 
 import logoimage from "../assets/images/logoimage.png";
@@ -10,8 +10,6 @@ class Navbar extends React.Component {
     this.state = {
       menuOpen: false,
     };
-
-    this.navbarRef = React.createRef();
   }
 
   navItems = [
@@ -24,34 +22,13 @@ class Navbar extends React.Component {
     { name: "About", id: "about-builder" },
   ];
 
-  componentDidMount() {
-    document.addEventListener("mousedown", this.handleOutsideClick);
-    document.addEventListener("touchstart", this.handleOutsideClick);
-  }
-
   componentDidUpdate() {
-    if (this.state.menuOpen) {
-      document.body.classList.add("mobile-nav-open");
-    } else {
-      document.body.classList.remove("mobile-nav-open");
-    }
+    document.body.classList.toggle("mobile-nav-open", this.state.menuOpen);
   }
 
   componentWillUnmount() {
     document.body.classList.remove("mobile-nav-open");
-    document.removeEventListener("mousedown", this.handleOutsideClick);
-    document.removeEventListener("touchstart", this.handleOutsideClick);
   }
-
-  handleOutsideClick = (e) => {
-    if (
-      this.state.menuOpen &&
-      this.navbarRef.current &&
-      !this.navbarRef.current.contains(e.target)
-    ) {
-      this.closeMenu();
-    }
-  };
 
   handleBookVisit = (e) => {
     e.preventDefault();
@@ -75,53 +52,96 @@ class Navbar extends React.Component {
     this.setState({ menuOpen: false });
   };
 
+  goToSection = (id) => {
+    this.closeMenu();
+
+    setTimeout(() => {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 120);
+  };
+
   render() {
     return (
-      <header className="navbar" ref={this.navbarRef}>
-        <div className="navbar-container">
-          <a href="#home" className="navbar-logo-box" onClick={this.closeMenu}>
-            <img
-              src={logoimage}
-              alt="Subham Park Logo"
-              className="navbar-logo"
-            />
-          </a>
+      <>
+        <header className="navbar">
+          <div className="navbar-container">
+            <a href="#home" className="navbar-logo-box" onClick={this.closeMenu}>
+              <img
+                src={logoimage}
+                alt="Subham Park Logo"
+                className="navbar-logo"
+              />
+            </a>
 
-          <nav
-            className={`navbar-menu ${
-              this.state.menuOpen ? "navbar-menu-open" : ""
-            }`}
+            <nav className="navbar-menu">
+              {this.navItems.map((item) => (
+                <a key={item.id} href={`#${item.id}`}>
+                  {item.name}
+                </a>
+              ))}
+            </nav>
+
+            <button
+              type="button"
+              className="navbar-btn"
+              onClick={this.handleBookVisit}
+            >
+              <Phone size={16} />
+              <span>Book a Site Visit</span>
+            </button>
+
+            <button
+              type="button"
+              className={`navbar-hamburger ${
+                this.state.menuOpen ? "active" : ""
+              }`}
+              onClick={this.toggleMenu}
+              aria-label="Toggle menu"
+            >
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </header>
+
+        <div
+          className={`mobile-full-menu ${
+            this.state.menuOpen ? "mobile-full-menu-open" : ""
+          }`}
+        >
+          <button
+            type="button"
+            className="mobile-full-menu-close"
+            onClick={this.closeMenu}
+            aria-label="Close menu"
           >
+            <X size={30} />
+          </button>
+
+          <div className="mobile-full-menu-links">
             {this.navItems.map((item) => (
-              <a key={item.id} href={`#${item.id}`} onClick={this.closeMenu}>
+              <button
+                type="button"
+                key={item.id}
+                onClick={() => this.goToSection(item.id)}
+              >
                 {item.name}
-              </a>
+              </button>
             ))}
-          </nav>
+          </div>
 
           <button
             type="button"
-            className="navbar-btn"
+            className="mobile-full-menu-cta"
             onClick={this.handleBookVisit}
           >
-            <Phone size={16} />
-            <span>Book a Site Visit</span>
-          </button>
-
-          <button
-            type="button"
-            className={`navbar-hamburger ${
-              this.state.menuOpen ? "active" : ""
-            }`}
-            onClick={this.toggleMenu}
-            aria-label="Toggle menu"
-            aria-expanded={this.state.menuOpen}
-          >
-            <span></span>
-            <span></span>
+            Contact / Enquire Now
           </button>
         </div>
-      </header>
+      </>
     );
   }
 }
