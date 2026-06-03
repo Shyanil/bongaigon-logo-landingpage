@@ -6067,7 +6067,7 @@ body:has(.thankyou-hero-page) {
 
 
 
-/* ========== FINAL WORKING MOBILE NAVBAR FIX ========== */
+/* ========== FINAL TAP-FIX MOBILE NAVBAR ========== */
 
 @media (max-width: 768px) {
   .navbar {
@@ -6084,6 +6084,13 @@ body:has(.thankyou-hero-page) {
     overflow: visible !important;
     position: relative !important;
     z-index: 999999 !important;
+  }
+
+  .navbar-container::before,
+  .navbar-container::after {
+    display: none !important;
+    content: none !important;
+    pointer-events: none !important;
   }
 
   .navbar-logo-box {
@@ -6103,8 +6110,8 @@ body:has(.thankyou-hero-page) {
 
   .navbar-hamburger {
     display: flex !important;
-    width: 42px !important;
-    height: 42px !important;
+    width: 46px !important;
+    height: 46px !important;
     margin-left: auto !important;
     border: none !important;
     background: transparent !important;
@@ -6115,8 +6122,10 @@ body:has(.thankyou-hero-page) {
     padding: 0 !important;
     cursor: pointer !important;
     position: relative !important;
-    z-index: 1000001 !important;
+    z-index: 1000002 !important;
     pointer-events: auto !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
   }
 
   .navbar-hamburger span {
@@ -6126,6 +6135,7 @@ body:has(.thankyou-hero-page) {
     background: #253419 !important;
     border-radius: 50px !important;
     transition: transform 0.25s ease !important;
+    pointer-events: none !important;
   }
 
   .navbar-hamburger.active span:first-child {
@@ -6187,6 +6197,7 @@ body:has(.thankyou-hero-page) {
     border-radius: 0 !important;
     opacity: 1 !important;
     visibility: visible !important;
+    pointer-events: auto !important;
   }
 
   .navbar-menu a::after {

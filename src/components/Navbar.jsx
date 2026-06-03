@@ -10,8 +10,6 @@ class Navbar extends React.Component {
     this.state = {
       menuOpen: false,
     };
-
-    this.navRef = React.createRef();
   }
 
   navItems = [
@@ -25,7 +23,11 @@ class Navbar extends React.Component {
   ];
 
   componentDidUpdate() {
-    document.body.classList.toggle("mobile-nav-open", this.state.menuOpen);
+    if (this.state.menuOpen) {
+      document.body.classList.add("mobile-nav-open");
+    } else {
+      document.body.classList.remove("mobile-nav-open");
+    }
   }
 
   componentWillUnmount() {
@@ -34,12 +36,17 @@ class Navbar extends React.Component {
 
   handleBookVisit = (e) => {
     e.preventDefault();
-    if (this.props.onOpenPopup) this.props.onOpenPopup();
+
+    if (this.props.onOpenPopup) {
+      this.props.onOpenPopup();
+    }
   };
 
   toggleMenu = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
 
     this.setState((prev) => ({
       menuOpen: !prev.menuOpen,
@@ -52,7 +59,7 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <header className="navbar" ref={this.navRef}>
+      <header className="navbar">
         <div className="navbar-container">
           <a href="#home" className="navbar-logo-box" onClick={this.closeMenu}>
             <img
@@ -88,7 +95,7 @@ class Navbar extends React.Component {
             className={`navbar-hamburger ${
               this.state.menuOpen ? "active" : ""
             }`}
-            onClick={this.toggleMenu}
+            onPointerDown={this.toggleMenu}
             aria-label="Toggle menu"
           >
             <span></span>
