@@ -7758,3 +7758,192 @@ body:has(.thankyou-hero-page) {
 .location-heading h2::before {
   width: 60px !important;
 }
+
+
+
+/* ================= FLOOR PLAN MOBILE ONLY FINAL FIX ================= */
+
+@media (max-width: 768px) {
+  .floorplan-section {
+    padding: 42px 4.5% 46px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  .floorplan-luxury-grid,
+  .floorplan-luxury-grid.master-only {
+    display: contents !important;
+  }
+
+  .floorplan-left-panel {
+    order: 1 !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .floorplan-left-panel h2,
+  .floorplan-left-panel h2 strong {
+    font-size: 34px !important;
+    line-height: 1.05 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .floorplan-left-panel p {
+    max-width: 100% !important;
+    margin: 0 0 16px !important;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+
+  .floorplan-detail-list {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    margin: 0 0 14px !important;
+  }
+
+  .floorplan-detail-list div {
+    grid-template-columns: 32px 1fr !important;
+    column-gap: 8px !important;
+  }
+
+  .floorplan-detail-list svg {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 7px !important;
+  }
+
+  .floorplan-detail-list span {
+    font-size: 8.5px !important;
+    letter-spacing: 0.7px !important;
+  }
+
+  .floorplan-detail-list strong {
+    font-size: 15px !important;
+    line-height: 1.1 !important;
+  }
+
+  .floorplan-tabs-luxury,
+  .floorplan-section > .floorplan-tabs-luxury {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 6px 0 14px !important;
+    padding: 5px !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 5px !important;
+    border-radius: 14px !important;
+  }
+
+  .floorplan-tabs-luxury button {
+    height: 40px !important;
+    min-width: 0 !important;
+    padding: 0 5px !important;
+    border-radius: 10px !important;
+    font-size: 9px !important;
+    line-height: 1.1 !important;
+    letter-spacing: 0.35px !important;
+    gap: 4px !important;
+  }
+
+  .floorplan-tabs-luxury button svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  .floorplan-hero-frame,
+  .floorplan-luxury-grid.master-only .floorplan-hero-frame {
+    order: 3 !important;
+    width: 100% !important;
+    height: clamp(230px, 62vw, 310px) !important;
+    min-height: 230px !important;
+    margin: 0 !important;
+    padding: 8px !important;
+    border-radius: 16px !important;
+  }
+
+  .floorplan-hero-frame::before {
+    inset: 6px !important;
+    border-radius: 12px !important;
+  }
+
+  .floorplan-hero-frame img,
+  .floorplan-luxury-grid.master-only .floorplan-hero-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: calc(100% - 22px) !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+  .floorplan-drag-note {
+    bottom: 7px !important;
+    font-size: 10px !important;
+    gap: 8px !important;
+  }
+
+  .floorplan-drag-note span {
+    width: 30px !important;
+  }
+
+  .floorplan-right-panel {
+    order: 4 !important;
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 9px !important;
+    margin-top: 12px !important;
+  }
+
+  .floorplan-right-panel button {
+    min-height: 76px !important;
+    padding: 8px !important;
+    border-radius: 13px !important;
+    grid-template-columns: 46px 1fr !important;
+    gap: 8px !important;
+  }
+
+  .floorplan-right-panel button img {
+    width: 46px !important;
+    height: 42px !important;
+    border-radius: 8px !important;
+    object-fit: cover !important;
+  }
+
+  .floorplan-right-panel button i {
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 8px !important;
+    left: 6px !important;
+    top: 6px !important;
+  }
+
+  .floorplan-right-panel strong {
+    font-size: 13px !important;
+    line-height: 1.1 !important;
+  }
+
+  .floorplan-right-panel span {
+    font-size: 9px !important;
+    line-height: 1.2 !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .floorplan-detail-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  .floorplan-right-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .floorplan-hero-frame,
+  .floorplan-luxury-grid.master-only .floorplan-hero-frame {
+    height: 235px !important;
+  }
+}
