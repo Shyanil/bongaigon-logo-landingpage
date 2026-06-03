@@ -7,9 +7,7 @@ import logoimage from "../assets/images/logoimage.png";
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      menuOpen: false,
-    };
+    this.state = { menuOpen: false };
   }
 
   navItems = [
@@ -22,37 +20,15 @@ class Navbar extends React.Component {
     { name: "About", id: "about-builder" },
   ];
 
-  componentDidUpdate() {
-    document.body.classList.toggle("mobile-nav-open", this.state.menuOpen);
-  }
-
-  componentWillUnmount() {
-    document.body.classList.remove("mobile-nav-open");
-  }
-
-  handleBookVisit = (e) => {
-    e.preventDefault();
-    this.closeMenu();
-
-    if (this.props.onOpenPopup) {
-      this.props.onOpenPopup();
-    }
-  };
-
-  toggleMenu = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    this.setState((prev) => ({
-      menuOpen: !prev.menuOpen,
-    }));
+  toggleMenu = () => {
+    this.setState((prev) => ({ menuOpen: !prev.menuOpen }));
   };
 
   closeMenu = () => {
     this.setState({ menuOpen: false });
   };
 
-  goToSection = (id) => {
+  scrollToSection = (id) => {
     this.closeMenu();
 
     setTimeout(() => {
@@ -60,7 +36,15 @@ class Navbar extends React.Component {
       if (section) {
         section.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-    }, 120);
+    }, 100);
+  };
+
+  handleBookVisit = () => {
+    this.closeMenu();
+
+    if (this.props.onOpenPopup) {
+      this.props.onOpenPopup();
+    }
   };
 
   render() {
@@ -68,7 +52,7 @@ class Navbar extends React.Component {
       <>
         <header className="navbar">
           <div className="navbar-container">
-            <a href="#home" className="navbar-logo-box" onClick={this.closeMenu}>
+            <a href="#home" className="navbar-logo-box">
               <img
                 src={logoimage}
                 alt="Subham Park Logo"
@@ -95,11 +79,9 @@ class Navbar extends React.Component {
 
             <button
               type="button"
-              className={`navbar-hamburger ${
-                this.state.menuOpen ? "active" : ""
-              }`}
+              className="sp-mobile-menu-btn"
               onClick={this.toggleMenu}
-              aria-label="Toggle menu"
+              aria-label="Open menu"
             >
               <span></span>
               <span></span>
@@ -108,25 +90,27 @@ class Navbar extends React.Component {
         </header>
 
         <div
-          className={`mobile-full-menu ${
-            this.state.menuOpen ? "mobile-full-menu-open" : ""
-          }`}
+          className={
+            this.state.menuOpen
+              ? "sp-mobile-menu sp-mobile-menu-show"
+              : "sp-mobile-menu"
+          }
         >
           <button
             type="button"
-            className="mobile-full-menu-close"
+            className="sp-mobile-menu-close"
             onClick={this.closeMenu}
             aria-label="Close menu"
           >
-            <X size={30} />
+            <X size={34} />
           </button>
 
-          <div className="mobile-full-menu-links">
+          <div className="sp-mobile-menu-links">
             {this.navItems.map((item) => (
               <button
                 type="button"
                 key={item.id}
-                onClick={() => this.goToSection(item.id)}
+                onClick={() => this.scrollToSection(item.id)}
               >
                 {item.name}
               </button>
@@ -135,7 +119,7 @@ class Navbar extends React.Component {
 
           <button
             type="button"
-            className="mobile-full-menu-cta"
+            className="sp-mobile-menu-cta"
             onClick={this.handleBookVisit}
           >
             Contact / Enquire Now

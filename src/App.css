@@ -8258,70 +8258,50 @@ body:has(.thankyou-hero-page) {
 }
 
 
-/* ================= MOBILE FULL NAV MENU FINAL FIX ================= */
+/* ================= SUBHAM PARK MOBILE MENU FINAL FIX ================= */
 
-.mobile-full-menu {
+.sp-mobile-menu,
+.sp-mobile-menu-btn {
   display: none;
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    overflow: visible !important;
-    z-index: 999999 !important;
-  }
-
-  .navbar-container {
-    overflow: visible !important;
-  }
-
-  .navbar-menu {
-    display: none !important;
-  }
-
+  .navbar-menu,
   .navbar-btn {
     display: none !important;
   }
 
-  .navbar-hamburger {
+  .sp-mobile-menu-btn {
     display: flex !important;
     width: 44px !important;
     height: 44px !important;
     margin-left: auto !important;
     border: none !important;
     background: transparent !important;
-    cursor: pointer !important;
-    flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
+    flex-direction: column !important;
     gap: 7px !important;
-    z-index: 1000000 !important;
+    cursor: pointer !important;
+    z-index: 999999999 !important;
   }
 
-  .navbar-hamburger span {
+  .sp-mobile-menu-btn span {
     width: 28px !important;
     height: 2.5px !important;
     background: #253419 !important;
     border-radius: 50px !important;
-    transition: 0.25s ease !important;
   }
 
-  .navbar-hamburger.active span:first-child {
-    transform: translateY(4.8px) rotate(45deg) !important;
-  }
-
-  .navbar-hamburger.active span:last-child {
-    transform: translateY(-4.8px) rotate(-45deg) !important;
-  }
-
-  .mobile-full-menu {
+  .sp-mobile-menu {
     position: fixed !important;
     inset: 0 !important;
-    z-index: 999998 !important;
+    z-index: 999999998 !important;
 
     display: flex !important;
     flex-direction: column !important;
 
-    padding: 98px 8% 34px !important;
+    padding: 92px 8% 34px !important;
     background: #f8f4ec !important;
 
     opacity: 0 !important;
@@ -8331,23 +8311,23 @@ body:has(.thankyou-hero-page) {
     transition: 0.25s ease !important;
   }
 
-  .mobile-full-menu-open {
+  .sp-mobile-menu-show {
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
     transform: translateY(0) !important;
   }
 
-  .mobile-full-menu-close {
+  .sp-mobile-menu-close {
     position: absolute !important;
-    top: 32px !important;
+    top: 28px !important;
     right: 8% !important;
 
     width: 58px !important;
     height: 58px !important;
     border-radius: 50% !important;
     border: 1px solid rgba(200, 107, 57, 0.18) !important;
-    background: rgba(248, 244, 236, 0.9) !important;
+    background: #f8f4ec !important;
     color: #c86b39 !important;
 
     display: flex !important;
@@ -8355,42 +8335,32 @@ body:has(.thankyou-hero-page) {
     justify-content: center !important;
   }
 
-  .mobile-full-menu-links {
+  .sp-mobile-menu-links {
     display: flex !important;
     flex-direction: column !important;
     gap: 26px !important;
-    margin-top: 22px !important;
   }
 
-  .mobile-full-menu-links button {
+  .sp-mobile-menu-links button {
     border: none !important;
     background: transparent !important;
     padding: 0 !important;
 
     font-family: "Cormorant Garamond", serif !important;
-    font-size: 52px !important;
-    line-height: 0.95 !important;
+    font-size: 50px !important;
+    line-height: 1 !important;
     color: #253419 !important;
     text-align: left !important;
-    font-weight: 500 !important;
   }
 
-  .mobile-full-menu-cta {
+  .sp-mobile-menu-cta {
     margin-top: auto !important;
-    width: 100% !important;
     height: 68px !important;
     border-radius: 22px !important;
     border: none !important;
-
     background: #c86b39 !important;
     color: #ffffff !important;
-
     font-size: 18px !important;
     font-weight: 800 !important;
-    letter-spacing: 0.02em !important;
-  }
-
-  body.mobile-nav-open {
-    overflow: hidden !important;
   }
 }
