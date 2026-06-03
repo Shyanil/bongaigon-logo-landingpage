@@ -8258,50 +8258,70 @@ body:has(.thankyou-hero-page) {
 }
 
 
-/* ================= SUBHAM PARK MOBILE MENU FINAL FIX ================= */
+/* ================= FINAL SINGLE MOBILE NAVBAR FIX ================= */
 
-.sp-mobile-menu,
-.sp-mobile-menu-btn {
+.mobile-full-menu {
   display: none;
 }
 
 @media (max-width: 768px) {
   .navbar-menu,
+  .navbar-menu.navbar-menu-open,
+  .navbar-menu-desktop-only,
+  body.mobile-nav-open .navbar-menu,
+  .navbar-container:hover .navbar-menu,
+  .navbar-container:focus-within .navbar-menu,
+  .navbar:has(.navbar-hamburger.active) .navbar-menu {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
   .navbar-btn {
     display: none !important;
   }
 
-  .sp-mobile-menu-btn {
+  .navbar-hamburger {
     display: flex !important;
     width: 44px !important;
     height: 44px !important;
     margin-left: auto !important;
     border: none !important;
     background: transparent !important;
+    cursor: pointer !important;
+    flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    flex-direction: column !important;
     gap: 7px !important;
-    cursor: pointer !important;
-    z-index: 999999999 !important;
+    z-index: 1000000000 !important;
   }
 
-  .sp-mobile-menu-btn span {
+  .navbar-hamburger span {
     width: 28px !important;
     height: 2.5px !important;
     background: #253419 !important;
     border-radius: 50px !important;
+    pointer-events: none !important;
   }
 
-  .sp-mobile-menu {
+  .navbar-hamburger.active span:first-child {
+    transform: translateY(4.8px) rotate(45deg) !important;
+  }
+
+  .navbar-hamburger.active span:last-child {
+    transform: translateY(-4.8px) rotate(-45deg) !important;
+  }
+
+  .mobile-full-menu {
     position: fixed !important;
     inset: 0 !important;
-    z-index: 999999998 !important;
+    z-index: 999999999 !important;
 
     display: flex !important;
     flex-direction: column !important;
 
-    padding: 92px 8% 34px !important;
+    padding: 96px 8% 34px !important;
     background: #f8f4ec !important;
 
     opacity: 0 !important;
@@ -8311,14 +8331,14 @@ body:has(.thankyou-hero-page) {
     transition: 0.25s ease !important;
   }
 
-  .sp-mobile-menu-show {
+  .mobile-full-menu.mobile-full-menu-open {
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
     transform: translateY(0) !important;
   }
 
-  .sp-mobile-menu-close {
+  .mobile-full-menu-close {
     position: absolute !important;
     top: 28px !important;
     right: 8% !important;
@@ -8335,13 +8355,13 @@ body:has(.thankyou-hero-page) {
     justify-content: center !important;
   }
 
-  .sp-mobile-menu-links {
+  .mobile-full-menu-links {
     display: flex !important;
     flex-direction: column !important;
     gap: 26px !important;
   }
 
-  .sp-mobile-menu-links button {
+  .mobile-full-menu-links button {
     border: none !important;
     background: transparent !important;
     padding: 0 !important;
@@ -8351,16 +8371,34 @@ body:has(.thankyou-hero-page) {
     line-height: 1 !important;
     color: #253419 !important;
     text-align: left !important;
+    font-weight: 500 !important;
   }
 
-  .sp-mobile-menu-cta {
+  .mobile-full-menu-cta {
     margin-top: auto !important;
+    width: 100% !important;
     height: 68px !important;
     border-radius: 22px !important;
     border: none !important;
+
     background: #c86b39 !important;
     color: #ffffff !important;
+
     font-size: 18px !important;
     font-weight: 800 !important;
+  }
+
+  body.mobile-nav-open {
+    overflow: hidden !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-full-menu {
+    display: none !important;
+  }
+
+  .navbar-menu-desktop-only {
+    display: flex !important;
   }
 }

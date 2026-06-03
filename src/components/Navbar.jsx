@@ -7,7 +7,9 @@ import logoimage from "../assets/images/logoimage.png";
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { menuOpen: false };
+    this.state = {
+      menuOpen: false,
+    };
   }
 
   navItems = [
@@ -20,26 +22,16 @@ class Navbar extends React.Component {
     { name: "About", id: "about-builder" },
   ];
 
-  toggleMenu = () => {
-    this.setState((prev) => ({ menuOpen: !prev.menuOpen }));
-  };
+  componentDidUpdate() {
+    document.body.classList.toggle("mobile-nav-open", this.state.menuOpen);
+  }
 
-  closeMenu = () => {
-    this.setState({ menuOpen: false });
-  };
+  componentWillUnmount() {
+    document.body.classList.remove("mobile-nav-open");
+  }
 
-  scrollToSection = (id) => {
-    this.closeMenu();
-
-    setTimeout(() => {
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }, 100);
-  };
-
-  handleBookVisit = () => {
+  handleBookVisit = (e) => {
+    e.preventDefault();
     this.closeMenu();
 
     if (this.props.onOpenPopup) {
@@ -47,12 +39,44 @@ class Navbar extends React.Component {
     }
   };
 
+  toggleMenu = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    this.setState((prev) => ({
+      menuOpen: !prev.menuOpen,
+    }));
+  };
+
+  closeMenu = () => {
+    this.setState({ menuOpen: false });
+  };
+
+  goToSection = (id) => {
+    this.closeMenu();
+
+    setTimeout(() => {
+      const section = document.getElementById(id);
+
+      if (section) {
+        const navbarOffset = 92;
+        const sectionTop =
+          section.getBoundingClientRect().top + window.pageYOffset;
+
+        window.scrollTo({
+          top: sectionTop - navbarOffset,
+          behavior: "smooth",
+        });
+      }
+    }, 120);
+  };
+
   render() {
     return (
       <>
         <header className="navbar">
           <div className="navbar-container">
-            <a href="#home" className="navbar-logo-box">
+            <a href="#home" className="navbar-logo-box" onClick={this.closeMenu}>
               <img
                 src={logoimage}
                 alt="Subham Park Logo"
@@ -60,7 +84,7 @@ class Navbar extends React.Component {
               />
             </a>
 
-            <nav className="navbar-menu">
+            <nav className="navbar-menu navbar-menu-desktop-only">
               {this.navItems.map((item) => (
                 <a key={item.id} href={`#${item.id}`}>
                   {item.name}
@@ -79,9 +103,12 @@ class Navbar extends React.Component {
 
             <button
               type="button"
-              className="sp-mobile-menu-btn"
+              className={`navbar-hamburger ${
+                this.state.menuOpen ? "active" : ""
+              }`}
               onClick={this.toggleMenu}
-              aria-label="Open menu"
+              aria-label="Toggle menu"
+              aria-expanded={this.state.menuOpen}
             >
               <span></span>
               <span></span>
@@ -90,27 +117,25 @@ class Navbar extends React.Component {
         </header>
 
         <div
-          className={
-            this.state.menuOpen
-              ? "sp-mobile-menu sp-mobile-menu-show"
-              : "sp-mobile-menu"
-          }
+          className={`mobile-full-menu ${
+            this.state.menuOpen ? "mobile-full-menu-open" : ""
+          }`}
         >
           <button
             type="button"
-            className="sp-mobile-menu-close"
+            className="mobile-full-menu-close"
             onClick={this.closeMenu}
             aria-label="Close menu"
           >
-            <X size={34} />
+            <X size={30} />
           </button>
 
-          <div className="sp-mobile-menu-links">
+          <div className="mobile-full-menu-links">
             {this.navItems.map((item) => (
               <button
                 type="button"
                 key={item.id}
-                onClick={() => this.scrollToSection(item.id)}
+                onClick={() => this.goToSection(item.id)}
               >
                 {item.name}
               </button>
@@ -119,7 +144,7 @@ class Navbar extends React.Component {
 
           <button
             type="button"
-            className="sp-mobile-menu-cta"
+            className="mobile-full-menu-cta"
             onClick={this.handleBookVisit}
           >
             Contact / Enquire Now
