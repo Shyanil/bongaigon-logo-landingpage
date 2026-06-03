@@ -2764,7 +2764,7 @@ label {
   justify-content: center;
   gap: 14px;
   font-family: "Outfit", sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   text-transform: uppercase;
   color: #ffd86f;
   font-weight: 500;
@@ -3904,6 +3904,10 @@ body.floor-modal-open {
   height: 1px;
   background: #ffd86f;
   display: block;
+}
+
+.location-heading h2::after {
+  display: none;
 }
 
 .location-title {
