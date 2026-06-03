@@ -7686,6 +7686,16 @@ body:has(.thankyou-hero-page) {
   .floorplan-hero-frame {
     order: 2 !important;
     width: 100% !important;
+    height: clamp(240px, 42vw, 280px) !important;
+    min-height: 240px !important;
+    padding: 10px !important;
+  }
+
+  .floorplan-hero-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
   }
 
   .floorplan-section > .floorplan-modal {
