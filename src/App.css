@@ -8402,3 +8402,38 @@ body:has(.thankyou-hero-page) {
     display: flex !important;
   }
 }
+
+
+/* ================= MOBILE MENU SIZE FIX ================= */
+
+@media (max-width: 768px) {
+  .mobile-full-menu {
+    padding: 92px 8% 34px !important;
+  }
+
+  .mobile-full-menu-links {
+    gap: 18px !important;
+  }
+
+  .mobile-full-menu-links button {
+    font-size: 38px !important;
+    line-height: 1.05 !important;
+    letter-spacing: 0.01em !important;
+  }
+
+  .mobile-full-menu-cta {
+    height: 58px !important;
+    border-radius: 18px !important;
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .mobile-full-menu-links {
+    gap: 15px !important;
+  }
+
+  .mobile-full-menu-links button {
+    font-size: 34px !important;
+  }
+}
