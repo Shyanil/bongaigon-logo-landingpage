@@ -4490,95 +4490,7 @@ body:has(.thankyou-hero-page) {
   }
 }
 
-/* ================= KEY.JSX PRELOADER LOGO - FIXED ================= */
 
-/* TABLET: 768px to 1024px */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .key-logo-ring {
-    width: 135px !important;
-    height: 135px !important;
-    margin: 0 auto 32px !important;
-  }
-
-  .key-logo-ring::before {
-    inset: -22px !important;
-  }
-
-  .key-logo-ring::after {
-    inset: -40px !important;
-  }
-
-  .key-logo-ring img {
-    width: 85px !important;
-    height: auto !important;
-  }
-}
-
-/* MOBILE: 480px to 767px */
-@media (min-width: 480px) and (max-width: 767px) {
-  .key-logo-ring {
-    width: 118px !important;
-    height: 118px !important;
-    margin: 0 auto 26px !important;
-  }
-
-  .key-logo-ring::before {
-    inset: -20px !important;
-  }
-
-  .key-logo-ring::after {
-    inset: -36px !important;
-  }
-
-  .key-logo-ring img {
-    width: 74px !important;
-    height: auto !important;
-  }
-}
-
-/* SMALL MOBILE: 380px to 479px */
-@media (min-width: 380px) and (max-width: 479px) {
-  .key-logo-ring {
-    width: 108px !important;
-    height: 108px !important;
-    margin: 0 auto 22px !important;
-  }
-
-  .key-logo-ring::before {
-    inset: -18px !important;
-  }
-
-  .key-logo-ring::after {
-    inset: -32px !important;
-  }
-
-  .key-logo-ring img {
-    width: 68px !important;
-    height: auto !important;
-  }
-}
-
-/* EXTRA SMALL MOBILE: Below 380px */
-@media (max-width: 379px) {
-  .key-logo-ring {
-    width: 100px !important;
-    height: 100px !important;
-    margin: 0 auto 20px !important;
-  }
-
-  .key-logo-ring::before {
-    inset: -16px !important;
-  }
-
-  .key-logo-ring::after {
-    inset: -28px !important;
-  }
-
-  .key-logo-ring img {
-    width: 63px !important;
-    height: auto !important;
-  }
-}
 
 /* MOBILE: 480px to 767px */
 @media (min-width: 480px) and (max-width: 767px) {
@@ -8170,5 +8082,18 @@ video {
   ::-webkit-scrollbar-thumb {
     background: rgba(185, 94, 47, 0.3);
     border-radius: 4px;
+  }
+}
+
+
+
+
+
+/* FIX: remove unwanted orange line beside logo in Key preloader */
+@media (max-width: 768px) {
+  .key-logo-ring::after {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
   }
 }
