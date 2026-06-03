@@ -7699,3 +7699,22 @@ body:has(.thankyou-hero-page) {
     font-size: 34px !important;
   }
 }
+
+/* final heading label normalization */
+.amenities-heading h2,
+.gallery-heading h2,
+.location-heading h2 {
+  font-family: "Outfit", sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 2px !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  margin: 0 !important;
+}
+
+.amenities-heading h2::before,
+.gallery-heading h2::before,
+.location-heading h2::before {
+  width: 60px !important;
+}
