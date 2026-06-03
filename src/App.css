@@ -8045,3 +8045,36 @@ body:has(.thankyou-hero-page) {
     font-size: 8px !important;
   }
 }
+
+
+/* FORCE FLOORPLAN TABS BELOW AVAILABLE - MOBILE ONLY */
+
+@media (max-width: 768px) {
+  .floorplan-section {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .floorplan-tabs-luxury {
+    order: 2 !important;
+    margin: 0 0 14px !important;
+  }
+
+  .floorplan-luxury-grid,
+  .floorplan-luxury-grid.master-only {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .floorplan-left-panel {
+    order: 1 !important;
+  }
+
+  .floorplan-hero-frame {
+    order: 3 !important;
+  }
+
+  .floorplan-right-panel {
+    order: 4 !important;
+  }
+}
