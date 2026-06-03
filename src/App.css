@@ -5628,7 +5628,7 @@ body:has(.thankyou-hero-page) {
     pointer-events: none !important;
 
     z-index: 10000 !important;
-    transition: 0.25s ease !important;
+    transition: opacity 0.25s ease, transform 0.25s ease !important;
   }
 
   .navbar-menu.navbar-menu-open {
@@ -5637,6 +5637,12 @@ body:has(.thankyou-hero-page) {
     visibility: visible !important;
     transform: translateY(0) !important;
     pointer-events: auto !important;
+  }
+
+  .navbar-menu:not(.navbar-menu-open) {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
   }
 
   .navbar-menu a {
@@ -5657,7 +5663,7 @@ body:has(.thankyou-hero-page) {
     height: auto !important;
     min-height: auto !important;
     max-height: none !important;
-    margin-top: 8px !important;
+    margin-top: 68px !important;
     padding: 20px 5% 26px !important;
     align-items: flex-start !important;
     overflow: hidden !important;
