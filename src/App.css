@@ -2213,7 +2213,7 @@ label {
 
 .about-project-text {
   max-width: 500px;
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Outfit", sans-serif;
   line-height: 1.55;
   color: #2d2d2d;
@@ -8829,5 +8829,212 @@ body:has(.thankyou-hero-page) {
   .popup-submit {
     height: 54px !important;
     font-size: 13px !important;
+  }
+}
+
+/* ================= FINAL EXACT STICKY FORM DESKTOP FIX ================= */
+
+@media (min-width: 769px) {
+  .desktop-sticky-form {
+    width: min(88vw, 1420px) !important;
+    max-width: calc(100vw - 120px) !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) translateY(120%) !important;
+
+    display: grid !important;
+    grid-template-columns:
+      minmax(150px, 160px)
+      minmax(180px, 1fr)
+      minmax(180px, 1fr)
+      minmax(220px, 1.15fr)
+      minmax(120px, 130px)
+      minmax(130px, 145px)
+      minmax(140px, 150px) !important;
+
+    align-items: center !important;
+    gap: 10px !important;
+
+    padding: 10px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  .desktop-sticky-form.show {
+    transform: translateX(-50%) translateY(0) !important;
+  }
+
+  .desktop-sticky-form > * {
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .sticky-left,
+  .sticky-input,
+  .sticky-select,
+  .sticky-submit {
+    height: 52px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .sticky-input {
+    display: flex !important;
+    align-items: center !important;
+    overflow: hidden !important;
+  }
+
+  .sticky-input input {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .sticky-submit {
+    padding: 0 14px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+
+    font-size: 13px !important;
+    letter-spacing: 0.10em !important;
+    white-space: nowrap !important;
+
+    overflow: hidden !important;
+  }
+
+  .sticky-submit svg {
+    width: 15px !important;
+    height: 15px !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+/* smaller desktop / laptop */
+@media (min-width: 769px) and (max-width: 1280px) {
+  .desktop-sticky-form {
+    width: calc(100vw - 64px) !important;
+    max-width: calc(100vw - 64px) !important;
+
+    grid-template-columns:
+      145px
+      minmax(140px, 1fr)
+      minmax(140px, 1fr)
+      minmax(170px, 1fr)
+      110px
+      120px
+      128px !important;
+
+    gap: 8px !important;
+  }
+
+  .sticky-submit {
+    font-size: 11px !important;
+    letter-spacing: 0.08em !important;
+    padding: 0 10px !important;
+  }
+}
+
+/* very small laptop */
+@media (min-width: 769px) and (max-width: 1050px) {
+  .desktop-sticky-form {
+    width: calc(100vw - 36px) !important;
+    max-width: calc(100vw - 36px) !important;
+
+    grid-template-columns:
+      132px
+      minmax(110px, 1fr)
+      minmax(110px, 1fr)
+      minmax(140px, 1fr)
+      95px
+      105px
+      112px !important;
+
+    gap: 6px !important;
+    padding: 8px !important;
+  }
+
+  .sticky-left h4 {
+    font-size: 12px !important;
+  }
+
+  .sticky-left p {
+    font-size: 8px !important;
+  }
+
+  .sticky-input input,
+  .sticky-select {
+    font-size: 11px !important;
+  }
+
+  .sticky-submit {
+    font-size: 10px !important;
+    letter-spacing: 0.05em !important;
+    padding: 0 6px !important;
+    gap: 5px !important;
+  }
+
+  .sticky-submit svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+}
+
+/* ===== SLICK DESKTOP STICKY FORM HEIGHT FIX ===== */
+
+@media (min-width: 769px) {
+  .desktop-sticky-form {
+    height: 58px !important;
+    min-height: 58px !important;
+    padding: 7px 10px !important;
+    border-radius: 22px !important;
+    gap: 9px !important;
+  }
+
+  .sticky-left,
+  .sticky-input,
+  .sticky-select,
+  .sticky-submit {
+    height: 44px !important;
+    min-height: 44px !important;
+    border-radius: 13px !important;
+  }
+
+  .sticky-left {
+    padding: 0 14px !important;
+  }
+
+  .sticky-icon {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .sticky-left h4 {
+    font-size: 12px !important;
+    line-height: 1 !important;
+  }
+
+  .sticky-left p {
+    font-size: 8px !important;
+    line-height: 1 !important;
+    margin-top: 3px !important;
+  }
+
+  .sticky-input {
+    padding: 0 14px !important;
+    gap: 9px !important;
+  }
+
+  .sticky-input input,
+  .sticky-select {
+    font-size: 12px !important;
+  }
+
+  .sticky-submit {
+    font-size: 12px !important;
+    padding: 0 14px !important;
+    letter-spacing: 0.12em !important;
   }
 }
