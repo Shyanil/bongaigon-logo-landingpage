@@ -8680,3 +8680,53 @@ body:has(.thankyou-hero-page) {
     line-height: 1.2 !important;
   }
 }
+
+
+/* ===== DOWNLOAD BROCHURE MOBILE FIX ===== */
+
+@media (max-width: 768px) {
+
+  .hero-btn-brochure {
+    width: 100% !important;
+    height: 52px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 0 8px !important;
+    overflow: hidden !important;
+  }
+
+  .hero-btn-brochure,
+  .hero-btn-brochure span {
+
+    font-size: clamp(9px, 2.5vw, 11px) !important;
+    letter-spacing: 0.08em !important;
+    font-weight: 700 !important;
+
+    white-space: nowrap !important;
+    text-align: center !important;
+  }
+
+  .hero-btn-brochure svg {
+    width: 12px !important;
+    height: 12px !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+/* Extra Small Phones */
+@media (max-width: 380px) {
+
+  .hero-btn-brochure,
+  .hero-btn-brochure span {
+
+    font-size: 8px !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  .hero-btn-brochure {
+    padding: 0 6px !important;
+  }
+}
