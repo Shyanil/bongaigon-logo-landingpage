@@ -8730,3 +8730,104 @@ body:has(.thankyou-hero-page) {
     padding: 0 6px !important;
   }
 }
+
+
+
+/* ===== FINAL MOBILE POPUP + MENU CONFLICT FIX ===== */
+
+@media (max-width: 768px) {
+
+  /* Popup open hole navbar/menu hide */
+  body:has(.popup-overlay) .navbar,
+  body:has(.popup-overlay) .mobile-full-menu,
+  body:has(.popup-overlay) .mobile-sticky-btn {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  .popup-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 2147483647 !important;
+    padding: 18px 5% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow-y: auto !important;
+    background: rgba(0, 0, 0, 0.72) !important;
+  }
+
+  .popup-form {
+    width: 100% !important;
+    max-width: 520px !important;
+    max-height: calc(100svh - 36px) !important;
+    overflow-y: auto !important;
+    border-radius: 28px !important;
+    padding: 34px 26px 28px !important;
+    position: relative !important;
+    margin: auto !important;
+  }
+
+  .popup-close {
+    position: fixed !important;
+    top: 24px !important;
+    right: 24px !important;
+    width: 44px !important;
+    height: 44px !important;
+    z-index: 2147483647 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .popup-form h2 {
+    font-size: clamp(44px, 10vw, 62px) !important;
+    line-height: 1.05 !important;
+    margin: 0 0 16px !important;
+  }
+
+  .popup-form p {
+    font-size: clamp(15px, 3.8vw, 18px) !important;
+    line-height: 1.55 !important;
+    margin: 0 0 22px !important;
+  }
+
+  .popup-input {
+    height: 54px !important;
+    margin-bottom: 14px !important;
+    border-radius: 18px !important;
+  }
+
+  .popup-submit {
+    height: 58px !important;
+    border-radius: 18px !important;
+    margin-top: 8px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .popup-overlay {
+    padding: 14px 4% !important;
+  }
+
+  .popup-form {
+    max-height: calc(100svh - 28px) !important;
+    padding: 28px 22px 24px !important;
+    border-radius: 24px !important;
+  }
+
+  .popup-form h2 {
+    font-size: 42px !important;
+  }
+
+  .popup-input {
+    height: 50px !important;
+  }
+
+  .popup-submit {
+    height: 54px !important;
+    font-size: 13px !important;
+  }
+}
