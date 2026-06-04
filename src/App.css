@@ -8722,8 +8722,8 @@ body:has(.thankyou-hero-page) {
   .hero-btn-brochure,
   .hero-btn-brochure span {
 
-    font-size: 8px !important;
-    letter-spacing: 0.05em !important;
+    font-size: 9px !important;
+    letter-spacing: none !important;
   }
 
   .hero-btn-brochure {
