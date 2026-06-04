@@ -8406,3 +8406,200 @@ body:has(.thankyou-hero-page) {
     display: flex !important;
   }
 }
+
+
+
+
+
+/* ================= FINAL EXACT MOBILE HERO FIX ================= */
+@media (max-width: 768px) {
+  html, body, #root {
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .navbar {
+    top: 14px !important;
+    padding: 0 5% !important;
+  }
+
+  .navbar-container {
+    height: 72px !important;
+    border-radius: 24px !important;
+    padding: 0 28px !important;
+    background: rgba(248,244,236,0.96) !important;
+  }
+
+  .navbar-logo {
+    width: 92px !important;
+    max-height: 60px !important;
+    transform: none !important;
+  }
+
+  .navbar-btn {
+    display: none !important;
+  }
+
+  .navbar-hamburger {
+    display: flex !important;
+    width: 42px !important;
+    height: 42px !important;
+    margin-left: auto !important;
+    gap: 7px !important;
+  }
+
+  .navbar-hamburger span {
+    width: 28px !important;
+    height: 3px !important;
+    background: #253419 !important;
+  }
+
+  .hero-section {
+    margin-top: 105px !important;
+    padding: 72px 5% 34px !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    display: block !important;
+    background: #fff !important;
+  }
+
+  .hero-bg {
+    height: 290px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    object-position: 70% top !important;
+    opacity: 0.72 !important;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255,255,255,0.10) 0%,
+        rgba(255,255,255,0.58) 42%,
+        #ffffff 82%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(255,255,255,0.98) 0%,
+        rgba(255,255,255,0.88) 43%,
+        rgba(255,255,255,0.22) 100%
+      ) !important;
+  }
+
+  .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  .hero-title {
+    font-size: clamp(58px, 12vw, 78px) !important;
+    line-height: 0.92 !important;
+    letter-spacing: 0.01em !important;
+    margin: 0 0 24px !important;
+    color: #000 !important;
+  }
+
+  .hero-title span {
+    font-size: clamp(64px, 13vw, 86px) !important;
+    line-height: 0.9 !important;
+    margin: 4px 0 6px 0 !important;
+    color: #b95e2f !important;
+  }
+
+  .hero-description {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .hero-description p {
+    max-width: 100% !important;
+    font-size: clamp(18px, 4vw, 22px) !important;
+    line-height: 1.7 !important;
+    text-align: left !important;
+    margin: 0 0 34px !important;
+    color: #2f2f2f !important;
+  }
+
+  .hero-info {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    max-width: 100% !important;
+    margin: 0 0 34px !important;
+  }
+
+  .hero-info-card {
+    min-height: 150px !important;
+    padding: 28px 24px !important;
+    border-radius: 22px !important;
+  }
+
+  .hero-info-card small {
+    font-size: 13px !important;
+    letter-spacing: 0.16em !important;
+    margin-bottom: 24px !important;
+  }
+
+  .hero-info-card:first-child strong {
+    font-size: 30px !important;
+  }
+
+  .hero-info-card:last-child strong {
+    font-size: 23px !important;
+    line-height: 1.2 !important;
+  }
+
+  .hero-buttons {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 22px !important;
+    max-width: 100% !important;
+  }
+
+  .hero-btn-brochure,
+  .hero-btn-explore {
+    width: 100% !important;
+    height: 74px !important;
+    justify-content: center !important;
+    font-size: 15px !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .highlight-marquee-section {
+    margin-top: 38px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-title {
+    font-size: 52px !important;
+  }
+
+  .hero-title span {
+    font-size: 58px !important;
+  }
+
+  .hero-info-card {
+    min-height: 130px !important;
+    padding: 22px 18px !important;
+  }
+
+  .hero-info-card:first-child strong {
+    font-size: 25px !important;
+  }
+
+  .hero-info-card:last-child strong {
+    font-size: 19px !important;
+  }
+
+  .hero-btn-brochure,
+  .hero-btn-explore {
+    height: 62px !important;
+    font-size: 12px !important;
+  }
+}
