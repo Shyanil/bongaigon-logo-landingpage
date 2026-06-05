@@ -1,6 +1,6 @@
 import React from "react";
 import { Sparkles, User, Phone, Mail, Send, Clock } from "lucide-react";
-import { supabase } from "../supabase";
+import { supabase, getUTMData } from "../supabase";
 import "../App.css";
 
 class StickyNote extends React.Component {
@@ -69,6 +69,8 @@ class StickyNote extends React.Component {
         interested_in: formData.interestedIn,
         requirement: "Site Visit",
         timing: formData.timing || null,
+
+        ...getUTMData(),
       },
     ]);
 
@@ -78,6 +80,26 @@ class StickyNote extends React.Component {
       this.setState({ loading: false });
       return;
     }
+
+    await fetch(
+      "https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjcwNTZlMDYzZjA0MzI1MjZiNTUzMTUxMzQi_pc",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          interested_in: formData.interestedIn,
+          requirement: "Site Visit",
+          timing: formData.timing || null,
+
+          ...getUTMData(),
+        }),
+      }
+    );
 
     this.setState({
       loading: false,

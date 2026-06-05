@@ -10,7 +10,7 @@ import {
   Home,
   CalendarCheck,
 } from "lucide-react";
-import { supabase } from "../supabase";
+import { supabase, getUTMData } from "../supabase";
 import "../App.css";
 
 class Contact extends React.Component {
@@ -54,6 +54,8 @@ class Contact extends React.Component {
         interested_in: formData.interestedIn,
         requirement: "Download Brochure",
         timing: formData.timing || null,
+
+        ...getUTMData(),
       },
     ]);
 
@@ -63,6 +65,26 @@ class Contact extends React.Component {
       this.setState({ loading: false });
       return;
     }
+
+    await fetch(
+      "https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjcwNTZlMDYzZjA0MzI1MjZiNTUzMTUxMzQi_pc",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          interested_in: formData.interestedIn,
+          requirement: "Download Brochure",
+          timing: formData.timing || null,
+
+          ...getUTMData(),
+        }),
+      }
+    );
 
     this.setState({
       loading: false,
