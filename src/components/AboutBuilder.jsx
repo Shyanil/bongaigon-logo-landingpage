@@ -16,10 +16,9 @@ const ongoingProjects = [
   { name: "Subham Solitaire", address: "Agartala" },
   { name: "Subham Ashray", address: "Aerocity" },
   { name: "The Peak", address: "GS Road" },
-  { name: "The Park", address: "GS Jorhat" },
   {
     name: "Subham Park",
-    address: "Bongaigaon",
+    address: " Johrat",
   },
   { name: "Subham Kishori Heights", address: "Dibrugarh" },
 ];

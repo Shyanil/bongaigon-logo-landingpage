@@ -11,22 +11,12 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 export const getUTMData = () => {
   const params = new URLSearchParams(window.location.search);
 
-  const getParamValue = (key, fallback = "direct") => {
-    const value = params.get(key);
-
-    if (value && value.trim() !== "") {
-      return value.trim();
-    }
-
-    return fallback;
-  };
-
   return {
-    utm_source: getParamValue("utm_source", "direct"),
-    utm_medium: getParamValue("utm_medium", "direct"),
-    utm_campaign: getParamValue("utm_campaign", "direct"),
-    utm_term: getParamValue("utm_term", "direct"),
-    utm_content: getParamValue("utm_content", "direct"),
+    utm_source: params.get("utm_source") || "direct",
+    utm_medium: params.get("utm_medium") || "",
+    utm_campaign: params.get("utm_campaign") || "",
+    utm_term: params.get("utm_term") || "",
+    utm_content: params.get("utm_content") || "",
     page_url: window.location.href,
   };
 };
