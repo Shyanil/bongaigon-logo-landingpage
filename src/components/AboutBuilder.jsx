@@ -18,7 +18,7 @@ const ongoingProjects = [
   { name: "The Peak", address: "GS Road" },
   {
     name: "Subham Park",
-    address: " Johrat",
+    address: "Jorhat",
   },
   { name: "Subham Kishori Heights", address: "Dibrugarh" },
 ];
