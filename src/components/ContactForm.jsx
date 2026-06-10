@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import {
   User,
   Phone,
@@ -46,7 +46,7 @@ class Contact extends React.Component {
 
     this.setState({ loading: true });
 
-    const { error } = await supabase.from("subham-bongaigon").insert([
+    const { error } = await supabase.from("subhamgroup_park-bongaigaon").insert([
       {
         name: formData.name,
         phone: formData.phone,
@@ -99,7 +99,7 @@ class Contact extends React.Component {
     });
 
     setTimeout(() => {
-      window.location.href = "/thank-you";
+      window.location.href = "/park-bongaigaon/thank-you";
     }, 2200);
   };
 

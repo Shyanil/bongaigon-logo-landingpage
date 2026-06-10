@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import {
   MapPin,
   School,
@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import "../App.css";
 
-import mapImage from "../assets/images/map.png";
+import mapImage from "../assets/images/map.webp";
 
 const googleMapLink =
   "https://www.google.com/maps?q=Guru%20Nanak%20Nagar%2C%20Chapaguri%20Road%2C%20Bongaigaon%2C%20Assam";

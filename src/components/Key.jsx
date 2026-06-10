@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import logoImg from "../assets/images/logoimage.png";
+import logoImg from "../assets/images/logoimage.webp";
 
 class Key extends React.Component {
   componentDidMount() {

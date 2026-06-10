@@ -1,8 +1,8 @@
-﻿import React from "react";
+import React from "react";
 import { Phone, X } from "lucide-react";
 import "../App.css";
 
-import logoimage from "../assets/images/logoimage.png";
+import logoimage from "../assets/images/logoimage.webp";
 
 class Navbar extends React.Component {
   constructor(props) {

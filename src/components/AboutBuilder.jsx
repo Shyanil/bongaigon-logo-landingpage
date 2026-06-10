@@ -1,8 +1,8 @@
-﻿import React from "react";
+import React from "react";
 import { Building2, Ruler, HardHat, Users } from "lucide-react";
 import "../App.css";
 
-import subhamLogo from "../assets/images/aboutbuilderlogo.png";
+import subhamLogo from "../assets/images/aboutbuilderlogo.webp";
 
 const stats = [
   { icon: Building2, number: "16+", label: "Completed Projects" },

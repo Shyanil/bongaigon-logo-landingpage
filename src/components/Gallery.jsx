@@ -1,17 +1,17 @@
-﻿import React from "react";
+import React from "react";
 import { X, ZoomIn, ZoomOut, ArrowLeft, ArrowRight } from "lucide-react";
 import "../App.css";
 
-import gallery1 from "../assets/images/splashpool.jpeg";
-import gallery2 from "../assets/images/lobbylounge.jpeg";
-import gallery3 from "../assets/images/semiarenaview.jpeg";
-import gallery4 from "../assets/images/gymnasium.jpeg";
-import gallery5 from "../assets/images/kidsplayarea.jpeg";
-import gallery6 from "../assets/images/picture1.jpeg";
-import gallery7 from "../assets/images/indoorgamesroom.jpeg";
-import gallery8 from "../assets/images/mainentrance.jpeg";
-import gallery9 from "../assets/images/g9.jpeg";
-import gallery10 from "../assets/images/g10.jpeg";
+import gallery1 from "../assets/images/splashpool.webp";
+import gallery2 from "../assets/images/lobbylounge.webp";
+import gallery3 from "../assets/images/semiarenaview.webp";
+import gallery4 from "../assets/images/gymnasium.webp";
+import gallery5 from "../assets/images/kidsplayarea.webp";
+import gallery6 from "../assets/images/picture1.webp";
+import gallery7 from "../assets/images/indoorgamesroom.webp";
+import gallery8 from "../assets/images/mainentrance.webp";
+import gallery9 from "../assets/images/g9.webp";
+import gallery10 from "../assets/images/g10.webp";
 
 const galleryImages = [
   { img: gallery1, title: "Splash Pool" },

@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import "./App.css";
 
 import Key from "./components/Key";
@@ -205,9 +205,15 @@ class App extends React.Component {
 }
 
 const AppWrapper = () => {
-  const currentPath = window.location.pathname;
+  const currentPath = decodeURIComponent(window.location.pathname).replace(/\/+$/, "");
+  const thankYouPaths = new Set([
+    "/thank-you",
+    "/thank you",
+    "/park-bongaigaon/thank-you",
+    "/park-bongaigaon/thank you",
+  ]);
 
-  if (currentPath === "/thank-you") {
+  if (thankYouPaths.has(currentPath)) {
     return <ThankYou />;
   }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
-import logo from "../assets/images/logoimage.png";
-import thankyouBg from "../assets/images/thankyoubg.jpeg";
+import logo from "../assets/images/logoimage.webp";
+import thankyouBg from "../assets/images/thankyoubg.webp";
 
 const ThankYou = () => {
   return (
@@ -23,11 +23,11 @@ const ThankYou = () => {
         </p>
 
         <div className="thankyou-hero-buttons">
-          <a href="/Brochure.pdf" download className="thankyou-hero-download">
+          <a href="/park-bongaigaon/Brochure.pdf" download className="thankyou-hero-download">
             Download Brochure
           </a>
 
-          <a href="/" className="thankyou-hero-home">
+          <a href="/park-bongaigaon/" className="thankyou-hero-home">
             Back to Home →
           </a>
         </div>

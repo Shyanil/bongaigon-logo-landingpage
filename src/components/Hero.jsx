@@ -1,8 +1,8 @@
-﻿import React from "react";
+import React from "react";
 import { ArrowRight, Download, MapPin } from "lucide-react";
 
 import "../App.css";
-import heroimage from "../assets/images/heroimage.jpeg";
+import heroimage from "../assets/images/heroimage.webp";
 
 const Hero = ({ onOpenPopup }) => {
   return (

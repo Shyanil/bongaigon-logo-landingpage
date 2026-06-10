@@ -12,15 +12,15 @@ import {
 } from "lucide-react";
 import "../App.css";
 
-import mainPlan from "../assets/images/mainplan.jpg";
-import unit1 from "../assets/images/unitmap1.jpg";
-import unit2 from "../assets/images/unitmap2.jpg";
-import unit3 from "../assets/images/unitmap3.jpg";
-import unit4 from "../assets/images/unitmap4.jpg";
-import floor1 from "../assets/images/map1.jpg";
-import floor2 from "../assets/images/map2.jpg";
-import floor3 from "../assets/images/map3.jpg";
-import floor4 from "../assets/images/map4.jpg";
+import mainPlan from "../assets/images/mainplan.webp";
+import unit1 from "../assets/images/unitmap1.webp";
+import unit2 from "../assets/images/unitmap2.webp";
+import unit3 from "../assets/images/unitmap3.webp";
+import unit4 from "../assets/images/unitmap4.webp";
+import floor1 from "../assets/images/map1.webp";
+import floor2 from "../assets/images/map2.webp";
+import floor3 from "../assets/images/map3.webp";
+import floor4 from "../assets/images/map4.webp";
 
 const plans = {
   master: [{ title: "Master Plan", img: mainPlan, type: "Master Plan" }],

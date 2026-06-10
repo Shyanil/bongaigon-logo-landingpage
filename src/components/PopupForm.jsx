@@ -50,7 +50,7 @@ class PopupForm extends React.Component {
         ? this.props.title
         : "Book A Site Visit";
 
-    const { error } = await supabase.from("subham-bongaigon").insert([
+    const { error } = await supabase.from("subhamgroup_park-bongaigaon").insert([
       {
         name: formData.name,
         phone: formData.phone,
@@ -109,7 +109,7 @@ class PopupForm extends React.Component {
     });
 
     setTimeout(() => {
-      window.location.href = "/thank-you";
+      window.location.href = "/park-bongaigaon/thank-you";
     }, 2200);
   };
 
