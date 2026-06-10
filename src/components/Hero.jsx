@@ -20,9 +20,9 @@ const Hero = ({ onOpenPopup }) => {
 
         <div className="hero-description">
           <p>
-            Experience premium 3BHK & 4 BHK residences designed for refined
-            living, elegant comfort, and a lifestyle inspired by modern
-            sensibilities.
+            Bongaigaon's most coveted address offers you just that.
+Built in a prime location with the best of modern amenities,
+it's not just a home; it's a lifestyle upgrade.
           </p>
 
           <div className="hero-info">
